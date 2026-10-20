@@ -100,8 +100,8 @@
                         android:layout_marginTop="6dp"
                         android:orientation="horizontal">
 
-                        <Button android:id="@+id/tabA" style="@style/DeckButton" android:layout_height="48dp" android:background="@drawable/tab_bg" android:ellipsize="end" android:paddingStart="8dp" android:paddingEnd="8dp" android:singleLine="true" android:textSize="14sp" />
-                        <Button android:id="@+id/tabB" style="@style/DeckButton" android:layout_height="48dp" android:background="@drawable/tab_bg" android:ellipsize="end" android:paddingStart="8dp" android:paddingEnd="8dp" android:singleLine="true" android:textSize="14sp" />
+                        <Button android:id="@+id/tabA" style="@style/DeckButton" android:layout_height="48dp" android:background="@drawable/tab_bg" android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" android:fadingEdgeLength="12dp" android:requiresFadingEdge="horizontal" android:paddingStart="8dp" android:paddingEnd="8dp" android:singleLine="true" android:textSize="14sp" />
+                        <Button android:id="@+id/tabB" style="@style/DeckButton" android:layout_height="48dp" android:background="@drawable/tab_bg" android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" android:fadingEdgeLength="12dp" android:requiresFadingEdge="horizontal" android:paddingStart="8dp" android:paddingEnd="8dp" android:singleLine="true" android:textSize="14sp" />
                     </LinearLayout>
 
                     <!-- 选中那一路的设置 -->

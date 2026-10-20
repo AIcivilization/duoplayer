@@ -39,6 +39,11 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
+/** 文字没变就不重设：TextView 重设文字会让跑马灯从头开始滚，首页每 250ms 刷新一次就会「抖」 */
+private var TextView.txt: CharSequence
+    get() = text
+    set(v) { if (!android.text.TextUtils.equals(text, v)) text = v }
+
 class MainActivity : Activity() {
 
     private var service: PlaybackService? = null
@@ -209,6 +214,7 @@ class MainActivity : Activity() {
         comboTitle = findViewById(R.id.comboTitle)
         comboSub = findViewById(R.id.comboSub)
         tabs = listOf(findViewById(R.id.tabA), findViewById(R.id.tabB))
+        tabs.forEach { it.isSelected = true }  // 名字太长时跑马灯滚动
         tabs.forEachIndexed { i, b ->
             b.setOnClickListener {
                 // 点 A 显示 A 的设置，点 B 显示 B 的设置；再点一次当前标签收起
@@ -349,26 +355,26 @@ class MainActivity : Activity() {
         last = s
         // ---- 输出 ----
         val rate = if (s.outputRate > 0) SlotController.khz(s.outputRate) else "—"
-        outputLine.text = getString(R.string.out_line, rate, Labels.outputMode(this, s.outputMode), getString(if (s.outputRunning) R.string.out_running else R.string.out_idle))
-        outputDetail.text = getString(R.string.out_detail, s.bufferMs, s.limiterHits, s.xruns)
+        outputLine.txt = getString(R.string.out_line, rate, Labels.outputMode(this, s.outputMode), getString(if (s.outputRunning) R.string.out_running else R.string.out_idle))
+        outputDetail.txt = getString(R.string.out_detail, s.bufferMs, s.limiterHits, s.xruns)
         val warn = when {
             s.outputError.isNotEmpty() -> Labels.nativeError(this, s.outputError)
             s.outputRate in 1..48000 -> getString(R.string.out_warn_48k, SlotController.khz(s.outputRate))
             else -> ""
         }
-        warning.text = warn
+        warning.txt = warn
         warning.visibility = if (warn.isEmpty()) View.GONE else View.VISIBLE
         btnMode.setText(if (s.standardMode) R.string.btn_output_standard else R.string.btn_output_power)
 
         // ---- 组合卡片 ----
-        comboTitle.text = s.comboName
-        comboSub.text = listOfNotNull(
+        comboTitle.txt = s.comboName
+        comboSub.txt = listOfNotNull(
             s.bookmarkName?.let { getString(R.string.combo_bookmark, it) + if (s.bookmarkDirty) getString(R.string.combo_modified) else "" } ?: getString(R.string.combo_unsaved),
             queueText(s),
         ).joinToString(" · ")
         tabs.forEachIndexed { i, b ->
             val sl = s.slots[i]
-            b.text = getString(R.string.tab_label, "AB"[i].toString(), if (sl.hasFile) sl.title else getString(R.string.not_selected))
+            b.txt = getString(R.string.tab_label, "AB"[i].toString(), if (sl.hasFile) sl.title else getString(R.string.not_selected))
             val sel = panelOpen && selectedSlot == i
             b.backgroundTintList = ColorStateList.valueOf(if (sel) slotColor(i) else colBtn)
             b.setTextColor(if (sel) colBg else if (sl.enabled) slotColor(i) else colMuted)
@@ -379,9 +385,9 @@ class MainActivity : Activity() {
 
         // ---- 播放 ----
         s.slots.forEachIndexed { i, sl -> chips[i].bind(sl) }
-        btnPlay.text = if (s.playing) "❚❚" else "▶"
-        queueLine.text = queueText(s) ?: getString(R.string.single_combo)
-        btnRepeat.text = Labels.repeat(this, s.repeat)
+        btnPlay.txt = if (s.playing) "❚❚" else "▶"
+        queueLine.txt = queueText(s) ?: getString(R.string.single_combo)
+        btnRepeat.txt = Labels.repeat(this, s.repeat)
         btnExitQueue.visibility = if (s.queueMode == QueueMode.NONE) View.GONE else View.VISIBLE
 
         // ---- 书签 / 列表 ----
@@ -416,24 +422,24 @@ class MainActivity : Activity() {
 
     private fun bindSettings(sl: SlotSnapshot) {
         val c = slotColor(sl.index)
-        setFile.text = if (sl.hasFile) sl.fileName else getString(R.string.set_no_file)
+        setFile.txt = if (sl.hasFile) sl.fileName else getString(R.string.set_no_file)
         setFile.setTextColor(if (sl.hasFile) colText else colMuted)
-        setFormat.text = sl.formatLine
+        setFormat.txt = sl.formatLine
         setFormat.visibility = if (sl.formatLine.isEmpty()) View.GONE else View.VISIBLE
-        setPath.text = sl.pathLine
+        setPath.txt = sl.pathLine
         setPath.setTextColor(if (sl.bitPerfect) colGood else colMuted)
         val ly = sl.lyrics
-        setLyrics.text = when {
+        setLyrics.txt = when {
             !sl.hasFile -> ""
             ly == null -> getString(R.string.lyrics_none_hint)
             else -> getString(R.string.lyrics_info, Labels.lyricSource(this, ly.source)) + (if (ly.isBilingual) getString(R.string.lyrics_bilingual_suffix) else "") + if (!ly.synced) getString(R.string.lyrics_unsynced_suffix) else ""
         }
-        setError.text = sl.error
+        setError.txt = sl.error
         setError.visibility = if (sl.error.isEmpty()) View.GONE else View.VISIBLE
         val tint = ColorStateList.valueOf(c)
         listOf(gain, balance).forEach { it.progressTintList = tint; it.thumbTintList = tint }
-        if (!draggingGain) { gain.progress = dbToProgress(sl.gainDb); gainLabel.text = gainText(sl.gainDb) }
-        if (!draggingBalance) { balance.progress = (sl.balance * 100 + 100).toInt(); balanceLabel.text = balanceText(sl.balance) }
+        if (!draggingGain) { gain.progress = dbToProgress(sl.gainDb); gainLabel.txt = gainText(sl.gainDb) }
+        if (!draggingBalance) { balance.progress = (sl.balance * 100 + 100).toInt(); balanceLabel.txt = balanceText(sl.balance) }
         btnLoop.setText(if (sl.loop) R.string.loop_on else R.string.loop_off)
         btnLoop.setTextColor(if (sl.loop) c else colText)
         btnSlotOn.setText(if (sl.enabled) R.string.slot_on else R.string.slot_off)
@@ -465,9 +471,10 @@ class MainActivity : Activity() {
         var dragging = false
         var lastLyricKey = ""
         var lastLyrics: Lyrics? = null
+        var lastColor = 0
 
         init {
-            badge.text = "AB"[index].toString()
+            badge.txt = "AB"[index].toString()
             badge.background = badgeBg
             lyric1.setTextColor(color)
             title.isSelected = true
@@ -481,7 +488,7 @@ class MainActivity : Activity() {
             }
             seek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
                 override fun onProgressChanged(sb: SeekBar, p: Int, fromUser: Boolean) {
-                    if (fromUser) pos.text = fmt((snap?.durationMs ?: 0) * p / 1000)
+                    if (fromUser) pos.txt = fmt((snap?.durationMs ?: 0) * p / 1000)
                 }
                 override fun onStartTrackingTouch(sb: SeekBar) { dragging = true }
                 override fun onStopTrackingTouch(sb: SeekBar) {
@@ -497,14 +504,17 @@ class MainActivity : Activity() {
             snapTime = SystemClock.uptimeMillis()
             val on = sl.enabled && sl.hasFile
             val c = if (on) color else colMuted
-            bar.setBackgroundColor(c)
-            badgeBg.setColor(c)
+            if (c != lastColor) {
+                lastColor = c
+                bar.setBackgroundColor(c)
+                badgeBg.setColor(c)
+                seek.progressTintList = ColorStateList.valueOf(c)
+                seek.thumbTintList = ColorStateList.valueOf(c)
+            }
             root.alpha = if (on) 1f else 0.45f
-            seek.progressTintList = ColorStateList.valueOf(c)
-            seek.thumbTintList = ColorStateList.valueOf(c)
             seek.isEnabled = sl.hasFile
-            title.text = if (sl.hasFile) sl.title else getString(R.string.chip_no_file, "AB"[index].toString())
-            state.text = when {
+            title.txt = if (sl.hasFile) sl.title else getString(R.string.chip_no_file, "AB"[index].toString())
+            state.txt = when {
                 !sl.hasFile -> ""
                 !sl.enabled -> getString(R.string.state_off)
                 sl.error.isNotEmpty() -> getString(R.string.state_error)
@@ -513,10 +523,10 @@ class MainActivity : Activity() {
                 else -> getString(R.string.state_paused)
             }
             state.setTextColor(if (sl.error.isNotEmpty()) colBad else if (sl.playing) c else colMuted)
-            path.text = sl.error.ifEmpty { listOf(sl.formatLine, sl.pathLine).filter { it.isNotEmpty() }.joinToString(" · ") }
+            path.txt = sl.error.ifEmpty { listOf(sl.formatLine, sl.pathLine).filter { it.isNotEmpty() }.joinToString(" · ") }
             path.setTextColor(if (sl.error.isNotEmpty()) colBad else if (sl.bitPerfect) colGood else colMuted)
             path.visibility = if (path.text.isEmpty()) View.GONE else View.VISIBLE
-            dur.text = fmt(sl.durationMs)
+            dur.txt = fmt(sl.durationMs)
             tick()
         }
 
@@ -532,7 +542,7 @@ class MainActivity : Activity() {
             val p = positionNow()
             if (!dragging) {
                 seek.progress = if (d.durationMs > 0) (p * 1000 / d.durationMs).toInt() else 0
-                pos.text = fmt(p)
+                pos.txt = fmt(p)
             }
             val l = d.lyrics
             lyricsDialog?.takeIf { it.deck == index && it.isShowing }?.update(d.title, l, p)
@@ -553,11 +563,11 @@ class MainActivity : Activity() {
         }
 
         private fun show(cur: List<String>, next: String) {
-            lyric1.text = cur.getOrElse(0) { "" }
+            lyric1.txt = cur.getOrElse(0) { "" }
             val second = cur.getOrNull(1)
             lyric2.visibility = if (second == null) View.GONE else View.VISIBLE
-            lyric2.text = second ?: ""
-            lyric3.text = next
+            lyric2.txt = second ?: ""
+            lyric3.txt = next
             lyric3.visibility = if (next.isEmpty()) View.GONE else View.VISIBLE
         }
     }

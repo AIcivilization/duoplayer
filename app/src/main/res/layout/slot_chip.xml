@@ -46,6 +46,9 @@
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:ellipsize="marquee"
+                android:fadingEdgeLength="14dp"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:requiresFadingEdge="horizontal"
                 android:singleLine="true"
                 android:textColor="@color/text"
                 android:textSize="15sp" />
@@ -122,9 +125,10 @@
             android:paddingStart="4dp"
             android:paddingEnd="4dp">
 
-            <TextView android:id="@+id/chipPos" style="@style/Label" android:textSize="11sp" />
+            <!-- 固定宽高：时间每秒变化时只重绘不重排，避免打断上面名字的跑马灯 -->
+            <TextView android:id="@+id/chipPos" style="@style/Label" android:layout_width="64dp" android:layout_height="16dp" android:singleLine="true" android:textSize="11sp" />
             <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
-            <TextView android:id="@+id/chipDur" style="@style/Label" android:textSize="11sp" />
+            <TextView android:id="@+id/chipDur" style="@style/Label" android:layout_width="64dp" android:layout_height="16dp" android:gravity="end" android:singleLine="true" android:textSize="11sp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
