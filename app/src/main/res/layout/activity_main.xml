@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- ================= 播放页 ================= -->
+        <ScrollView
+            android:id="@+id/pagePlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <!-- 输出状态 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView android:id="@+id/outputLine" style="@style/Label" android:textColor="@color/text" android:textSize="12sp" />
+                        <TextView android:id="@+id/outputDetail" style="@style/Label" android:textSize="11sp" />
+                        <TextView android:id="@+id/warning" style="@style/Label" android:layout_marginTop="4dp" android:textColor="@color/warn" android:visibility="gone" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnMode"
+                        style="@style/SmallButton"
+                        android:layout_width="78dp"
+                        android:layout_weight="0"
+                        android:text="输出:省电" />
+                </LinearLayout>
+
+                <!-- 组合卡片：A / B 索引 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/card_bg"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/comboTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:textColor="@color/text"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView android:id="@+id/comboSub" style="@style/Label" android:layout_marginTop="2dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <Button android:id="@+id/tabA" style="@style/DeckButton" android:layout_height="48dp" android:background="@drawable/tab_bg" android:ellipsize="end" android:paddingStart="8dp" android:paddingEnd="8dp" android:singleLine="true" android:textSize="14sp" />
+                        <Button android:id="@+id/tabB" style="@style/DeckButton" android:layout_height="48dp" android:background="@drawable/tab_bg" android:ellipsize="end" android:paddingStart="8dp" android:paddingEnd="8dp" android:singleLine="true" android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <!-- 选中那一路的设置 -->
+                    <LinearLayout
+                        android:id="@+id/settingsPanel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView android:id="@+id/setFile" android:layout_width="match_parent" android:layout_height="wrap_content" android:ellipsize="end" android:maxLines="2" android:textColor="@color/text" android:textSize="15sp" />
+                        <TextView android:id="@+id/setFormat" style="@style/Label" android:layout_marginTop="2dp" android:textColor="@color/text" />
+                        <TextView android:id="@+id/setPath" style="@style/Label" />
+                        <TextView android:id="@+id/setLyrics" style="@style/Label" />
+                        <TextView android:id="@+id/setError" style="@style/Label" android:textColor="@color/bad" android:visibility="gone" />
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:orientation="horizontal">
+                            <Button android:id="@+id/btnPickFile" style="@style/SmallButton" android:text="选择音频" />
+                            <Button android:id="@+id/btnPickLrc" style="@style/SmallButton" android:text="选择歌词" />
+                            <Button android:id="@+id/btnClearSlot" style="@style/SmallButton" android:text="移除" />
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="center_vertical" android:orientation="horizontal">
+                            <TextView android:id="@+id/gainLabel" style="@style/Label" android:layout_width="96dp" />
+                            <SeekBar android:id="@+id/gain" android:layout_width="0dp" android:layout_height="32dp" android:layout_weight="1" android:max="132" />
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                            <TextView android:id="@+id/balanceLabel" style="@style/Label" android:layout_width="96dp" />
+                            <SeekBar android:id="@+id/balance" android:layout_width="0dp" android:layout_height="32dp" android:layout_weight="1" android:max="200" />
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:orientation="horizontal">
+                            <Button android:id="@+id/btnLoop" style="@style/SmallButton" android:text="单曲循环：关" />
+                            <Button android:id="@+id/btnSlotOn" style="@style/SmallButton" android:text="本路：开启" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:orientation="horizontal">
+                        <Button android:id="@+id/btnSave" style="@style/SmallButton" android:text="保存" />
+                        <Button android:id="@+id/btnSaveBookmark" style="@style/SmallButton" android:text="存为书签" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- 播放：A / B 亮=播放，灰=不播放 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/card_bg"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView style="@style/Label" android:text="点 A / B 切换：亮 = 播放，灰 = 不播放" android:textSize="11sp" />
+
+                    <include android:id="@+id/chipA" layout="@layout/slot_chip" />
+                    <include android:id="@+id/chipB" layout="@layout/slot_chip" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button android:id="@+id/btnPrev" style="@style/DeckButton" android:layout_width="64dp" android:layout_height="52dp" android:layout_weight="0" android:text="⏮" android:textSize="18sp" />
+                        <Button
+                            android:id="@+id/btnPlay"
+                            android:layout_width="76dp"
+                            android:layout_height="76dp"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginEnd="18dp"
+                            android:background="@drawable/play_bg"
+                            android:stateListAnimator="@null"
+                            android:text="▶"
+                            android:textColor="@color/bg"
+                            android:textSize="28sp" />
+                        <Button android:id="@+id/btnNext" style="@style/DeckButton" android:layout_width="64dp" android:layout_height="52dp" android:layout_weight="0" android:text="⏭" android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView android:id="@+id/queueLine" style="@style/Label" android:layout_width="0dp" android:layout_weight="1" android:ellipsize="end" android:singleLine="true" android:textColor="@color/text" android:textSize="12sp" />
+                        <Button android:id="@+id/btnRepeat" style="@style/SmallButton" android:layout_width="84dp" android:layout_weight="0" />
+                        <Button android:id="@+id/btnExitQueue" style="@style/SmallButton" android:layout_width="72dp" android:layout_weight="0" android:text="退出列表" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- ================= 书签页 ================= -->
+        <LinearLayout
+            android:id="@+id/pageBookmarks"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="书签" android:textColor="@color/accent" android:textSize="18sp" android:textStyle="bold" />
+                <Button android:id="@+id/btnAddBookmark" style="@style/SmallButton" android:layout_width="132dp" android:layout_weight="0" android:text="＋ 存当前组合" />
+            </LinearLayout>
+            <TextView style="@style/Label" android:layout_marginTop="2dp" android:text="点一下：载入并播放 · 长按：重命名 / 覆盖 / 加入列表 / 排序 / 删除" android:textSize="11sp" />
+            <TextView android:id="@+id/bookmarkEmpty" style="@style/Label" android:layout_width="match_parent" android:gravity="center" android:padding="32dp" android:text="还没有书签。\n在播放页设置好 A + B 后点「存为书签」，以后一点就能直接播放这个组合。" />
+            <ListView android:id="@+id/bookmarkList" android:layout_width="match_parent" android:layout_height="0dp" android:layout_marginTop="6dp" android:layout_weight="1" android:divider="@null" />
+        </LinearLayout>
+
+        <!-- ================= 列表页 ================= -->
+        <LinearLayout
+            android:id="@+id/pageLists"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <Button android:id="@+id/segBookmarks" style="@style/DeckButton" android:background="@drawable/tab_bg" android:text="书签列表" />
+                <Button android:id="@+id/segFiles" style="@style/DeckButton" android:background="@drawable/tab_bg" android:text="文件列表" />
+            </LinearLayout>
+            <TextView android:id="@+id/listHint" style="@style/Label" android:layout_marginTop="4dp" android:textSize="11sp" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:orientation="horizontal">
+                <Button android:id="@+id/btnQueueAdd" style="@style/SmallButton" />
+                <Button android:id="@+id/btnQueueFolder" style="@style/SmallButton" android:text="＋ 文件夹" />
+                <Button android:id="@+id/btnQueueClear" style="@style/SmallButton" android:text="清空" />
+                <Button android:id="@+id/btnQueuePlay" style="@style/SmallButton" android:text="▶ 播放" />
+            </LinearLayout>
+            <TextView android:id="@+id/queueEmpty" style="@style/Label" android:layout_width="match_parent" android:gravity="center" android:padding="32dp" />
+            <ListView android:id="@+id/queueList" android:layout_width="match_parent" android:layout_height="0dp" android:layout_marginTop="4dp" android:layout_weight="1" android:divider="@null" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:orientation="horizontal">
+                <Button android:id="@+id/btnBackup" style="@style/SmallButton" android:text="备份" />
+                <Button android:id="@+id/btnRestore" style="@style/SmallButton" android:text="恢复" />
+                <Button android:id="@+id/btnRelink" style="@style/SmallButton" android:layout_weight="1.4" android:text="重新关联文件夹" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                <TextView android:id="@+id/versionText" style="@style/Label" android:layout_width="0dp" android:layout_weight="1" android:paddingStart="6dp" />
+                <Button android:id="@+id/btnAutoUpdate" style="@style/SmallButton" android:layout_width="104dp" android:layout_weight="0" />
+                <Button android:id="@+id/btnCheckUpdate" style="@style/SmallButton" android:layout_width="88dp" android:layout_weight="0" android:text="检查更新" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- 底部导航 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/card"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/navPlay" style="@style/NavButton" android:text="播放" />
+        <Button android:id="@+id/navBookmarks" style="@style/NavButton" android:text="书签" />
+        <Button android:id="@+id/navLists" style="@style/NavButton" android:text="列表" />
+    </LinearLayout>
+</LinearLayout>

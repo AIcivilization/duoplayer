@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#0D0E11</color>
+    <color name="card">#17191E</color>
+    <color name="cardStroke">#262A31</color>
+    <color name="text">#ECECEC</color>
+    <color name="muted">#9AA0A8</color>
+    <color name="accent">#D9A55B</color>
+    <color name="accentB">#6FA8DC</color>
+    <color name="good">#6CCB8B</color>
+    <color name="warn">#E8B04A</color>
+    <color name="bad">#E06C6C</color>
+    <color name="btn">#23262D</color>
+    <color name="btnPressed">#30343C</color>
+</resources>

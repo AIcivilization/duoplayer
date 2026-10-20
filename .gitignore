@@ -1,0 +1,14 @@
+.gradle/
+build/
+app/build/
+app/.cxx/
+local.properties
+*.iml
+.idea/
+.DS_Store
+release/
+hosttest/out/
+# 签名密钥永远不进仓库
+*.jks
+*.keystore
+keystore.properties
