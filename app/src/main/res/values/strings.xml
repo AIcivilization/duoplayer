@@ -1,4 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 由 i18n/build_strings.py 生成，请修改 i18n/en.txt -->
 <resources>
-    <string name="app_name">双轨 Hi-Fi</string>
+    <string name="app_name">DuoPlayer Hi-Fi</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+    <string name="add">Add</string>
+    <string name="add_all">Add all</string>
+    <string name="nav_play">Play</string>
+    <string name="nav_bookmarks">Bookmarks</string>
+    <string name="nav_lists">Lists</string>
+    <string name="out_line">Output %1$s · 32-bit float · %2$s · %3$s</string>
+    <string name="out_mode_power">eco path</string>
+    <string name="out_mode_standard">standard path</string>
+    <string name="out_running">running</string>
+    <string name="out_idle">idle</string>
+    <string name="out_detail">Buffer %1$d ms · Clip guard %2$d · Underruns %3$d</string>
+    <string name="out_warn_48k">System output is only %1$s: open Settings → Sound and turn on “High-Res streaming”, then tap the “Output” button once.</string>
+    <string name="btn_output_power">Output: Eco</string>
+    <string name="btn_output_standard">Output: Std</string>
+    <string name="combo_bookmark">Bookmark: %1$s</string>
+    <string name="combo_modified">" (modified)"</string>
+    <string name="combo_unsaved">Not saved as a bookmark</string>
+    <string name="combo_none">No audio selected</string>
+    <string name="tab_label">%1$s · %2$s</string>
+    <string name="not_selected">None</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_save_bookmark">Save as bookmark</string>
+    <string name="btn_choose_audio">Choose audio</string>
+    <string name="btn_choose_lyrics">Choose lyrics</string>
+    <string name="btn_remove">Remove</string>
+    <string name="loop_on">Repeat one: On</string>
+    <string name="loop_off">Repeat one: Off</string>
+    <string name="slot_on">This track: On</string>
+    <string name="slot_off">This track: Off</string>
+    <string name="set_no_file">No audio selected: tap “Choose audio”</string>
+    <string name="lyrics_none_hint">Lyrics: none (tap “Choose lyrics” to pick a .lrc)</string>
+    <string name="lyrics_info">Lyrics: %1$s</string>
+    <string name="lyrics_bilingual_suffix">" · bilingual"</string>
+    <string name="lyrics_unsynced_suffix">" · unsynced"</string>
+    <string name="lyrics_src_lrc">LRC file</string>
+    <string name="lyrics_src_embedded">embedded</string>
+    <string name="gain_mute">Volume: mute</string>
+    <string name="gain_db">Volume %1$s dB</string>
+    <string name="balance_center">Balance: center</string>
+    <string name="balance_left">Balance: L %1$d</string>
+    <string name="balance_right">Balance: R %1$d</string>
+    <string name="chip_hint">Tap A / B to switch: lit = playing, grey = off</string>
+    <string name="chip_no_file">No audio (choose it in %1$s above)</string>
+    <string name="state_off">Off · tap to enable</string>
+    <string name="state_error">Can’t play</string>
+    <string name="state_playing">Playing</string>
+    <string name="state_ended">Ended</string>
+    <string name="state_paused">Paused</string>
+    <string name="lyrics_unsynced_tap">Unsynced lyrics · tap to view</string>
+    <string name="toast_lyric_mode">Lyrics: %1$s</string>
+    <string name="lyric_mode_both">Both</string>
+    <string name="lyric_mode_cjk">CJK</string>
+    <string name="lyric_mode_latin">Latin</string>
+    <string name="single_combo">Single combo</string>
+    <string name="queue_bookmarks_pos">Bookmark list %1$d/%2$d</string>
+    <string name="queue_files_pos">File list %1$d/%2$d</string>
+    <string name="repeat_off">In order</string>
+    <string name="repeat_all">Repeat list</string>
+    <string name="repeat_one">Repeat item</string>
+    <string name="btn_exit_queue">Exit list</string>
+    <string name="bookmarks_title">Bookmarks</string>
+    <string name="btn_add_bookmark">+ Save current</string>
+    <string name="bookmark_page_hint">Tap: load and play · Long-press: rename / overwrite / add to list / reorder / delete</string>
+    <string name="bookmark_empty">No bookmarks yet.\nSet up A + B on the Play page and tap “Save as bookmark” — next time a single tap plays that combo.</string>
+    <string name="bm_slot_off">%1$s (off)</string>
+    <string name="bm_slot_a">A: %1$s</string>
+    <string name="bm_slot_b">B: %1$s</string>
+    <string name="bm_empty">(empty combo)</string>
+    <string name="bm_deleted">(bookmark deleted)</string>
+    <string name="need_audio_first">Choose audio for A or B first</string>
+    <string name="save_bookmark_title">Save as bookmark</string>
+    <string name="bookmark_name_hint">Bookmark name</string>
+    <string name="rename_title">Rename bookmark</string>
+    <string name="name_hint">Name</string>
+    <string name="confirm_overwrite">Overwrite bookmark “%1$s” with the current A + B combo?</string>
+    <string name="confirm_delete_bm">Delete bookmark “%1$s”? (It will also be removed from the bookmark list.)</string>
+    <string name="segment_bookmarks">Bookmark list</string>
+    <string name="segment_files">File list</string>
+    <string name="hint_bookmark_list">Plays bookmarks in order: each bookmark’s A + B play together, then the next one starts.</string>
+    <string name="hint_file_list">Plays files in order: each file goes into A; B keeps its current setting (grey out B on the Play page to hear A only).</string>
+    <string name="btn_add_bookmark_q">+ Bookmarks</string>
+    <string name="btn_add_files">+ Files</string>
+    <string name="btn_add_folder">+ Folder</string>
+    <string name="btn_clear">Clear</string>
+    <string name="btn_play_list">▶ Play</string>
+    <string name="empty_bookmark_list">The bookmark list is empty. Tap “+ Bookmarks” to add saved bookmarks.</string>
+    <string name="empty_file_list">The file list is empty. Tap “+ Files” or “+ Folder”.</string>
+    <string name="confirm_clear_bookmark_list">Clear the bookmark list?</string>
+    <string name="confirm_clear_file_list">Clear the file list?</string>
+    <string name="has_lyrics_suffix">" · lyrics"</string>
+    <string name="no_bookmarks_yet">No bookmarks yet: tap “Save as bookmark” on the Play page first</string>
+    <string name="pick_bookmarks_title">Choose bookmarks to add</string>
+    <string name="choose_audio_for">Choose audio for %1$s</string>
+    <string name="choose_from_device">From device…</string>
+    <string name="choose_from_list">From file list (%1$d)</string>
+    <string name="picker_failed">Can’t open the system file picker</string>
+    <string name="btn_backup">Backup</string>
+    <string name="btn_restore">Restore</string>
+    <string name="btn_relink">Relink folder</string>
+    <string name="relink_title">Relink folder</string>
+    <string name="relink_message">After reinstalling the app or restoring a backup, the old file permissions are gone.\n\nChoose the root folder that holds your music (e.g. Music or the SD card). The app will find the files in your bookmarks and lists again by their original paths and names.</string>
+    <string name="relink_pick">Choose folder</string>
+    <string name="backup_file_prefix">DuoPlayer-backup-</string>
+    <string name="scanning_folder">Scanning folder…</string>
+    <string name="folder_no_audio">No audio in this folder</string>
+    <string name="scanning_relink">Scanning and matching files…</string>
+    <string name="backup_done">Backup saved</string>
+    <string name="backup_failed">Failed to write the backup</string>
+    <string name="restore_read_failed">Failed to read the backup</string>
+    <string name="restore_title">Restore backup</string>
+    <string name="restore_message">“Replace”: overwrite all current bookmarks, lists and the combo with the backup.\n“Merge”: add the backup’s bookmarks and lists to your current data.</string>
+    <string name="restore_replace">Replace</string>
+    <string name="restore_merge">Merge</string>
+    <string name="version_current">Version %1$s</string>
+    <string name="auto_update_on">Auto-check: On</string>
+    <string name="auto_update_off">Auto-check: Off</string>
+    <string name="check_update">Check update</string>
+    <string name="toast_bookmark_saved">Bookmark “%1$s” saved</string>
+    <string name="toast_bookmark_overwritten">Bookmark overwritten with the current combo</string>
+    <string name="toast_files_added">Added %1$d file(s)</string>
+    <string name="toast_bad_backup">Not a valid backup file</string>
+    <string name="toast_merged">Merged: %1$d bookmarks in total</string>
+    <string name="toast_restored">Restored: %1$d bookmarks, %2$d files</string>
+    <string name="toast_missing_files">%1$d file(s) can’t be accessed — use “Relink folder” to find them</string>
+    <string name="toast_relink_ok_all">Access restored — all files are reachable</string>
+    <string name="toast_relink_fixed">Found %1$d file(s)</string>
+    <string name="toast_relink_left">, %1$d still missing</string>
+    <string name="toast_both_off">A and B are both off: turn at least one on</string>
+    <string name="toast_choose_first">Choose an audio file for A / B first</string>
+    <string name="toast_not_in_list">Not playing a list right now</string>
+    <string name="toast_list_finished">List finished</string>
+    <string name="notif_channel">Playback</string>
+    <string name="notif_prev">Previous</string>
+    <string name="notif_pause">Pause</string>
+    <string name="notif_play">Play</string>
+    <string name="notif_next">Next</string>
+    <string name="err_io">Can’t open the file</string>
+    <string name="err_no_permission">No access permission: use “Relink folder” on the Lists page</string>
+    <string name="err_not_found">File not found: use “Relink folder” on the Lists page</string>
+    <string name="err_corrupt">The %1$s file is damaged or can’t be parsed</string>
+    <string name="err_unsupported">Unsupported %1$s format</string>
+    <string name="err_unknown_format">Unrecognized file format</string>
+    <string name="err_no_audio_track">The file has no audio track</string>
+    <string name="err_no_decoder">This system has no decoder for %1$s</string>
+    <string name="err_bad_format">The decoder returned an invalid format</string>
+    <string name="err_bad_rate">Invalid sample rate</string>
+    <string name="err_rate_ratio">Unsupported sample-rate conversion %1$s</string>
+    <string name="err_aaudio">Audio output (AAudio) is unavailable</string>
+    <string name="err_output_open">Failed to open audio output: %1$s</string>
+    <string name="err_output_start">Failed to start audio output: %1$s</string>
+    <string name="err_unknown">Unknown error (%1$s)</string>
+    <string name="fmt_lossless">lossless</string>
+    <string name="fmt_lossy">lossy</string>
+    <string name="path_direct_gain">Direct %1$s · 64-bit gain</string>
+    <string name="path_bitperfect">Direct %1$s · bit-perfect</string>
+    <string name="path_direct">Direct %1$s</string>
+    <string name="path_resample">Resample %1$s → %2$s</string>
+    <string name="path_mix">" · mixing"</string>
+    <string name="lyrics_none_long">No lyrics found for this track.\n\n· With “+ Folder”, a .lrc with the same name in the same folder is linked automatically\n· With “+ Files”, select the .lrc together with the song\n· Or tap “Choose lyrics” above\n· Lyrics embedded in FLAC / MP3 / DSF are read too</string>
+    <string name="lyrics_none">No lyrics</string>
+    <string name="lyrics_src_unsynced">%1$s · unsynced</string>
+    <string name="lyrics_src_bilingual">%1$s · bilingual · %2$d lines</string>
+    <string name="lyrics_src_lines">%1$s · %2$d lines</string>
+    <string name="upd_checking">Checking for updates…</string>
+    <string name="upd_none_published">No release has been published on GitHub yet</string>
+    <string name="upd_latest">You’re up to date (%1$s)</string>
+    <string name="upd_check_failed">Update check failed</string>
+    <string name="upd_check_failed_msg">%1$s\n\nGitHub can be slow or unreachable on some networks. Try again later, or open the releases page in a browser.</string>
+    <string name="upd_open_page">Open releases page</string>
+    <string name="upd_found">New version %1$s</string>
+    <string name="upd_current">Current version %1$s%2$s</string>
+    <string name="upd_download_install">Download &amp; install</string>
+    <string name="upd_skip">Skip this version</string>
+    <string name="upd_later">Later</string>
+    <string name="upd_need_perm_title">One-time permission needed</string>
+    <string name="upd_need_perm_msg">Android requires allowing “%1$s” to install apps before it can update itself.\n\nTap “Settings” → turn on “Allow from this source” → go back and tap “Check update” again.</string>
+    <string name="upd_go_settings">Settings</string>
+    <string name="upd_downloading">Downloading %1$s</string>
+    <string name="upd_preparing">Preparing…</string>
+    <string name="upd_progress">%1$s / %2$s MB (%3$d%%)</string>
+    <string name="upd_progress_unknown">%1$s MB</string>
+    <string name="upd_installer_failed">Can’t open the system installer: %1$s</string>
+    <string name="upd_failed">Update failed</string>
+    <string name="upd_no_browser">No browser available: %1$s</string>
+    <string name="upd_err_rate_limited">GitHub rate limit reached, try again later</string>
+    <string name="upd_err_http">GitHub returned %1$s</string>
+    <string name="upd_err_redirect">Download redirect failed</string>
+    <string name="upd_err_download">Download failed: HTTP %1$s</string>
+    <string name="upd_err_save">Failed to save the package</string>
+    <string name="upd_err_redirects">Too many redirects</string>
+    <string name="upd_err_damaged">The package is damaged</string>
+    <string name="upd_err_wrong_pkg">The package is not this app</string>
+    <string name="upd_err_not_newer">The package isn’t newer than the installed version</string>
+    <string name="upd_err_signature">The signature doesn’t match the installed app, so it can’t be upgraded in place.\n(Version 1.2 and earlier used a temporary signature: back up on the Lists page, uninstall the old version, then install the new one from GitHub once — later updates will work in-app.)</string>
+    <string-array name="bookmark_menu">
+        <item>Play</item>
+        <item>Load only (don’t play)</item>
+        <item>Add to bookmark list</item>
+        <item>Rename</item>
+        <item>Overwrite with current combo</item>
+        <item>Move up</item>
+        <item>Move down</item>
+        <item>Delete</item>
+    </string-array>
+    <string-array name="queue_menu_files">
+        <item>Play from here</item>
+        <item>Put into A</item>
+        <item>Put into B</item>
+        <item>Move up</item>
+        <item>Move down</item>
+        <item>Remove from list</item>
+    </string-array>
+    <string-array name="queue_menu_bookmarks">
+        <item>Play from here</item>
+        <item>Move up</item>
+        <item>Move down</item>
+        <item>Remove from list</item>
+    </string-array>
 </resources>

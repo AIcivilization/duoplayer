@@ -47,7 +47,7 @@
                         style="@style/SmallButton"
                         android:layout_width="78dp"
                         android:layout_weight="0"
-                        android:text="输出:省电" />
+                        android:text="@string/btn_output_power" />
                 </LinearLayout>
 
                 <!-- 组合卡片：A / B 索引 -->
@@ -97,9 +97,9 @@
                         <TextView android:id="@+id/setError" style="@style/Label" android:textColor="@color/bad" android:visibility="gone" />
 
                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:orientation="horizontal">
-                            <Button android:id="@+id/btnPickFile" style="@style/SmallButton" android:text="选择音频" />
-                            <Button android:id="@+id/btnPickLrc" style="@style/SmallButton" android:text="选择歌词" />
-                            <Button android:id="@+id/btnClearSlot" style="@style/SmallButton" android:text="移除" />
+                            <Button android:id="@+id/btnPickFile" style="@style/SmallButton" android:text="@string/btn_choose_audio" />
+                            <Button android:id="@+id/btnPickLrc" style="@style/SmallButton" android:text="@string/btn_choose_lyrics" />
+                            <Button android:id="@+id/btnClearSlot" style="@style/SmallButton" android:text="@string/btn_remove" />
                         </LinearLayout>
 
                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="center_vertical" android:orientation="horizontal">
@@ -113,14 +113,14 @@
                         </LinearLayout>
 
                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:orientation="horizontal">
-                            <Button android:id="@+id/btnLoop" style="@style/SmallButton" android:text="单曲循环：关" />
-                            <Button android:id="@+id/btnSlotOn" style="@style/SmallButton" android:text="本路：开启" />
+                            <Button android:id="@+id/btnLoop" style="@style/SmallButton" android:text="@string/loop_off" />
+                            <Button android:id="@+id/btnSlotOn" style="@style/SmallButton" android:text="@string/slot_on" />
                         </LinearLayout>
                     </LinearLayout>
 
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:orientation="horizontal">
-                        <Button android:id="@+id/btnSave" style="@style/SmallButton" android:text="保存" />
-                        <Button android:id="@+id/btnSaveBookmark" style="@style/SmallButton" android:text="存为书签" />
+                        <Button android:id="@+id/btnSave" style="@style/SmallButton" android:text="@string/btn_save" />
+                        <Button android:id="@+id/btnSaveBookmark" style="@style/SmallButton" android:text="@string/btn_save_bookmark" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -133,7 +133,7 @@
                     android:orientation="vertical"
                     android:padding="10dp">
 
-                    <TextView style="@style/Label" android:text="点 A / B 切换：亮 = 播放，灰 = 不播放" android:textSize="11sp" />
+                    <TextView style="@style/Label" android:text="@string/chip_hint" android:textSize="11sp" />
 
                     <include android:id="@+id/chipA" layout="@layout/slot_chip" />
                     <include android:id="@+id/chipB" layout="@layout/slot_chip" />
@@ -169,7 +169,7 @@
 
                         <TextView android:id="@+id/queueLine" style="@style/Label" android:layout_width="0dp" android:layout_weight="1" android:ellipsize="end" android:singleLine="true" android:textColor="@color/text" android:textSize="12sp" />
                         <Button android:id="@+id/btnRepeat" style="@style/SmallButton" android:layout_width="84dp" android:layout_weight="0" />
-                        <Button android:id="@+id/btnExitQueue" style="@style/SmallButton" android:layout_width="72dp" android:layout_weight="0" android:text="退出列表" />
+                        <Button android:id="@+id/btnExitQueue" style="@style/SmallButton" android:layout_width="72dp" android:layout_weight="0" android:text="@string/btn_exit_queue" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -185,11 +185,11 @@
             android:visibility="gone">
 
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="书签" android:textColor="@color/accent" android:textSize="18sp" android:textStyle="bold" />
-                <Button android:id="@+id/btnAddBookmark" style="@style/SmallButton" android:layout_width="132dp" android:layout_weight="0" android:text="＋ 存当前组合" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/bookmarks_title" android:textColor="@color/accent" android:textSize="18sp" android:textStyle="bold" />
+                <Button android:id="@+id/btnAddBookmark" style="@style/SmallButton" android:layout_width="132dp" android:layout_weight="0" android:text="@string/btn_add_bookmark" />
             </LinearLayout>
-            <TextView style="@style/Label" android:layout_marginTop="2dp" android:text="点一下：载入并播放 · 长按：重命名 / 覆盖 / 加入列表 / 排序 / 删除" android:textSize="11sp" />
-            <TextView android:id="@+id/bookmarkEmpty" style="@style/Label" android:layout_width="match_parent" android:gravity="center" android:padding="32dp" android:text="还没有书签。\n在播放页设置好 A + B 后点「存为书签」，以后一点就能直接播放这个组合。" />
+            <TextView style="@style/Label" android:layout_marginTop="2dp" android:text="@string/bookmark_page_hint" android:textSize="11sp" />
+            <TextView android:id="@+id/bookmarkEmpty" style="@style/Label" android:layout_width="match_parent" android:gravity="center" android:padding="32dp" android:text="@string/bookmark_empty" />
             <ListView android:id="@+id/bookmarkList" android:layout_width="match_parent" android:layout_height="0dp" android:layout_marginTop="6dp" android:layout_weight="1" android:divider="@null" />
         </LinearLayout>
 
@@ -203,27 +203,27 @@
             android:visibility="gone">
 
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                <Button android:id="@+id/segBookmarks" style="@style/DeckButton" android:background="@drawable/tab_bg" android:text="书签列表" />
-                <Button android:id="@+id/segFiles" style="@style/DeckButton" android:background="@drawable/tab_bg" android:text="文件列表" />
+                <Button android:id="@+id/segBookmarks" style="@style/DeckButton" android:background="@drawable/tab_bg" android:text="@string/segment_bookmarks" />
+                <Button android:id="@+id/segFiles" style="@style/DeckButton" android:background="@drawable/tab_bg" android:text="@string/segment_files" />
             </LinearLayout>
             <TextView android:id="@+id/listHint" style="@style/Label" android:layout_marginTop="4dp" android:textSize="11sp" />
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:orientation="horizontal">
                 <Button android:id="@+id/btnQueueAdd" style="@style/SmallButton" />
-                <Button android:id="@+id/btnQueueFolder" style="@style/SmallButton" android:text="＋ 文件夹" />
-                <Button android:id="@+id/btnQueueClear" style="@style/SmallButton" android:text="清空" />
-                <Button android:id="@+id/btnQueuePlay" style="@style/SmallButton" android:text="▶ 播放" />
+                <Button android:id="@+id/btnQueueFolder" style="@style/SmallButton" android:text="@string/btn_add_folder" />
+                <Button android:id="@+id/btnQueueClear" style="@style/SmallButton" android:text="@string/btn_clear" />
+                <Button android:id="@+id/btnQueuePlay" style="@style/SmallButton" android:text="@string/btn_play_list" />
             </LinearLayout>
             <TextView android:id="@+id/queueEmpty" style="@style/Label" android:layout_width="match_parent" android:gravity="center" android:padding="32dp" />
             <ListView android:id="@+id/queueList" android:layout_width="match_parent" android:layout_height="0dp" android:layout_marginTop="4dp" android:layout_weight="1" android:divider="@null" />
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:orientation="horizontal">
-                <Button android:id="@+id/btnBackup" style="@style/SmallButton" android:text="备份" />
-                <Button android:id="@+id/btnRestore" style="@style/SmallButton" android:text="恢复" />
-                <Button android:id="@+id/btnRelink" style="@style/SmallButton" android:layout_weight="1.4" android:text="重新关联文件夹" />
+                <Button android:id="@+id/btnBackup" style="@style/SmallButton" android:text="@string/btn_backup" />
+                <Button android:id="@+id/btnRestore" style="@style/SmallButton" android:text="@string/btn_restore" />
+                <Button android:id="@+id/btnRelink" style="@style/SmallButton" android:layout_weight="1.4" android:text="@string/btn_relink" />
             </LinearLayout>
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
                 <TextView android:id="@+id/versionText" style="@style/Label" android:layout_width="0dp" android:layout_weight="1" android:paddingStart="6dp" />
                 <Button android:id="@+id/btnAutoUpdate" style="@style/SmallButton" android:layout_width="104dp" android:layout_weight="0" />
-                <Button android:id="@+id/btnCheckUpdate" style="@style/SmallButton" android:layout_width="88dp" android:layout_weight="0" android:text="检查更新" />
+                <Button android:id="@+id/btnCheckUpdate" style="@style/SmallButton" android:layout_width="88dp" android:layout_weight="0" android:text="@string/check_update" />
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>
@@ -235,8 +235,8 @@
         android:background="@color/card"
         android:orientation="horizontal">
 
-        <Button android:id="@+id/navPlay" style="@style/NavButton" android:text="播放" />
-        <Button android:id="@+id/navBookmarks" style="@style/NavButton" android:text="书签" />
-        <Button android:id="@+id/navLists" style="@style/NavButton" android:text="列表" />
+        <Button android:id="@+id/navPlay" style="@style/NavButton" android:text="@string/nav_play" />
+        <Button android:id="@+id/navBookmarks" style="@style/NavButton" android:text="@string/nav_bookmarks" />
+        <Button android:id="@+id/navLists" style="@style/NavButton" android:text="@string/nav_lists" />
     </LinearLayout>
 </LinearLayout>

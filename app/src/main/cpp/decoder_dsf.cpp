@@ -26,8 +26,8 @@ public:
 
     bool init(std::string& error) {
         uint8_t h[92];
-        if (::pread64(fd_, h, sizeof(h), 0) != (ssize_t)sizeof(h)) { error = "DSF 文件过短"; return false; }
-        if (memcmp(h, "DSD ", 4) != 0 || memcmp(h + 28, "fmt ", 4) != 0) { error = "不是 DSF 文件"; return false; }
+        if (::pread64(fd_, h, sizeof(h), 0) != (ssize_t)sizeof(h)) { error = "corrupt:DSF"; return false; }
+        if (memcmp(h, "DSD ", 4) != 0 || memcmp(h + 28, "fmt ", 4) != 0) { error = "corrupt:DSF"; return false; }
         uint64_t fmtSize = le64(h + 32);
         uint32_t formatId = le32(h + 44);
         chans_ = (int)le32(h + 52);
@@ -37,12 +37,12 @@ public:
         blockSize_ = le32(h + 72);
         if (formatId != 0 || chans_ < 1 || chans_ > 6 || blockSize_ == 0 || fs_ < 2822400 ||
             (bitsPerSample_ != 1 && bitsPerSample_ != 8)) {
-            error = "不支持的 DSF 格式";
+            error = "unsupported:DSF";
             return false;
         }
         uint8_t d[12];
         uint64_t dataHdr = 28 + fmtSize;
-        if (::pread64(fd_, d, 12, (off64_t)dataHdr) != 12 || memcmp(d, "data", 4) != 0) { error = "DSF 缺少 data 块"; return false; }
+        if (::pread64(fd_, d, 12, (off64_t)dataHdr) != 12 || memcmp(d, "data", 4) != 0) { error = "corrupt:DSF"; return false; }
         dataOff_ = dataHdr + 12;
 
         // 抽取倍数：44.1k 系 DSD64 -> /16，DSD128 -> /32 ...（48k 系 DSD 同理得到 192k）
@@ -177,7 +177,7 @@ private:
 
 std::unique_ptr<Decoder> openDsf(int fd, std::string& error) {
     int own = ::dup(fd);
-    if (own < 0) { error = "dup 失败"; return nullptr; }
+    if (own < 0) { error = "io"; return nullptr; }
     auto d = std::make_unique<DsfDecoder>(own);
     if (!d->init(error)) return nullptr;
     return d;

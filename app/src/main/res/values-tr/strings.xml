@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 i18n/build_strings.py 生成，请修改 i18n/tr.txt -->
+<resources>
+    <string name="app_name">DuoPlayer Hi-Fi</string>
+    <string name="ok">Tamam</string>
+    <string name="cancel">İptal</string>
+    <string name="close">Kapat</string>
+    <string name="add">Ekle</string>
+    <string name="add_all">Tümünü ekle</string>
+    <string name="nav_play">Çal</string>
+    <string name="nav_bookmarks">Yer imleri</string>
+    <string name="nav_lists">Listeler</string>
+    <string name="out_line">Çıkış %1$s · 32-bit float · %2$s · %3$s</string>
+    <string name="out_mode_power">tasarruf yolu</string>
+    <string name="out_mode_standard">standart yol</string>
+    <string name="out_running">çalışıyor</string>
+    <string name="out_idle">beklemede</string>
+    <string name="out_detail">Arabellek %1$d ms · Kırpma koruması %2$d · Boşalma %3$d</string>
+    <string name="out_warn_48k">Sistem çıkışı yalnızca %1$s: Ayarlar → Ses bölümünden “High-Res streaming”i açın, sonra “Çıkış” düğmesine bir kez dokunun.</string>
+    <string name="btn_output_power">Çıkış: Eko</string>
+    <string name="btn_output_standard">Çıkış: Std</string>
+    <string name="combo_bookmark">Yer imi: %1$s</string>
+    <string name="combo_modified">" (değiştirildi)"</string>
+    <string name="combo_unsaved">Yer imi olarak kaydedilmedi</string>
+    <string name="combo_none">Ses seçilmedi</string>
+    <string name="tab_label">%1$s · %2$s</string>
+    <string name="not_selected">Yok</string>
+    <string name="btn_save">Kaydet</string>
+    <string name="btn_edit">Düzenle</string>
+    <string name="btn_save_bookmark">Yer imi olarak kaydet</string>
+    <string name="btn_choose_audio">Ses seç</string>
+    <string name="btn_choose_lyrics">Şarkı sözü seç</string>
+    <string name="btn_remove">Kaldır</string>
+    <string name="loop_on">Parçayı tekrarla: açık</string>
+    <string name="loop_off">Parçayı tekrarla: kapalı</string>
+    <string name="slot_on">Bu kanal: açık</string>
+    <string name="slot_off">Bu kanal: kapalı</string>
+    <string name="set_no_file">Ses yok: “Ses seç”e dokunun</string>
+    <string name="lyrics_none_hint">Şarkı sözü: yok (.lrc seçmek için “Şarkı sözü seç”e dokunun)</string>
+    <string name="lyrics_info">Şarkı sözü: %1$s</string>
+    <string name="lyrics_bilingual_suffix">" · iki dilli"</string>
+    <string name="lyrics_unsynced_suffix">" · senkronsuz"</string>
+    <string name="lyrics_src_lrc">LRC dosyası</string>
+    <string name="lyrics_src_embedded">gömülü</string>
+    <string name="gain_mute">Ses: kapalı</string>
+    <string name="gain_db">Ses %1$s dB</string>
+    <string name="balance_center">Denge: orta</string>
+    <string name="balance_left">Denge: S %1$d</string>
+    <string name="balance_right">Denge: Sağ %1$d</string>
+    <string name="chip_hint">Değiştirmek için A / B’ye dokunun: parlak = çalıyor, gri = kapalı</string>
+    <string name="chip_no_file">Ses yok (yukarıdaki %1$s içinden seçin)</string>
+    <string name="state_off">Kapalı · açmak için dokunun</string>
+    <string name="state_error">Çalınamıyor</string>
+    <string name="state_playing">Çalıyor</string>
+    <string name="state_ended">Bitti</string>
+    <string name="state_paused">Duraklatıldı</string>
+    <string name="lyrics_unsynced_tap">Senkronsuz şarkı sözü · görmek için dokunun</string>
+    <string name="toast_lyric_mode">Şarkı sözü: %1$s</string>
+    <string name="lyric_mode_both">İkisi de</string>
+    <string name="lyric_mode_cjk">CJK</string>
+    <string name="lyric_mode_latin">Latin</string>
+    <string name="single_combo">Tek kombinasyon</string>
+    <string name="queue_bookmarks_pos">Yer imi listesi %1$d/%2$d</string>
+    <string name="queue_files_pos">Dosya listesi %1$d/%2$d</string>
+    <string name="repeat_off">Sırayla</string>
+    <string name="repeat_all">Listeyi tekrarla</string>
+    <string name="repeat_one">Öğeyi tekrarla</string>
+    <string name="btn_exit_queue">Listeden çık</string>
+    <string name="bookmarks_title">Yer imleri</string>
+    <string name="btn_add_bookmark">+ Geçerliyi kaydet</string>
+    <string name="bookmark_page_hint">Dokun: yükle ve çal · Basılı tut: yeniden adlandır / üzerine yaz / listeye ekle / sırala / sil</string>
+    <string name="bookmark_empty">Henüz yer imi yok.\nÇal sayfasında A + B’yi ayarlayıp “Yer imi olarak kaydet”e dokunun; bir dahaki sefere tek dokunuşla o kombinasyon çalar.</string>
+    <string name="bm_slot_off">%1$s (kapalı)</string>
+    <string name="bm_slot_a">A: %1$s</string>
+    <string name="bm_slot_b">B: %1$s</string>
+    <string name="bm_empty">(boş kombinasyon)</string>
+    <string name="bm_deleted">(yer imi silindi)</string>
+    <string name="need_audio_first">Önce A veya B için ses seçin</string>
+    <string name="save_bookmark_title">Yer imi olarak kaydet</string>
+    <string name="bookmark_name_hint">Yer imi adı</string>
+    <string name="rename_title">Yer imini yeniden adlandır</string>
+    <string name="name_hint">Ad</string>
+    <string name="confirm_overwrite">“%1$s” yer iminin üzerine geçerli A + B kombinasyonu yazılsın mı?</string>
+    <string name="confirm_delete_bm">“%1$s” yer imi silinsin mi? (Yer imi listesinden de kaldırılır.)</string>
+    <string name="segment_bookmarks">Yer imi listesi</string>
+    <string name="segment_files">Dosya listesi</string>
+    <string name="hint_bookmark_list">Yer imlerini sırayla çalar: her yer iminin A + B’si birlikte çalar, ardından sıradaki başlar.</string>
+    <string name="hint_file_list">Dosyaları sırayla çalar: her dosya A’ya girer; B mevcut ayarını korur (yalnızca A’yı duymak için Çal sayfasında B’yi griye alın).</string>
+    <string name="btn_add_bookmark_q">+ Yer imleri</string>
+    <string name="btn_add_files">+ Dosyalar</string>
+    <string name="btn_add_folder">+ Klasör</string>
+    <string name="btn_clear">Temizle</string>
+    <string name="btn_play_list">▶ Çal</string>
+    <string name="empty_bookmark_list">Yer imi listesi boş. Eklemek için “+ Yer imleri”ne dokunun.</string>
+    <string name="empty_file_list">Dosya listesi boş. “+ Dosyalar” veya “+ Klasör”e dokunun.</string>
+    <string name="confirm_clear_bookmark_list">Yer imi listesi temizlensin mi?</string>
+    <string name="confirm_clear_file_list">Dosya listesi temizlensin mi?</string>
+    <string name="has_lyrics_suffix">" · şarkı sözü"</string>
+    <string name="no_bookmarks_yet">Yer imi yok: önce Çal sayfasında “Yer imi olarak kaydet”e dokunun</string>
+    <string name="pick_bookmarks_title">Eklenecek yer imlerini seçin</string>
+    <string name="choose_audio_for">%1$s için ses seç</string>
+    <string name="choose_from_device">Cihazdan…</string>
+    <string name="choose_from_list">Dosya listesinden (%1$d)</string>
+    <string name="picker_failed">Sistem dosya seçici açılamıyor</string>
+    <string name="btn_backup">Yedekle</string>
+    <string name="btn_restore">Geri yükle</string>
+    <string name="btn_relink">Klasörü yeniden bağla</string>
+    <string name="relink_title">Klasörü yeniden bağla</string>
+    <string name="relink_message">Uygulamayı yeniden yükledikten veya yedeği geri yükledikten sonra eski dosya izinleri kaybolur.\n\nMüziğinizin bulunduğu kök klasörü seçin (ör. Music veya SD kart); uygulama yer imlerinizdeki ve listelerinizdeki dosyaları özgün yol ve adlarına göre yeniden bulur.</string>
+    <string name="relink_pick">Klasör seç</string>
+    <string name="backup_file_prefix">DuoPlayer-yedek-</string>
+    <string name="scanning_folder">Klasör taranıyor…</string>
+    <string name="folder_no_audio">Bu klasörde ses yok</string>
+    <string name="scanning_relink">Dosyalar taranıyor ve eşleştiriliyor…</string>
+    <string name="backup_done">Yedek kaydedildi</string>
+    <string name="backup_failed">Yedek yazılamadı</string>
+    <string name="restore_read_failed">Yedek okunamadı</string>
+    <string name="restore_title">Yedeği geri yükle</string>
+    <string name="restore_message">“Değiştir”: tüm geçerli yer imlerinin, listelerin ve kombinasyonun yerine yedeği koyar.\n“Birleştir”: yedekteki yer imlerini ve listeleri mevcut verilere ekler.</string>
+    <string name="restore_replace">Değiştir</string>
+    <string name="restore_merge">Birleştir</string>
+    <string name="version_current">Sürüm %1$s</string>
+    <string name="auto_update_on">Otomatik kontrol: açık</string>
+    <string name="auto_update_off">Otomatik kontrol: kapalı</string>
+    <string name="check_update">Güncellemeyi denetle</string>
+    <string name="toast_bookmark_saved">“%1$s” yer imi kaydedildi</string>
+    <string name="toast_bookmark_overwritten">Yer iminin üzerine geçerli kombinasyon yazıldı</string>
+    <string name="toast_files_added">%1$d dosya eklendi</string>
+    <string name="toast_bad_backup">Geçerli bir yedek dosyası değil</string>
+    <string name="toast_merged">Birleştirildi: toplam %1$d yer imi</string>
+    <string name="toast_restored">Geri yüklendi: %1$d yer imi, %2$d dosya</string>
+    <string name="toast_missing_files">%1$d dosyaya erişilemiyor — “Klasörü yeniden bağla”yı kullanın</string>
+    <string name="toast_relink_ok_all">Erişim geri geldi — tüm dosyalara erişilebiliyor</string>
+    <string name="toast_relink_fixed">%1$d dosya bulundu</string>
+    <string name="toast_relink_left">, %1$d hâlâ bulunamadı</string>
+    <string name="toast_both_off">A ve B ikisi de kapalı: en az birini açın</string>
+    <string name="toast_choose_first">Önce A / B için bir ses dosyası seçin</string>
+    <string name="toast_not_in_list">Şu anda liste çalınmıyor</string>
+    <string name="toast_list_finished">Liste bitti</string>
+    <string name="notif_channel">Çalma</string>
+    <string name="notif_prev">Önceki</string>
+    <string name="notif_pause">Duraklat</string>
+    <string name="notif_play">Çal</string>
+    <string name="notif_next">Sonraki</string>
+    <string name="err_io">Dosya açılamıyor</string>
+    <string name="err_no_permission">Erişim izni yok: Listeler sayfasındaki “Klasörü yeniden bağla”yı kullanın</string>
+    <string name="err_not_found">Dosya bulunamadı: Listeler sayfasındaki “Klasörü yeniden bağla”yı kullanın</string>
+    <string name="err_corrupt">%1$s dosyası bozuk veya okunamıyor</string>
+    <string name="err_unsupported">Desteklenmeyen %1$s biçimi</string>
+    <string name="err_unknown_format">Tanınmayan dosya biçimi</string>
+    <string name="err_no_audio_track">Dosyada ses parçası yok</string>
+    <string name="err_no_decoder">Bu sistemde %1$s için kod çözücü yok</string>
+    <string name="err_bad_format">Kod çözücü geçersiz bir biçim döndürdü</string>
+    <string name="err_bad_rate">Geçersiz örnekleme hızı</string>
+    <string name="err_rate_ratio">Desteklenmeyen örnekleme hızı dönüşümü %1$s</string>
+    <string name="err_aaudio">Ses çıkışı (AAudio) kullanılamıyor</string>
+    <string name="err_output_open">Ses çıkışı açılamadı: %1$s</string>
+    <string name="err_output_start">Ses çıkışı başlatılamadı: %1$s</string>
+    <string name="err_unknown">Bilinmeyen hata (%1$s)</string>
+    <string name="fmt_lossless">kayıpsız</string>
+    <string name="fmt_lossy">kayıplı</string>
+    <string name="path_direct_gain">Doğrudan %1$s · 64-bit kazanç</string>
+    <string name="path_bitperfect">Doğrudan %1$s · bit-perfect</string>
+    <string name="path_direct">Doğrudan %1$s</string>
+    <string name="path_resample">Yeniden örnekleme %1$s → %2$s</string>
+    <string name="path_mix">" · karışım"</string>
+    <string name="lyrics_none_long">Bu parça için şarkı sözü bulunamadı.\n\n· “+ Klasör” ile içe aktarırken aynı klasördeki aynı adlı .lrc otomatik bağlanır\n· “+ Dosyalar” ile .lrc’yi şarkıyla birlikte seçin\n· Ya da yukarıdaki “Şarkı sözü seç”e dokunun\n· FLAC / MP3 / DSF içine gömülü sözler de okunur</string>
+    <string name="lyrics_none">Şarkı sözü yok</string>
+    <string name="lyrics_src_unsynced">%1$s · senkronsuz</string>
+    <string name="lyrics_src_bilingual">%1$s · iki dilli · %2$d satır</string>
+    <string name="lyrics_src_lines">%1$s · %2$d satır</string>
+    <string name="upd_checking">Güncellemeler denetleniyor…</string>
+    <string name="upd_none_published">GitHub’da henüz yayınlanmış sürüm yok</string>
+    <string name="upd_latest">Güncelsiniz (%1$s)</string>
+    <string name="upd_check_failed">Güncelleme denetlenemedi</string>
+    <string name="upd_check_failed_msg">%1$s\n\nBazı ağlarda GitHub yavaş veya erişilemez olabilir. Daha sonra tekrar deneyin ya da sürümler sayfasını tarayıcıda açın.</string>
+    <string name="upd_open_page">Sürümler sayfasını aç</string>
+    <string name="upd_found">Yeni sürüm %1$s</string>
+    <string name="upd_current">Geçerli sürüm %1$s%2$s</string>
+    <string name="upd_download_install">İndir ve yükle</string>
+    <string name="upd_skip">Bu sürümü atla</string>
+    <string name="upd_later">Sonra</string>
+    <string name="upd_need_perm_title">Bir kerelik izin gerekiyor</string>
+    <string name="upd_need_perm_msg">Kendini güncelleyebilmesi için Android’in “%1$s” uygulamasına uygulama yükleme izni vermesi gerekir.\n\n“Ayarlar”a dokunun → “Bu kaynaktan izin ver”i açın → geri dönüp tekrar “Güncellemeyi denetle”ye dokunun.</string>
+    <string name="upd_go_settings">Ayarlar</string>
+    <string name="upd_downloading">%1$s indiriliyor</string>
+    <string name="upd_preparing">Hazırlanıyor…</string>
+    <string name="upd_progress">%1$s / %2$s MB (%%%3$d)</string>
+    <string name="upd_progress_unknown">%1$s MB</string>
+    <string name="upd_installer_failed">Sistem yükleyicisi açılamıyor: %1$s</string>
+    <string name="upd_failed">Güncelleme başarısız</string>
+    <string name="upd_no_browser">Kullanılabilir tarayıcı yok: %1$s</string>
+    <string name="upd_err_rate_limited">GitHub istek sınırına ulaşıldı, daha sonra deneyin</string>
+    <string name="upd_err_http">GitHub %1$s döndürdü</string>
+    <string name="upd_err_redirect">İndirme yönlendirmesi başarısız</string>
+    <string name="upd_err_download">İndirme başarısız: HTTP %1$s</string>
+    <string name="upd_err_save">Paket kaydedilemedi</string>
+    <string name="upd_err_redirects">Çok fazla yönlendirme</string>
+    <string name="upd_err_damaged">Paket bozuk</string>
+    <string name="upd_err_wrong_pkg">Paket bu uygulamaya ait değil</string>
+    <string name="upd_err_not_newer">Paket yüklü sürümden daha yeni değil</string>
+    <string name="upd_err_signature">İmza yüklü uygulamayla eşleşmiyor, bu yüzden üzerine güncellenemez.\n(1.2 ve önceki sürümler geçici imza kullanıyordu: Listeler sayfasında yedek alın, eski sürümü kaldırın ve yenisini bir kez GitHub’dan yükleyin; sonraki güncellemeler uygulama içinden çalışır.)</string>
+    <string-array name="bookmark_menu">
+        <item>Çal</item>
+        <item>Yalnızca yükle (çalma)</item>
+        <item>Yer imi listesine ekle</item>
+        <item>Yeniden adlandır</item>
+        <item>Geçerliyle üzerine yaz</item>
+        <item>Yukarı taşı</item>
+        <item>Aşağı taşı</item>
+        <item>Sil</item>
+    </string-array>
+    <string-array name="queue_menu_files">
+        <item>Buradan çal</item>
+        <item>A’ya koy</item>
+        <item>B’ye koy</item>
+        <item>Yukarı taşı</item>
+        <item>Aşağı taşı</item>
+        <item>Listeden çıkar</item>
+    </string-array>
+    <string-array name="queue_menu_bookmarks">
+        <item>Buradan çal</item>
+        <item>Yukarı taşı</item>
+        <item>Aşağı taşı</item>
+        <item>Listeden çıkar</item>
+    </string-array>
+</resources>

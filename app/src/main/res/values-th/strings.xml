@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 i18n/build_strings.py 生成，请修改 i18n/th.txt -->
+<resources>
+    <string name="app_name">DuoPlayer Hi-Fi</string>
+    <string name="ok">ตกลง</string>
+    <string name="cancel">ยกเลิก</string>
+    <string name="close">ปิด</string>
+    <string name="add">เพิ่ม</string>
+    <string name="add_all">เพิ่มทั้งหมด</string>
+    <string name="nav_play">เล่น</string>
+    <string name="nav_bookmarks">บุ๊กมาร์ก</string>
+    <string name="nav_lists">รายการ</string>
+    <string name="out_line">เอาต์พุต %1$s · 32-bit float · %2$s · %3$s</string>
+    <string name="out_mode_power">เส้นทางประหยัดพลังงาน</string>
+    <string name="out_mode_standard">เส้นทางมาตรฐาน</string>
+    <string name="out_running">ทำงานอยู่</string>
+    <string name="out_idle">พัก</string>
+    <string name="out_detail">บัฟเฟอร์ %1$d ms · ป้องกันเสียงแตก %2$d · ข้อมูลขาด %3$d</string>
+    <string name="out_warn_48k">เอาต์พุตระบบมีแค่ %1$s: เปิด การตั้งค่า → เสียง แล้วเปิด “High-Res streaming” จากนั้นแตะปุ่ม “เอาต์พุต” หนึ่งครั้ง</string>
+    <string name="btn_output_power">เอาต์พุต: ประหยัด</string>
+    <string name="btn_output_standard">เอาต์พุต: มาตรฐาน</string>
+    <string name="combo_bookmark">บุ๊กมาร์ก: %1$s</string>
+    <string name="combo_modified">" (แก้ไขแล้ว)"</string>
+    <string name="combo_unsaved">ยังไม่ได้บันทึกเป็นบุ๊กมาร์ก</string>
+    <string name="combo_none">ยังไม่ได้เลือกเสียง</string>
+    <string name="tab_label">%1$s · %2$s</string>
+    <string name="not_selected">ไม่มี</string>
+    <string name="btn_save">บันทึก</string>
+    <string name="btn_edit">แก้ไข</string>
+    <string name="btn_save_bookmark">บันทึกเป็นบุ๊กมาร์ก</string>
+    <string name="btn_choose_audio">เลือกเสียง</string>
+    <string name="btn_choose_lyrics">เลือกเนื้อเพลง</string>
+    <string name="btn_remove">นำออก</string>
+    <string name="loop_on">เล่นซ้ำเพลงเดียว: เปิด</string>
+    <string name="loop_off">เล่นซ้ำเพลงเดียว: ปิด</string>
+    <string name="slot_on">แทร็กนี้: เปิด</string>
+    <string name="slot_off">แทร็กนี้: ปิด</string>
+    <string name="set_no_file">ยังไม่มีเสียง: แตะ “เลือกเสียง”</string>
+    <string name="lyrics_none_hint">เนื้อเพลง: ไม่มี (แตะ “เลือกเนื้อเพลง” เพื่อเลือก .lrc)</string>
+    <string name="lyrics_info">เนื้อเพลง: %1$s</string>
+    <string name="lyrics_bilingual_suffix">" · สองภาษา"</string>
+    <string name="lyrics_unsynced_suffix">" · ไม่ซิงก์"</string>
+    <string name="lyrics_src_lrc">ไฟล์ LRC</string>
+    <string name="lyrics_src_embedded">ฝังในไฟล์</string>
+    <string name="gain_mute">ระดับเสียง: ปิดเสียง</string>
+    <string name="gain_db">ระดับเสียง %1$s dB</string>
+    <string name="balance_center">บาลานซ์: กลาง</string>
+    <string name="balance_left">บาลานซ์: ซ้าย %1$d</string>
+    <string name="balance_right">บาลานซ์: ขวา %1$d</string>
+    <string name="chip_hint">แตะ A / B เพื่อสลับ: สว่าง = กำลังเล่น, เทา = ปิด</string>
+    <string name="chip_no_file">ไม่มีเสียง (เลือกใน %1$s ด้านบน)</string>
+    <string name="state_off">ปิด · แตะเพื่อเปิด</string>
+    <string name="state_error">เล่นไม่ได้</string>
+    <string name="state_playing">กำลังเล่น</string>
+    <string name="state_ended">จบแล้ว</string>
+    <string name="state_paused">หยุดชั่วคราว</string>
+    <string name="lyrics_unsynced_tap">เนื้อเพลงไม่ซิงก์ · แตะเพื่อดู</string>
+    <string name="toast_lyric_mode">เนื้อเพลง: %1$s</string>
+    <string name="lyric_mode_both">ทั้งสอง</string>
+    <string name="lyric_mode_cjk">CJK</string>
+    <string name="lyric_mode_latin">ละติน</string>
+    <string name="single_combo">ชุดเดียว</string>
+    <string name="queue_bookmarks_pos">รายการบุ๊กมาร์ก %1$d/%2$d</string>
+    <string name="queue_files_pos">รายการไฟล์ %1$d/%2$d</string>
+    <string name="repeat_off">ตามลำดับ</string>
+    <string name="repeat_all">เล่นซ้ำทั้งรายการ</string>
+    <string name="repeat_one">เล่นซ้ำรายการเดียว</string>
+    <string name="btn_exit_queue">ออกจากรายการ</string>
+    <string name="bookmarks_title">บุ๊กมาร์ก</string>
+    <string name="btn_add_bookmark">+ บันทึกชุดปัจจุบัน</string>
+    <string name="bookmark_page_hint">แตะ: โหลดและเล่น · กดค้าง: เปลี่ยนชื่อ / เขียนทับ / เพิ่มในรายการ / จัดลำดับ / ลบ</string>
+    <string name="bookmark_empty">ยังไม่มีบุ๊กมาร์ก\nตั้งค่า A + B ในหน้าเล่นแล้วแตะ “บันทึกเป็นบุ๊กมาร์ก” ครั้งต่อไปแตะครั้งเดียวก็เล่นชุดนั้นได้เลย</string>
+    <string name="bm_slot_off">%1$s (ปิด)</string>
+    <string name="bm_slot_a">A: %1$s</string>
+    <string name="bm_slot_b">B: %1$s</string>
+    <string name="bm_empty">(ชุดว่าง)</string>
+    <string name="bm_deleted">(ลบบุ๊กมาร์กแล้ว)</string>
+    <string name="need_audio_first">โปรดเลือกเสียงให้ A หรือ B ก่อน</string>
+    <string name="save_bookmark_title">บันทึกเป็นบุ๊กมาร์ก</string>
+    <string name="bookmark_name_hint">ชื่อบุ๊กมาร์ก</string>
+    <string name="rename_title">เปลี่ยนชื่อบุ๊กมาร์ก</string>
+    <string name="name_hint">ชื่อ</string>
+    <string name="confirm_overwrite">เขียนทับบุ๊กมาร์ก “%1$s” ด้วยชุด A + B ปัจจุบันหรือไม่</string>
+    <string name="confirm_delete_bm">ลบบุ๊กมาร์ก “%1$s” หรือไม่ (จะถูกนำออกจากรายการบุ๊กมาร์กด้วย)</string>
+    <string name="segment_bookmarks">รายการบุ๊กมาร์ก</string>
+    <string name="segment_files">รายการไฟล์</string>
+    <string name="hint_bookmark_list">เล่นบุ๊กมาร์กตามลำดับ: A + B ของแต่ละบุ๊กมาร์กเล่นพร้อมกัน แล้วต่อด้วยบุ๊กมาร์กถัดไป</string>
+    <string name="hint_file_list">เล่นไฟล์ตามลำดับ: แต่ละไฟล์ใส่ใน A ส่วน B คงการตั้งค่าเดิม (ทำให้ B เป็นสีเทาในหน้าเล่นเพื่อฟังแค่ A)</string>
+    <string name="btn_add_bookmark_q">+ บุ๊กมาร์ก</string>
+    <string name="btn_add_files">+ ไฟล์</string>
+    <string name="btn_add_folder">+ โฟลเดอร์</string>
+    <string name="btn_clear">ล้าง</string>
+    <string name="btn_play_list">▶ เล่น</string>
+    <string name="empty_bookmark_list">รายการบุ๊กมาร์กว่างอยู่ แตะ “+ บุ๊กมาร์ก” เพื่อเพิ่ม</string>
+    <string name="empty_file_list">รายการไฟล์ว่างอยู่ แตะ “+ ไฟล์” หรือ “+ โฟลเดอร์”</string>
+    <string name="confirm_clear_bookmark_list">ล้างรายการบุ๊กมาร์กหรือไม่</string>
+    <string name="confirm_clear_file_list">ล้างรายการไฟล์หรือไม่</string>
+    <string name="has_lyrics_suffix">" · มีเนื้อเพลง"</string>
+    <string name="no_bookmarks_yet">ยังไม่มีบุ๊กมาร์ก: แตะ “บันทึกเป็นบุ๊กมาร์ก” ในหน้าเล่นก่อน</string>
+    <string name="pick_bookmarks_title">เลือกบุ๊กมาร์กที่จะเพิ่ม</string>
+    <string name="choose_audio_for">เลือกเสียงสำหรับ %1$s</string>
+    <string name="choose_from_device">จากอุปกรณ์…</string>
+    <string name="choose_from_list">จากรายการไฟล์ (%1$d)</string>
+    <string name="picker_failed">เปิดตัวเลือกไฟล์ของระบบไม่ได้</string>
+    <string name="btn_backup">สำรอง</string>
+    <string name="btn_restore">กู้คืน</string>
+    <string name="btn_relink">เชื่อมโฟลเดอร์ใหม่</string>
+    <string name="relink_title">เชื่อมโฟลเดอร์ใหม่</string>
+    <string name="relink_message">หลังติดตั้งแอปใหม่หรือกู้คืนข้อมูลสำรอง สิทธิ์เข้าถึงไฟล์เดิมจะหายไป\n\nเลือกโฟลเดอร์หลักที่เก็บเพลง (เช่น Music หรือการ์ด SD) แอปจะหาไฟล์ในบุ๊กมาร์กและรายการกลับมาตามพาธและชื่อเดิม</string>
+    <string name="relink_pick">เลือกโฟลเดอร์</string>
+    <string name="backup_file_prefix">DuoPlayer-backup-</string>
+    <string name="scanning_folder">กำลังสแกนโฟลเดอร์…</string>
+    <string name="folder_no_audio">ไม่มีไฟล์เสียงในโฟลเดอร์นี้</string>
+    <string name="scanning_relink">กำลังสแกนและจับคู่ไฟล์…</string>
+    <string name="backup_done">บันทึกข้อมูลสำรองแล้ว</string>
+    <string name="backup_failed">เขียนข้อมูลสำรองไม่สำเร็จ</string>
+    <string name="restore_read_failed">อ่านข้อมูลสำรองไม่ได้</string>
+    <string name="restore_title">กู้คืนข้อมูลสำรอง</string>
+    <string name="restore_message">“แทนที่”: เขียนทับบุ๊กมาร์ก รายการ และชุดปัจจุบันทั้งหมดด้วยข้อมูลสำรอง\n“รวม”: เพิ่มบุ๊กมาร์กและรายการจากข้อมูลสำรองเข้าไปในข้อมูลที่มีอยู่</string>
+    <string name="restore_replace">แทนที่</string>
+    <string name="restore_merge">รวม</string>
+    <string name="version_current">เวอร์ชัน %1$s</string>
+    <string name="auto_update_on">ตรวจอัตโนมัติ: เปิด</string>
+    <string name="auto_update_off">ตรวจอัตโนมัติ: ปิด</string>
+    <string name="check_update">ตรวจหาอัปเดต</string>
+    <string name="toast_bookmark_saved">บันทึกบุ๊กมาร์ก “%1$s” แล้ว</string>
+    <string name="toast_bookmark_overwritten">เขียนทับบุ๊กมาร์กด้วยชุดปัจจุบันแล้ว</string>
+    <string name="toast_files_added">เพิ่ม %1$d ไฟล์แล้ว</string>
+    <string name="toast_bad_backup">ไม่ใช่ไฟล์สำรองที่ถูกต้อง</string>
+    <string name="toast_merged">รวมแล้ว: บุ๊กมาร์กทั้งหมด %1$d รายการ</string>
+    <string name="toast_restored">กู้คืนแล้ว: บุ๊กมาร์ก %1$d รายการ, ไฟล์ %2$d ไฟล์</string>
+    <string name="toast_missing_files">เข้าถึงไม่ได้ %1$d ไฟล์ — ใช้ “เชื่อมโฟลเดอร์ใหม่” เพื่อหาไฟล์</string>
+    <string name="toast_relink_ok_all">ได้สิทธิ์คืนแล้ว เข้าถึงไฟล์ได้ทั้งหมด</string>
+    <string name="toast_relink_fixed">พบ %1$d ไฟล์</string>
+    <string name="toast_relink_left">, ยังหาไม่พบ %1$d ไฟล์</string>
+    <string name="toast_both_off">A และ B ปิดอยู่ทั้งคู่: เปิดอย่างน้อยหนึ่งช่อง</string>
+    <string name="toast_choose_first">โปรดเลือกไฟล์เสียงให้ A / B ก่อน</string>
+    <string name="toast_not_in_list">ตอนนี้ไม่ได้เล่นจากรายการ</string>
+    <string name="toast_list_finished">เล่นรายการจบแล้ว</string>
+    <string name="notif_channel">การเล่น</string>
+    <string name="notif_prev">ก่อนหน้า</string>
+    <string name="notif_pause">หยุดชั่วคราว</string>
+    <string name="notif_play">เล่น</string>
+    <string name="notif_next">ถัดไป</string>
+    <string name="err_io">เปิดไฟล์ไม่ได้</string>
+    <string name="err_no_permission">ไม่มีสิทธิ์เข้าถึง: ใช้ “เชื่อมโฟลเดอร์ใหม่” ในหน้ารายการ</string>
+    <string name="err_not_found">ไม่พบไฟล์: ใช้ “เชื่อมโฟลเดอร์ใหม่” ในหน้ารายการ</string>
+    <string name="err_corrupt">ไฟล์ %1$s เสียหายหรืออ่านไม่ได้</string>
+    <string name="err_unsupported">ไม่รองรับรูปแบบ %1$s</string>
+    <string name="err_unknown_format">ไม่รู้จักรูปแบบไฟล์</string>
+    <string name="err_no_audio_track">ไฟล์ไม่มีแทร็กเสียง</string>
+    <string name="err_no_decoder">ระบบไม่มีตัวถอดรหัสสำหรับ %1$s</string>
+    <string name="err_bad_format">ตัวถอดรหัสส่งรูปแบบที่ไม่ถูกต้อง</string>
+    <string name="err_bad_rate">อัตราสุ่มตัวอย่างไม่ถูกต้อง</string>
+    <string name="err_rate_ratio">ไม่รองรับการแปลงอัตราสุ่มตัวอย่าง %1$s</string>
+    <string name="err_aaudio">ใช้เอาต์พุตเสียง (AAudio) ไม่ได้</string>
+    <string name="err_output_open">เปิดเอาต์พุตเสียงไม่สำเร็จ: %1$s</string>
+    <string name="err_output_start">เริ่มเอาต์พุตเสียงไม่สำเร็จ: %1$s</string>
+    <string name="err_unknown">ข้อผิดพลาดที่ไม่รู้จัก (%1$s)</string>
+    <string name="fmt_lossless">lossless</string>
+    <string name="fmt_lossy">lossy</string>
+    <string name="path_direct_gain">ส่งตรง %1$s · เกน 64-bit</string>
+    <string name="path_bitperfect">ส่งตรง %1$s · bit-perfect</string>
+    <string name="path_direct">ส่งตรง %1$s</string>
+    <string name="path_resample">รีแซมเปิล %1$s → %2$s</string>
+    <string name="path_mix">" · มิกซ์"</string>
+    <string name="lyrics_none_long">ไม่พบเนื้อเพลงของเพลงนี้\n\n· เมื่อนำเข้าด้วย “+ โฟลเดอร์” ไฟล์ .lrc ชื่อเดียวกันในโฟลเดอร์เดียวกันจะเชื่อมให้อัตโนมัติ\n· เมื่อใช้ “+ ไฟล์” ให้เลือก .lrc พร้อมกับเพลง\n· หรือแตะ “เลือกเนื้อเพลง” ด้านบน\n· อ่านเนื้อเพลงที่ฝังใน FLAC / MP3 / DSF ได้ด้วย</string>
+    <string name="lyrics_none">ไม่มีเนื้อเพลง</string>
+    <string name="lyrics_src_unsynced">%1$s · ไม่ซิงก์</string>
+    <string name="lyrics_src_bilingual">%1$s · สองภาษา · %2$d บรรทัด</string>
+    <string name="lyrics_src_lines">%1$s · %2$d บรรทัด</string>
+    <string name="upd_checking">กำลังตรวจหาอัปเดต…</string>
+    <string name="upd_none_published">ยังไม่มีรุ่นเผยแพร่บน GitHub</string>
+    <string name="upd_latest">เป็นเวอร์ชันล่าสุดแล้ว (%1$s)</string>
+    <string name="upd_check_failed">ตรวจหาอัปเดตไม่สำเร็จ</string>
+    <string name="upd_check_failed_msg">%1$s\n\nบางเครือข่ายอาจเข้า GitHub ได้ช้าหรือเข้าไม่ได้ ลองใหม่ภายหลัง หรือเปิดหน้ารุ่นเผยแพร่ในเบราว์เซอร์</string>
+    <string name="upd_open_page">เปิดหน้ารุ่นเผยแพร่</string>
+    <string name="upd_found">เวอร์ชันใหม่ %1$s</string>
+    <string name="upd_current">เวอร์ชันปัจจุบัน %1$s%2$s</string>
+    <string name="upd_download_install">ดาวน์โหลดและติดตั้ง</string>
+    <string name="upd_skip">ข้ามเวอร์ชันนี้</string>
+    <string name="upd_later">ภายหลัง</string>
+    <string name="upd_need_perm_title">ต้องอนุญาตหนึ่งครั้ง</string>
+    <string name="upd_need_perm_msg">Android ต้องอนุญาตให้ “%1$s” ติดตั้งแอปก่อน จึงจะอัปเดตตัวเองได้\n\nแตะ “การตั้งค่า” → เปิด “อนุญาตจากแหล่งที่มานี้” → กลับมาแล้วแตะ “ตรวจหาอัปเดต” อีกครั้ง</string>
+    <string name="upd_go_settings">การตั้งค่า</string>
+    <string name="upd_downloading">กำลังดาวน์โหลด %1$s</string>
+    <string name="upd_preparing">กำลังเตรียม…</string>
+    <string name="upd_progress">%1$s / %2$s MB (%3$d%%)</string>
+    <string name="upd_progress_unknown">%1$s MB</string>
+    <string name="upd_installer_failed">เปิดตัวติดตั้งของระบบไม่ได้: %1$s</string>
+    <string name="upd_failed">อัปเดตไม่สำเร็จ</string>
+    <string name="upd_no_browser">ไม่มีเบราว์เซอร์: %1$s</string>
+    <string name="upd_err_rate_limited">เข้าถึง GitHub ถึงขีดจำกัดแล้ว ลองใหม่ภายหลัง</string>
+    <string name="upd_err_http">GitHub ตอบกลับ %1$s</string>
+    <string name="upd_err_redirect">การเปลี่ยนเส้นทางดาวน์โหลดล้มเหลว</string>
+    <string name="upd_err_download">ดาวน์โหลดไม่สำเร็จ: HTTP %1$s</string>
+    <string name="upd_err_save">บันทึกแพ็กเกจไม่สำเร็จ</string>
+    <string name="upd_err_redirects">เปลี่ยนเส้นทางมากเกินไป</string>
+    <string name="upd_err_damaged">แพ็กเกจเสียหาย</string>
+    <string name="upd_err_wrong_pkg">แพ็กเกจนี้ไม่ใช่ของแอปนี้</string>
+    <string name="upd_err_not_newer">แพ็กเกจไม่ใหม่กว่าเวอร์ชันที่ติดตั้งอยู่</string>
+    <string name="upd_err_signature">ลายเซ็นไม่ตรงกับแอปที่ติดตั้ง จึงอัปเดตทับไม่ได้\n(เวอร์ชัน 1.2 และก่อนหน้าใช้ลายเซ็นชั่วคราว: สำรองข้อมูลในหน้ารายการ ถอนการติดตั้งรุ่นเก่า แล้วติดตั้งรุ่นใหม่จาก GitHub หนึ่งครั้ง หลังจากนั้นจะอัปเดตในแอปได้)</string>
+    <string-array name="bookmark_menu">
+        <item>เล่น</item>
+        <item>โหลดอย่างเดียว (ไม่เล่น)</item>
+        <item>เพิ่มในรายการบุ๊กมาร์ก</item>
+        <item>เปลี่ยนชื่อ</item>
+        <item>เขียนทับด้วยชุดปัจจุบัน</item>
+        <item>เลื่อนขึ้น</item>
+        <item>เลื่อนลง</item>
+        <item>ลบ</item>
+    </string-array>
+    <string-array name="queue_menu_files">
+        <item>เล่นจากตรงนี้</item>
+        <item>ใส่ใน A</item>
+        <item>ใส่ใน B</item>
+        <item>เลื่อนขึ้น</item>
+        <item>เลื่อนลง</item>
+        <item>นำออกจากรายการ</item>
+    </string-array>
+    <string-array name="queue_menu_bookmarks">
+        <item>เล่นจากตรงนี้</item>
+        <item>เลื่อนขึ้น</item>
+        <item>เลื่อนลง</item>
+        <item>นำออกจากรายการ</item>
+    </string-array>
+</resources>

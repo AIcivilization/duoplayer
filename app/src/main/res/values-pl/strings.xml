@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 i18n/build_strings.py 生成，请修改 i18n/pl.txt -->
+<resources>
+    <string name="app_name">DuoPlayer Hi-Fi</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Anuluj</string>
+    <string name="close">Zamknij</string>
+    <string name="add">Dodaj</string>
+    <string name="add_all">Dodaj wszystkie</string>
+    <string name="nav_play">Odtwarzanie</string>
+    <string name="nav_bookmarks">Zakładki</string>
+    <string name="nav_lists">Listy</string>
+    <string name="out_line">Wyjście %1$s · 32-bit float · %2$s · %3$s</string>
+    <string name="out_mode_power">ścieżka eko</string>
+    <string name="out_mode_standard">ścieżka standardowa</string>
+    <string name="out_running">działa</string>
+    <string name="out_idle">bezczynne</string>
+    <string name="out_detail">Bufor %1$d ms · Ochrona przed przesterem %2$d · Niedobory %3$d</string>
+    <string name="out_warn_48k">Wyjście systemu ma tylko %1$s: otwórz Ustawienia → Dźwięk i włącz „High-Res streaming”, potem dotknij raz przycisku „Wyjście”.</string>
+    <string name="btn_output_power">Wyjście: Eko</string>
+    <string name="btn_output_standard">Wyjście: Std</string>
+    <string name="combo_bookmark">Zakładka: %1$s</string>
+    <string name="combo_modified">" (zmieniono)"</string>
+    <string name="combo_unsaved">Nie zapisano jako zakładki</string>
+    <string name="combo_none">Nie wybrano audio</string>
+    <string name="tab_label">%1$s · %2$s</string>
+    <string name="not_selected">Brak</string>
+    <string name="btn_save">Zapisz</string>
+    <string name="btn_edit">Edytuj</string>
+    <string name="btn_save_bookmark">Zapisz jako zakładkę</string>
+    <string name="btn_choose_audio">Wybierz audio</string>
+    <string name="btn_choose_lyrics">Wybierz tekst</string>
+    <string name="btn_remove">Usuń</string>
+    <string name="loop_on">Powtarzaj utwór: wł.</string>
+    <string name="loop_off">Powtarzaj utwór: wył.</string>
+    <string name="slot_on">Ta ścieżka: wł.</string>
+    <string name="slot_off">Ta ścieżka: wył.</string>
+    <string name="set_no_file">Brak audio: dotknij „Wybierz audio”</string>
+    <string name="lyrics_none_hint">Tekst: brak (dotknij „Wybierz tekst”, aby wskazać .lrc)</string>
+    <string name="lyrics_info">Tekst: %1$s</string>
+    <string name="lyrics_bilingual_suffix">" · dwujęzyczny"</string>
+    <string name="lyrics_unsynced_suffix">" · niesynchroniczny"</string>
+    <string name="lyrics_src_lrc">plik LRC</string>
+    <string name="lyrics_src_embedded">osadzony</string>
+    <string name="gain_mute">Głośność: wycisz</string>
+    <string name="gain_db">Głośność %1$s dB</string>
+    <string name="balance_center">Balans: środek</string>
+    <string name="balance_left">Balans: L %1$d</string>
+    <string name="balance_right">Balans: P %1$d</string>
+    <string name="chip_hint">Dotknij A / B, aby przełączyć: jasne = gra, szare = wył.</string>
+    <string name="chip_no_file">Brak audio (wybierz w %1$s powyżej)</string>
+    <string name="state_off">Wył. · dotknij, aby włączyć</string>
+    <string name="state_error">Nie można odtworzyć</string>
+    <string name="state_playing">Odtwarzanie</string>
+    <string name="state_ended">Zakończono</string>
+    <string name="state_paused">Pauza</string>
+    <string name="lyrics_unsynced_tap">Tekst niesynchroniczny · dotknij, aby zobaczyć</string>
+    <string name="toast_lyric_mode">Tekst: %1$s</string>
+    <string name="lyric_mode_both">Oba</string>
+    <string name="lyric_mode_cjk">CJK</string>
+    <string name="lyric_mode_latin">Łaciński</string>
+    <string name="single_combo">Pojedyncza kombinacja</string>
+    <string name="queue_bookmarks_pos">Lista zakładek %1$d/%2$d</string>
+    <string name="queue_files_pos">Lista plików %1$d/%2$d</string>
+    <string name="repeat_off">Po kolei</string>
+    <string name="repeat_all">Powtarzaj listę</string>
+    <string name="repeat_one">Powtarzaj pozycję</string>
+    <string name="btn_exit_queue">Wyjdź z listy</string>
+    <string name="bookmarks_title">Zakładki</string>
+    <string name="btn_add_bookmark">+ Zapisz bieżącą</string>
+    <string name="bookmark_page_hint">Dotknij: wczytaj i odtwórz · Przytrzymaj: zmień nazwę / nadpisz / dodaj do listy / kolejność / usuń</string>
+    <string name="bookmark_empty">Nie ma jeszcze zakładek.\nUstaw A + B na stronie Odtwarzanie i dotknij „Zapisz jako zakładkę” — następnym razem jedno dotknięcie odtworzy tę kombinację.</string>
+    <string name="bm_slot_off">%1$s (wył.)</string>
+    <string name="bm_slot_a">A: %1$s</string>
+    <string name="bm_slot_b">B: %1$s</string>
+    <string name="bm_empty">(pusta kombinacja)</string>
+    <string name="bm_deleted">(zakładka usunięta)</string>
+    <string name="need_audio_first">Najpierw wybierz audio dla A lub B</string>
+    <string name="save_bookmark_title">Zapisz jako zakładkę</string>
+    <string name="bookmark_name_hint">Nazwa zakładki</string>
+    <string name="rename_title">Zmień nazwę zakładki</string>
+    <string name="name_hint">Nazwa</string>
+    <string name="confirm_overwrite">Nadpisać zakładkę „%1$s” bieżącą kombinacją A + B?</string>
+    <string name="confirm_delete_bm">Usunąć zakładkę „%1$s”? (Zostanie też usunięta z listy zakładek.)</string>
+    <string name="segment_bookmarks">Lista zakładek</string>
+    <string name="segment_files">Lista plików</string>
+    <string name="hint_bookmark_list">Odtwarza zakładki po kolei: A + B każdej zakładki grają razem, potem startuje następna.</string>
+    <string name="hint_file_list">Odtwarza pliki po kolei: każdy plik trafia do A; B zachowuje swoje ustawienie (wyszarz B na stronie Odtwarzanie, aby słyszeć tylko A).</string>
+    <string name="btn_add_bookmark_q">+ Zakładki</string>
+    <string name="btn_add_files">+ Pliki</string>
+    <string name="btn_add_folder">+ Folder</string>
+    <string name="btn_clear">Wyczyść</string>
+    <string name="btn_play_list">▶ Odtwórz</string>
+    <string name="empty_bookmark_list">Lista zakładek jest pusta. Dotknij „+ Zakładki”, aby dodać.</string>
+    <string name="empty_file_list">Lista plików jest pusta. Dotknij „+ Pliki” lub „+ Folder”.</string>
+    <string name="confirm_clear_bookmark_list">Wyczyścić listę zakładek?</string>
+    <string name="confirm_clear_file_list">Wyczyścić listę plików?</string>
+    <string name="has_lyrics_suffix">" · tekst"</string>
+    <string name="no_bookmarks_yet">Brak zakładek: najpierw dotknij „Zapisz jako zakładkę” na stronie Odtwarzanie</string>
+    <string name="pick_bookmarks_title">Wybierz zakładki do dodania</string>
+    <string name="choose_audio_for">Wybierz audio dla %1$s</string>
+    <string name="choose_from_device">Z urządzenia…</string>
+    <string name="choose_from_list">Z listy plików (%1$d)</string>
+    <string name="picker_failed">Nie można otworzyć systemowego wyboru plików</string>
+    <string name="btn_backup">Kopia</string>
+    <string name="btn_restore">Przywróć</string>
+    <string name="btn_relink">Połącz folder ponownie</string>
+    <string name="relink_title">Połącz folder ponownie</string>
+    <string name="relink_message">Po ponownej instalacji aplikacji lub przywróceniu kopii stare uprawnienia do plików przepadają.\n\nWybierz główny folder z muzyką (np. Music lub kartę SD), a aplikacja odnajdzie pliki z zakładek i list po ich pierwotnych ścieżkach i nazwach.</string>
+    <string name="relink_pick">Wybierz folder</string>
+    <string name="backup_file_prefix">DuoPlayer-kopia-</string>
+    <string name="scanning_folder">Skanowanie folderu…</string>
+    <string name="folder_no_audio">W tym folderze nie ma audio</string>
+    <string name="scanning_relink">Skanowanie i dopasowywanie plików…</string>
+    <string name="backup_done">Kopia zapisana</string>
+    <string name="backup_failed">Nie udało się zapisać kopii</string>
+    <string name="restore_read_failed">Nie udało się odczytać kopii</string>
+    <string name="restore_title">Przywróć kopię</string>
+    <string name="restore_message">„Zastąp”: zastępuje wszystkie bieżące zakładki, listy i kombinację danymi z kopii.\n„Scal”: dodaje zakładki i listy z kopii do bieżących danych.</string>
+    <string name="restore_replace">Zastąp</string>
+    <string name="restore_merge">Scal</string>
+    <string name="version_current">Wersja %1$s</string>
+    <string name="auto_update_on">Autosprawdzanie: wł.</string>
+    <string name="auto_update_off">Autosprawdzanie: wył.</string>
+    <string name="check_update">Sprawdź aktualizację</string>
+    <string name="toast_bookmark_saved">Zapisano zakładkę „%1$s”</string>
+    <string name="toast_bookmark_overwritten">Zakładka nadpisana bieżącą kombinacją</string>
+    <string name="toast_files_added">Dodano plików: %1$d</string>
+    <string name="toast_bad_backup">To nie jest prawidłowa kopia</string>
+    <string name="toast_merged">Scalono: łącznie zakładek %1$d</string>
+    <string name="toast_restored">Przywrócono: zakładek %1$d, plików %2$d</string>
+    <string name="toast_missing_files">Brak dostępu do plików: %1$d — użyj „Połącz folder ponownie”</string>
+    <string name="toast_relink_ok_all">Dostęp przywrócony — wszystkie pliki są dostępne</string>
+    <string name="toast_relink_fixed">Odnaleziono plików: %1$d</string>
+    <string name="toast_relink_left">, nadal brak: %1$d</string>
+    <string name="toast_both_off">A i B są wyłączone: włącz co najmniej jedną</string>
+    <string name="toast_choose_first">Najpierw wybierz plik audio dla A / B</string>
+    <string name="toast_not_in_list">Teraz nie jest odtwarzana lista</string>
+    <string name="toast_list_finished">Lista zakończona</string>
+    <string name="notif_channel">Odtwarzanie</string>
+    <string name="notif_prev">Poprzedni</string>
+    <string name="notif_pause">Pauza</string>
+    <string name="notif_play">Odtwórz</string>
+    <string name="notif_next">Następny</string>
+    <string name="err_io">Nie można otworzyć pliku</string>
+    <string name="err_no_permission">Brak uprawnień: użyj „Połącz folder ponownie” na stronie Listy</string>
+    <string name="err_not_found">Nie znaleziono pliku: użyj „Połącz folder ponownie” na stronie Listy</string>
+    <string name="err_corrupt">Plik %1$s jest uszkodzony lub nieczytelny</string>
+    <string name="err_unsupported">Nieobsługiwany format %1$s</string>
+    <string name="err_unknown_format">Nierozpoznany format pliku</string>
+    <string name="err_no_audio_track">Plik nie ma ścieżki audio</string>
+    <string name="err_no_decoder">Ten system nie ma dekodera %1$s</string>
+    <string name="err_bad_format">Dekoder zwrócił nieprawidłowy format</string>
+    <string name="err_bad_rate">Nieprawidłowa częstotliwość próbkowania</string>
+    <string name="err_rate_ratio">Nieobsługiwana konwersja częstotliwości %1$s</string>
+    <string name="err_aaudio">Wyjście audio (AAudio) jest niedostępne</string>
+    <string name="err_output_open">Nie udało się otworzyć wyjścia audio: %1$s</string>
+    <string name="err_output_start">Nie udało się uruchomić wyjścia audio: %1$s</string>
+    <string name="err_unknown">Nieznany błąd (%1$s)</string>
+    <string name="fmt_lossless">bezstratny</string>
+    <string name="fmt_lossy">stratny</string>
+    <string name="path_direct_gain">Bezpośrednio %1$s · wzmocnienie 64 bit</string>
+    <string name="path_bitperfect">Bezpośrednio %1$s · bit-perfect</string>
+    <string name="path_direct">Bezpośrednio %1$s</string>
+    <string name="path_resample">Resampling %1$s → %2$s</string>
+    <string name="path_mix">" · miks"</string>
+    <string name="lyrics_none_long">Nie znaleziono tekstu tego utworu.\n\n· Przy „+ Folder” plik .lrc o tej samej nazwie w tym samym folderze jest łączony automatycznie\n· Przy „+ Pliki” zaznacz .lrc razem z utworem\n· Albo dotknij „Wybierz tekst” powyżej\n· Odczytywane są też teksty osadzone w FLAC / MP3 / DSF</string>
+    <string name="lyrics_none">Brak tekstu</string>
+    <string name="lyrics_src_unsynced">%1$s · niesynchroniczny</string>
+    <string name="lyrics_src_bilingual">%1$s · dwujęzyczny · wierszy: %2$d</string>
+    <string name="lyrics_src_lines">%1$s · wierszy: %2$d</string>
+    <string name="upd_checking">Sprawdzanie aktualizacji…</string>
+    <string name="upd_none_published">Na GitHubie nie ma jeszcze wydań</string>
+    <string name="upd_latest">Masz najnowszą wersję (%1$s)</string>
+    <string name="upd_check_failed">Nie udało się sprawdzić aktualizacji</string>
+    <string name="upd_check_failed_msg">%1$s\n\nW niektórych sieciach GitHub działa wolno lub jest niedostępny. Spróbuj później albo otwórz stronę wydań w przeglądarce.</string>
+    <string name="upd_open_page">Otwórz stronę wydań</string>
+    <string name="upd_found">Nowa wersja %1$s</string>
+    <string name="upd_current">Bieżąca wersja %1$s%2$s</string>
+    <string name="upd_download_install">Pobierz i zainstaluj</string>
+    <string name="upd_skip">Pomiń tę wersję</string>
+    <string name="upd_later">Później</string>
+    <string name="upd_need_perm_title">Potrzebne jednorazowe uprawnienie</string>
+    <string name="upd_need_perm_msg">Android musi zezwolić aplikacji „%1$s” na instalowanie aplikacji, aby mogła się aktualizować.\n\nDotknij „Ustawienia” → włącz „Zezwalaj z tego źródła” → wróć i ponownie dotknij „Sprawdź aktualizację”.</string>
+    <string name="upd_go_settings">Ustawienia</string>
+    <string name="upd_downloading">Pobieranie %1$s</string>
+    <string name="upd_preparing">Przygotowywanie…</string>
+    <string name="upd_progress">%1$s / %2$s MB (%3$d%%)</string>
+    <string name="upd_progress_unknown">%1$s MB</string>
+    <string name="upd_installer_failed">Nie można otworzyć instalatora: %1$s</string>
+    <string name="upd_failed">Aktualizacja nie powiodła się</string>
+    <string name="upd_no_browser">Brak dostępnej przeglądarki: %1$s</string>
+    <string name="upd_err_rate_limited">Osiągnięto limit zapytań GitHuba, spróbuj później</string>
+    <string name="upd_err_http">GitHub zwrócił %1$s</string>
+    <string name="upd_err_redirect">Błąd przekierowania pobierania</string>
+    <string name="upd_err_download">Pobieranie nie powiodło się: HTTP %1$s</string>
+    <string name="upd_err_save">Nie udało się zapisać pakietu</string>
+    <string name="upd_err_redirects">Zbyt wiele przekierowań</string>
+    <string name="upd_err_damaged">Pakiet jest uszkodzony</string>
+    <string name="upd_err_wrong_pkg">To nie jest pakiet tej aplikacji</string>
+    <string name="upd_err_not_newer">Pakiet nie jest nowszy niż zainstalowana wersja</string>
+    <string name="upd_err_signature">Podpis nie zgadza się z zainstalowaną aplikacją, więc nie można jej zaktualizować.\n(Wersje 1.2 i starsze miały tymczasowy podpis: zrób kopię na stronie Listy, odinstaluj starą wersję i raz zainstaluj nową z GitHuba — potem aktualizacje będą działać w aplikacji.)</string>
+    <string-array name="bookmark_menu">
+        <item>Odtwórz</item>
+        <item>Tylko wczytaj (bez odtwarzania)</item>
+        <item>Dodaj do listy zakładek</item>
+        <item>Zmień nazwę</item>
+        <item>Nadpisz bieżącą</item>
+        <item>W górę</item>
+        <item>W dół</item>
+        <item>Usuń</item>
+    </string-array>
+    <string-array name="queue_menu_files">
+        <item>Odtwórz od tego miejsca</item>
+        <item>Włóż do A</item>
+        <item>Włóż do B</item>
+        <item>W górę</item>
+        <item>W dół</item>
+        <item>Usuń z listy</item>
+    </string-array>
+    <string-array name="queue_menu_bookmarks">
+        <item>Odtwórz od tego miejsca</item>
+        <item>W górę</item>
+        <item>W dół</item>
+        <item>Usuń z listy</item>
+    </string-array>
+</resources>

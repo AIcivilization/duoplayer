@@ -87,15 +87,16 @@ class SlotController(
         Log.i(TAG, "slot$index load ${f.name}")
         val res = try {
             ctx.contentResolver.openFileDescriptor(Uri.parse(f.uri), "r")?.use { pfd -> engine.load(index, pfd.fd) }
-                ?: NativeEngine.LoadResult(false, error = "无法打开文件")
+                ?: NativeEngine.LoadResult(false, error = "io")
         } catch (e: SecurityException) {
-            NativeEngine.LoadResult(false, error = "没有访问权限：请在「列表」页用「重新关联文件夹」找回文件")
+            NativeEngine.LoadResult(false, error = "@" + ctx.getString(R.string.err_no_permission))
         } catch (e: Exception) {
-            NativeEngine.LoadResult(false, error = if (e is java.io.FileNotFoundException) "找不到文件：请在「列表」页用「重新关联文件夹」找回" else e.message ?: e.javaClass.simpleName)
+            NativeEngine.LoadResult(false, error = "@" + if (e is java.io.FileNotFoundException) ctx.getString(R.string.err_not_found) else e.message ?: e.javaClass.simpleName)
         }
         if (!res.ok) {
             engine.unload(index)
-            error = res.error
+            // "@" 开头是已本地化的文字，否则是 C++ 引擎的错误码
+            error = if (res.error.startsWith("@")) res.error.substring(1) else Labels.nativeError(ctx, res.error)
             return
         }
         info = res
@@ -119,7 +120,7 @@ class SlotController(
             try {
                 val bytes = ctx.contentResolver.openInputStream(Uri.parse(lrc.uri))?.use { it.readBytes() }
                 if (bytes != null && bytes.size < (4 shl 20)) {
-                    LrcParser.parse(TextDecode.auto(bytes), "LRC")?.let { return it }
+                    LrcParser.parse(TextDecode.auto(bytes), "lrc")?.let { return it }
                 }
             } catch (e: Exception) {
                 Log.w(TAG, "lrc read failed: ${e.message}")
@@ -128,7 +129,7 @@ class SlotController(
         return try {
             ctx.contentResolver.openFileDescriptor(Uri.parse(f.uri), "r")?.use { pfd ->
                 FileInputStream(pfd.fileDescriptor).channel.use { ch -> EmbeddedLyrics.read(ch) }
-            }?.let { LrcParser.parse(it, "内嵌") }
+            }?.let { LrcParser.parse(it, "embedded") }
         } catch (e: Exception) {
             null
         }
@@ -161,7 +162,7 @@ class SlotController(
             val dsd = i.codec.startsWith("DSD")
             val bits = if (dsd) "1bit" else "${i.bits}bit"
             val src = if (dsd) "%.4f MHz".format(i.sourceRate / 1e6) else khz(i.sourceRate)
-            formatLine = "${i.codec} · $bits · $src" + if (i.lossless) " · 无损" else " · 有损"
+            formatLine = "${i.codec} · $bits · $src · " + ctx.getString(if (i.lossless) R.string.fmt_lossless else R.string.fmt_lossy)
             val c = config
             pathLine = when {
                 outRate <= 0 -> ""
@@ -170,13 +171,13 @@ class SlotController(
                     val unity = c.gainDb == 0.0 && c.balance == 0.0
                     bitPerfect = i.lossless && i.bits in 1..24 && unity && !otherPlaying
                     when {
-                        !unity -> "直通 ${khz(outRate)} · 64bit 增益"
-                        bitPerfect -> "直通 ${khz(outRate)} · 位精确"
-                        else -> "直通 ${khz(outRate)}"
+                        !unity -> ctx.getString(R.string.path_direct_gain, khz(outRate))
+                        bitPerfect -> ctx.getString(R.string.path_bitperfect, khz(outRate))
+                        else -> ctx.getString(R.string.path_direct, khz(outRate))
                     }
                 }
-                else -> "重采样 ${khz(i.sampleRate)} → ${khz(outRate)}"
-            } + if (otherPlaying && st.playing) " · 混音" else ""
+                else -> ctx.getString(R.string.path_resample, khz(i.sampleRate), khz(outRate))
+            } + if (otherPlaying && st.playing) ctx.getString(R.string.path_mix) else ""
         }
         return SlotSnapshot(
             index = index,

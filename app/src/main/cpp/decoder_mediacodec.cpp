@@ -39,9 +39,9 @@ public:
 
     bool init(std::string& error) {
         struct stat st {};
-        if (fstat(fd_, &st) != 0) { error = "fstat 失败"; return false; }
+        if (fstat(fd_, &st) != 0) { error = "io"; return false; }
         ex_ = AMediaExtractor_new();
-        if (AMediaExtractor_setDataSourceFd(ex_, fd_, 0, st.st_size) != AMEDIA_OK) { error = "无法识别的文件格式"; return false; }
+        if (AMediaExtractor_setDataSourceFd(ex_, fd_, 0, st.st_size) != AMEDIA_OK) { error = "unknown_format"; return false; }
         size_t n = AMediaExtractor_getTrackCount(ex_);
         AMediaFormat* fmt = nullptr;
         const char* mime = nullptr;
@@ -56,7 +56,7 @@ public:
             }
             AMediaFormat_delete(f);
         }
-        if (!fmt) { error = "文件中没有音轨"; return false; }
+        if (!fmt) { error = "no_audio_track"; return false; }
         std::string mimeStr = mime;
         int32_t rate = 0, ch = 0;
         int64_t durUs = 0;
@@ -69,7 +69,7 @@ public:
         if (!codec_ || AMediaCodec_configure(codec_, fmt, nullptr, nullptr, 0) != AMEDIA_OK ||
             AMediaCodec_start(codec_) != AMEDIA_OK) {
             AMediaFormat_delete(fmt);
-            error = "系统无此格式解码器: " + mimeStr;
+            error = "no_decoder:" + mimeStr;
             return false;
         }
         AMediaFormat_delete(fmt);
@@ -85,7 +85,7 @@ public:
         info_.sampleRate = info_.sourceRate = rate_;
         info_.channels = ch_;
         info_.totalFrames = durUs_ * (int64_t)rate_ / 1000000;
-        if (rate_ <= 0 || ch_ <= 0) { error = "解码器未给出有效格式"; return false; }
+        if (rate_ <= 0 || ch_ <= 0) { error = "bad_format"; return false; }
         return true;
     }
 
@@ -198,7 +198,7 @@ private:
 
 std::unique_ptr<Decoder> openMediaCodec(int fd, std::string& error) {
     int own = ::dup(fd);
-    if (own < 0) { error = "dup 失败"; return nullptr; }
+    if (own < 0) { error = "io"; return nullptr; }
     auto d = std::make_unique<CodecDecoder>(own);
     if (!d->init(error)) return nullptr;
     return d;

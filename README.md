@@ -1,216 +1,127 @@
-# 双轨 Hi-Fi（duoplayer）
+<p align="center">
+  <img src="docs/icon.png" width="128" alt="DuoPlayer Hi-Fi icon">
+</p>
 
-为 **Sony NW-ZX500 系列（ZX505 / ZX507，Android 9）** 写的无损播放器：A、B 两路音频**同时播放**，在耳机里叠加。音频链路全部在自己的 C++ 引擎里完成，系统混音器不再做重采样。
+<h1 align="center">DuoPlayer Hi-Fi</h1>
 
-## 安装
+<p align="center">
+  <b>Play two lossless audio files at the same time — built for Sony Android Walkman.</b><br>
+  Music + rain, song + metronome, audiobook + white noise… A and B start with one button and mix inside a 64-bit engine.
+</p>
 
-到 [Releases](https://github.com/AIcivilization/duoplayer/releases/latest) 下载最新的 `duoplayer-x.y.apk`，然后任选一种方式安装：
-- 拷进 ZX500，用文件管理器打开安装；
-- 或者用 adb：`adb install -r duoplayer-x.y.apk`（需要先在 ZX500 上打开「开发者选项 → USB 调试」）。
+<p align="center">
+  <a href="https://github.com/AIcivilization/duoplayer/releases/latest"><img src="https://img.shields.io/github/v/release/AIcivilization/duoplayer?label=download&color=E3B267" alt="Latest release"></a>
+  <a href="https://github.com/AIcivilization/duoplayer/releases"><img src="https://img.shields.io/github/downloads/AIcivilization/duoplayer/total?color=6FA8DC" alt="Downloads"></a>
+  <img src="https://img.shields.io/badge/Android-9%2B-3DDC84?logo=android&logoColor=white" alt="Android 9+">
+  <img src="https://img.shields.io/badge/Sony%20Walkman-A100%20%7C%20ZX500%20%7C%20WM1M2%20%7C%20A300%20%7C%20ZX700-111111" alt="Sony Walkman">
+  <img src="https://img.shields.io/badge/Hi--Res-192%20kHz%20%2F%2032--bit-8A2BE2" alt="Hi-Res">
+  <img src="https://img.shields.io/badge/formats-FLAC%20%7C%20WAV%20%7C%20AIFF%20%7C%20DSD-555555" alt="Formats">
+  <img src="https://img.shields.io/badge/languages-17-0A7EA4" alt="17 languages">
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/AIcivilization/duoplayer?color=lightgrey" alt="MIT"></a>
+</p>
 
-## 自动更新
+<p align="center">
+  <b>English</b> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.ja.md">日本語</a>
+</p>
 
-- 应用每天最多检查一次 GitHub 上的最新 Release。发现新版本会提示，点「下载并安装」后：
-  1. 下载新版安装包；
-  2. 校验安装包：包名一致、版本更高、签名和已安装的完全相同；
-  3. 调起系统安装界面，你点一下「安装」即可。
-- 「列表」页底部可以手动「检查更新」，也可以关闭自动检查。
-- 第一次更新时，安卓会要求允许本应用「安装未知应用」，按提示去设置里打开一次就行。
-- 所有版本都用同一把发布密钥签名。**1.2 及更早版本**用的是临时签名，需要按以下步骤手动升级一次，之后就能在应用内更新：
-  1. 在旧版「列表」页点「备份」；
-  2. 卸载旧版，安装新版；
-  3. 点「恢复」，再点「重新关联文件夹」。
-- 国内网络访问 GitHub 可能不稳定，检查失败不影响播放；也可以点版本号打开发布页手动下载。
+<p align="center">
+  <img src="docs/screenshots/en_play.png" width="230" alt="Play">
+  <img src="docs/screenshots/en_lyrics.png" width="230" alt="Lyrics">
+  <img src="docs/screenshots/zh_play.png" width="230" alt="Play (Chinese)">
+</p>
 
-**第一次用之前**：系统 **设置 → 声音 → 打开「High-Res streaming（高解析度流媒体）」**。
-不打开的话，索尼固件会把所有第三方应用降到 48 kHz / 16 bit；打开后是 192 kHz / 32 bit。应用顶部会显示当前实际的输出采样率。如果显示 48 kHz，会出现黄色提示。
+## Features
 
-## 音频链路
+- **Two tracks, one Play button.** A and B are set up in one card (tap the A / B tab to edit each), then a single ▶ starts both.
+- **Light = playing, grey = off.** Tap a track's bar during playback to mute or un-mute it.
+- **Bookmarks.** Save an A + B combo with all its settings (files, lyrics, volume, balance, loop, on/off) under any name. Next time, one tap plays it.
+- **Continuous playback.** Two kinds of list:
+  - a bookmark list (each combo plays, then the next starts);
+  - a file list (files go through A one by one, while B keeps playing your background sound).
+  - Play in order, repeat the list, or repeat one item.
+- **Bilingual lyrics.**
+  - Lyrics come from a `.lrc` file or are read from the audio file itself (FLAC, MP3, DSF, WAV/AIFF).
+  - GBK, UTF-8 and UTF-16 encodings are detected automatically.
+  - Original + translation lines are shown together; tap a line to seek; switch between Both / CJK / Latin.
+- **Lossless engine.**
+  - Decoding: FLAC, WAV, AIFF and DSD (DSF) are decoded natively, not by Android's MediaCodec.
+  - Mixing: a 64-bit float bus combines A and B.
+  - Resampling: −130 dB stopband; skipped when the source rate already matches the output, so the path stays **bit-perfect**.
+- **Backup & restore** to a JSON file, plus **Relink folder**, which finds your files again after a reinstall or on a new device.
+- **In-app updates** from GitHub Releases, with a signature check before installing.
+- **17 languages**, chosen automatically from the system language.
 
-```
-文件 ─► 解码(线程) ─► 重采样到系统原生率 ─► 2 秒环形缓冲 ─┐
-                                                       ├─► 64bit 浮点总线相加 ─► 峰值保护 ─► float32 ─► AAudio ─► S-Master HX
-文件 ─► 解码(线程) ─► 重采样到系统原生率 ─► 2 秒环形缓冲 ─┘
-```
+## Supported devices
 
-| 环节 | 做法 | 理由 |
+| Device | Android | Status |
 |---|---|---|
-| FLAC / WAV / AIFF / RF64 / W64 | dr_flac / dr_wav，输出 32bit 整数再精确换算 | Android 9 系统自带的 FLAC 解码器会把 24bit 截成 16bit |
-| DSD（.dsf，DSD64/128/256） | 自研抽取滤波器：Kaiser FIR，通带 30 kHz，70 kHz 起衰减 -120 dB，按字节查表 → 176.4 kHz PCM | 安卓公开 API 送不了原生 DSD，只能在 PCM 域播放 |
-| MP3 / AAC / ALAC(m4a) / OGG / Opus | 系统 NDK MediaCodec | 能用就行；ALAC 能不能放取决于机器固件 |
-| 重采样 | 自研有理数多相 Kaiser 滤波，阻带 -130 dB；**源采样率等于输出采样率时直接跳过** | 系统输出固定在 192k，44.1k 系的曲子必然要转一次采样率。自己转可以控制质量，不交给安卓的重采样器 |
-| 混音 | double 精度相加 | 两轨叠加本身就会改变样本值，这一步不可能无损。用 64bit 运算是为了不再额外引入误差 |
-| 峰值保护 | 只有两轨相加**超过满幅**时才起作用（瞬时压限，150 ms 恢复）；没超就不动信号 | 防止两轨叠加削波，界面会显示触发次数 |
-| 输出 | AAudio、float32、采样率不指定，直接用系统原生值 | float32 有 24 位尾数，24bit 源能逐位保留 |
-| 淡入淡出 | 播放 / 暂停 / 跳转时有 8 ms 包络 | 防止爆音。包络走完后增益严格等于 1.0 |
+| **NW-ZX505 / ZX507** (ZX500 series) | 9 | Primary target |
+| **NW-A105 / A106 / A107** (A100 series) | 9 | Should work: same platform as ZX500 |
+| **NW-WM1AM2 / WM1ZM2** | 11 | Should work |
+| **NW-A306 / A307** (A300 series) | 12 | Should work |
+| **NW-ZX706 / ZX707** (ZX700 series) | 12 | Should work |
+| Any Android 9+ phone or DAP | 9+ | Works (generic AAudio path) |
+| NW-ZX1 / ZX2 / F880 / Z1000 | ≤ 4.4 | Not supported (needs Android 9) |
 
-**位精确条件**：满足以下全部条件时，界面路径行显示绿色的「位精确」，送进系统的样本和文件里的完全一样：
-- 只有一轨在播
-- 音量 0 dB，声像居中
-- 源文件采样率等于输出采样率（打开 High-Res streaming 后即 192 kHz）
-- 位深 ≤ 24 bit
+> So far the app has been tested in an Android 9 emulator only. Please share your Walkman's results by opening a [device report](https://github.com/AIcivilization/duoplayer/issues/new?template=device-report.md): model, firmware, and the sample rate shown at the top of the app.
 
-44.1 / 96 kHz 的曲子显示「重采样 → 192 kHz · 64bit」。
+## Install
 
-## 如何利用 ZX500 的硬件
+1. Download `duoplayer-x.y.apk` from **[Releases](https://github.com/AIcivilization/duoplayer/releases/latest)**.
+2. Copy it to the Walkman and open it with the file manager, or run `adb install -r duoplayer-x.y.apk`.
+3. Later versions update from inside the app (Lists page → **Check update**).
 
-- **High-Res streaming 通道**：输出流不指定采样率，直接拿到 192k/32bit 的系统原生格式，系统那一层不再做二次重采样。
-- **S-Master HX 全数字功放**：总音量交给机身音量键。应用内每轨的「音量」只用来调两轨之间的比例，平时保持 0 dB。点「音量」标签可以回到 0 dB，点「声像」标签可以回到居中。
-- **3.5 mm / 4.4 mm 平衡输出**：两个接口都能用。插拔耳机或在两个接口之间切换时，输出流会自动重开。拔掉耳机会自动暂停两轨。
-- **机身实体键**：通过 MediaSession 响应侧面的播放/暂停、上一首/下一首键。播放/暂停作用于两轨；上一首/下一首控制哪一轨，用顶部「实体键→A/B」切换。
-- **续航**：
-  - 默认「省电」输出通道（AAudio POWER_SAVING，系统用大缓冲）。
-  - 解码线程每次补满 2 秒缓冲后就休眠。
-  - 两轨都停约 2 秒后关闭输出流。
-  - 「输出:标准」可以切到普通通道，用来对比两个通道哪个能拿到 192 kHz。
-- 索尼自家的 DSEE HX、DC Phase Linearizer、动态标准化等音效是否作用于第三方应用，由固件决定，应用控制不了。追求纯净可以在系统设置里关掉它们，或者开启 Direct Source。
+## Best sound on a Walkman
 
-## 使用
+- **Turn on High-Res streaming:** Settings → Sound → **High-Res streaming**.
+  - On the A100 and ZX500 series, Sony's firmware limits third-party apps to 48 kHz / 16-bit when this is off, and gives them 192 kHz / 32-bit when it is on.
+  - The status line at the top of the app shows the rate it actually gets.
+- **Leave A / B volume at 0 dB** and use the hardware volume buttons. The S-Master HX amplifier then sets the level.
+- The green **bit-perfect** tag means the samples reach the system exactly as they are in the file. This happens when:
+  - only one track is playing;
+  - volume is at 0 dB and balance is centered;
+  - the file's sample rate equals the output rate;
+  - the file is 24-bit or lower.
+- **Both 3.5 mm and 4.4 mm balanced outputs work.** Unplugging headphones pauses playback.
+- **Hardware keys:** play/pause controls both tracks; previous/next move through the list.
 
-界面分三页：**播放 / 书签 / 列表**（底部切换）。
+## Audio engine
 
-### 播放页
-- **组合卡片**
-  - 有 A、B 两个索引标签：点 A 显示 A 的设置，点 B 显示 B 的设置。
-  - 每路可以设置：选择音频、选择歌词、音量、声像、单曲循环、本路开关。
-  - 点「保存」收起设置，卡片标题显示「A名 + B名」；收起后按钮变成「编辑」。
-- **只有一个播放键**：按下后 A 和 B 同时播放，再按一次同时暂停。
-- **A / B 播放条**
-  - 亮色 = 播放，点一下变灰 = 不播放，再点一下恢复。
-  - 播放中也可以随时切换，比如把 B 点灰就只听 A。
-  - 每条有自己的进度条和当前歌词。
-- **⏮ / ⏭** 是上一项 / 下一项，在列表播放时生效。
-- **播放模式**：顺序播放 / 列表循环 / 单项循环。
-- **组合什么时候算放完**：所有开启、并且没开单曲循环的那几路都放完，才算这个组合结束。所以「音乐 + 循环雨声」会在音乐结束时一起停，或者跳到下一项。
+```
+file A ─► decoder ─► resampler (to native rate) ─► 2 s ring buffer ─┐
+                                                                     ├─► 64-bit mix ─► peak guard ─► float32 ─► AAudio
+file B ─► decoder ─► resampler (to native rate) ─► 2 s ring buffer ─┘
+```
 
-### 书签
-- 设置好 A + B 后点「存为书签」，名称可以自定义，默认是「A名 + B名」。
-- 书签保存的内容：两路的文件、歌词、音量、声像、循环和开关状态。以后点一下书签就能直接播放。
-- 长按书签可以：
-  - 只载入不播放
-  - 加入书签列表
-  - 重命名
-  - 用当前组合覆盖
-  - 上移 / 下移
-  - 删除
-- 载入书签后再改动，标题下会显示「（已修改）」。
+| Stage | Implementation |
+|---|---|
+| FLAC / WAV / AIFF / RF64 | dr_flac / dr_wav, 32-bit integer output (Android 9's own FLAC decoder truncates to 16-bit) |
+| DSD (.dsf, DSD64–256) | Kaiser FIR decimation via byte lookup tables → 176.4 kHz PCM |
+| MP3 / AAC / ALAC / OGG / Opus | System NDK MediaCodec |
+| Resampler | Rational polyphase Kaiser; 44.1 k → 192 k THD+N −154 dB; bypassed when rates match |
+| Mix | 64-bit float sum; the peak guard only acts above full scale |
+| Output | AAudio, float32, at the device's native rate |
 
-### 列表（连续播放）
-- **书签列表**：以书签为单位。每个书签的 A+B 一起播，放完自动下一个。
-- **文件列表**：以音频文件为单位。
-  - 每个文件依次放进 A 播放，B 保持当前设置。
-  - 在播放页把 B 点灰，就是纯粹的单文件顺序播放。
-  - 文件可以用「＋文件」多选，也可以用「＋文件夹」递归导入，同名的 .lrc 会自动配对。
-- 点列表里的一项，就从那里开始播放。
-- 长按一项可以上移、下移、移出列表；文件列表里还可以「放入 A / 放入 B」。
+The numbers above come from `hosttest/run.sh`, which compiles the same C++ engine on a computer and measures it.
 
-### 备份与恢复
-- **备份**：把所有书签、两个列表、当前组合和播放模式导出成一个 `.json` 文件，可以存到机身、SD 卡或拷到电脑。
-- **恢复**：
-  - 「替换」用备份覆盖现有数据。
-  - 「合并」把备份里的书签和列表追加进来，按 id 去重。
-- **重新关联文件夹**：重装应用或换设备后，旧的文件授权会失效。这时选一次音乐所在的根文件夹，应用会按原来的路径、文件名自动找回书签和列表里的文件。
-  - 同名文件按路径末尾最接近的那个匹配。
-  - 匹配不确定时不会乱关联。
+## Languages
 
-> 建议用「＋文件夹」导入音乐。安卓 9 对单个文件的永久授权有数量上限，按文件夹授权没有这个问题。
+English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Español, Italiano, Português, Русский, Polski, Nederlands, Türkçe, Tiếng Việt, ไทย, Bahasa Indonesia.
 
-## 歌词（中英双语）
+Translations live in [`i18n/*.txt`](i18n) (one `key = text` per line). To add or fix a language, edit the file and run `python3 i18n/build_strings.py`. The script checks that every placeholder matches the English file. Pull requests are welcome.
 
-**歌词来源**，按以下优先级：
-1. 同名 `.lrc` 文件
-   - 用「＋文件夹」导入时，同目录下同名的 `.lrc` 会自动关联。
-   - 用「＋文件」时，把 `.lrc` 和歌曲一起选中即可。
-   - 也可以在全屏歌词里点「选择歌词」，手动给当前曲目指定。
-2. 文件内嵌歌词：
-   - FLAC：Vorbis Comment 的 `LYRICS` / `UNSYNCEDLYRICS`
-   - MP3 / DSF / WAV / AIFF：ID3v2 的 `USLT` 帧，或 `TXXX:LYRICS` / `TXXX:USLT`
+## Build
 
-**编码**：自动识别 UTF-8（带或不带 BOM）、UTF-16、GBK/GB18030。
-
-**双语格式**，两种写法都能识别：
-- 同一时间戳写两行，第一行原文，第二行翻译。网易云、QQ 音乐导出的双语 LRC 就是这种格式。
-- 同一行用 ` / `、` | `、`｜` 分隔，并且一边含汉字、另一边不含。
-
-**也支持**：
-- `[offset:]` 时间偏移
-- 一行多个时间戳
-- 逐字时间戳（会自动去掉）
-- 没有时间戳的纯文本歌词
-
-**显示**：
-- 每轨卡片里显示当前句（原文和翻译各一行）和下一句。两轨同时播放时各显示各的。
-- 点歌词区进入全屏滚动歌词：当前句高亮并自动居中，点任意一句跳到对应位置。
-- 长按卡片里的歌词区，或点全屏界面的模式按钮，可以切换「双语 / 中文 / English」。
-
-## 发布新版本（维护者）
-
-1. 修改 `app/build.gradle.kts` 的 `versionCode`（加 1）和 `versionName`。
-2. 写 `release-notes/v<版本>.md`，内容会显示在用户的更新提示里。
-3. 提交代码后运行 `scripts/release.sh`。脚本会依次：
-   - 编译并跑单元测试
-   - 核对签名证书指纹
-   - 打标签并推送
-   - 上传 APK 到 GitHub Release
-
-发布密钥在 `~/.config/duoplayer/`（`release.jks` + `keystore.properties`），**不在仓库里**。请务必另外备份：一旦丢失，已安装的用户就无法再接收更新。
-
-## 构建
-
-需要 JDK 17、Android SDK 34、NDK 26.3.11579264、CMake 3.22.1。
+You need JDK 17, Android SDK 34, NDK 26.3.11579264 and CMake 3.22.1.
 
 ```bash
 ./gradlew assembleRelease
 ```
 
-## 验证
+Maintainers publish a release with `scripts/release.sh`. The release signing key is stored outside the repository.
 
-`hosttest/run.sh` 在电脑上编译同一份 C++ 引擎并做数值测试，需要 clang++、python3+numpy 和 ffmpeg。当前结果：
+## License
 
-- WAV / FLAC / AIFF 24bit 解码与源逐样本一致，跳转后也一致
-- 重采样 44.1k→192k：1 kHz THD+N -154 dB；19 kHz THD+N -144 dB，镜像最高 -144 dB
-- 重采样 96k→192k：-183 dB；352.8k→192k：-179 dB
-- 单轨 0 dB 经过整条 Deck 链路后与源逐样本一致
-- 两轨相加结果与 A+B 的精确和一致
-- 暂停淡出 8 ms 后完全静音；曲目结束能正确置位
+[MIT](LICENSE). Bundled [dr_flac / dr_wav](https://github.com/mackron/dr_libs) are Public Domain / MIT-0.
 
-在 Android 9（API 28，arm64）模拟器上做过冒烟测试，以下功能正常：
-- 通过系统选择器选文件夹并递归加入列表
-- DSD / WAV / FLAC / MP3 的加载和播放
-- 两轨同时播放，路径行显示「混音」
-- 自动切到下一首，列表放完后停止
-- 媒体键：播放/暂停作用于两轨，下一首作用于 A 轨
-- 两轨叠加超过满幅时峰值保护触发
-
-模拟器的系统输出只有 48 kHz，所以 192 kHz 的路径没有测到。
-
-**还没在真机上验证**的部分：
-- ZX500 打开 High-Res streaming 后 AAudio 实际拿到的采样率（顶部状态行会显示）
-- 真实的侧面实体键
-- 3.5 / 4.4 mm 切换时的重连
-- 「省电」与「标准」两个输出通道在这台机器上的差别
-- 欠载计数：模拟器上有零星欠载，真机需要再观察
-- 曲目之间不是无缝衔接，切歌会有约 0.3 秒的间隙；单曲循环是无缝的
-
-## 目录
-
-```
-app/src/main/cpp/
-  engine.*            AAudio 输出、双轨混音、峰值保护、断开重连
-  deck.*              单轨：解码线程 + 重采样 + SPSC 环形缓冲 + 包络/增益平滑
-  resampler.*         有理数多相 Kaiser 重采样器（NEON）
-  decoder_drlibs.cpp  FLAC / WAV / AIFF
-  decoder_dsf.cpp     DSD(.dsf) → PCM
-  decoder_mediacodec.cpp  其余格式
-  third_party/        dr_flac.h、dr_wav.h（固定 commit，见 README.txt）
-app/src/main/java/com/zxdual/player/
-  PlaybackService.kt  前台服务、MediaSession、音频焦点、通知
-  DeckController.kt   每轨播放列表与状态
-  MainActivity.kt     界面
-```
-
-## 许可证
-
-本项目以 [MIT 许可证](LICENSE) 发布。
-
-第三方代码：`app/src/main/cpp/third_party/` 下的 [dr_flac / dr_wav](https://github.com/mackron/dr_libs) 采用 Public Domain / MIT-0 双许可。
+*Sony, Walkman and S-Master are trademarks of Sony Group Corporation. This is an independent project and is not affiliated with Sony.*

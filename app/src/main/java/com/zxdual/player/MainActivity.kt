@@ -50,6 +50,7 @@ class MainActivity : Activity() {
     private var selectedSlot = 0
     private var panelOpen = false
     private var segment = 0  // 0 = 书签列表, 1 = 文件列表
+    private var bound = false
     private val ui = Handler(Looper.getMainLooper())
     private val prefs by lazy { getSharedPreferences("ui", MODE_PRIVATE) }
     private val updater by lazy { UpdateUi(this, DIALOG_THEME) }
@@ -127,7 +128,30 @@ class MainActivity : Activity() {
         }
     }
 
+    /**
+     * 仅调试版：adb shell am start -n com.zxdual.player/.MainActivity --es testLocale de
+     * 用于在不改系统语言的情况下检查各语言界面排版。正式版（不可调试）忽略此参数。
+     */
+    override fun attachBaseContext(base: android.content.Context) {
+        val debuggable = base.applicationInfo.flags and android.content.pm.ApplicationInfo.FLAG_DEBUGGABLE != 0
+        val tag = if (debuggable) base.getSharedPreferences("ui", MODE_PRIVATE).getString("testLocale", null) else null
+        if (tag.isNullOrEmpty()) return super.attachBaseContext(base)
+        val conf = android.content.res.Configuration(base.resources.configuration)
+        conf.setLocale(Locale.forLanguageTag(tag))
+        super.attachBaseContext(base.createConfigurationContext(conf))
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        if (applicationInfo.flags and android.content.pm.ApplicationInfo.FLAG_DEBUGGABLE != 0 && intent?.hasExtra("testLocale") == true) {
+            val tag = intent.getStringExtra("testLocale").orEmpty()
+            val cur = getSharedPreferences("ui", MODE_PRIVATE).getString("testLocale", "")
+            if (tag != cur) {
+                getSharedPreferences("ui", MODE_PRIVATE).edit().putString("testLocale", tag).commit()
+                super.onCreate(savedInstanceState)
+                recreate()  // 重建后 attachBaseContext 读到新语言
+                return
+            }
+        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         lyricMode = runCatching { LyricMode.valueOf(prefs.getString("lyricMode", "BOTH")!!) }.getOrDefault(LyricMode.BOTH)
@@ -136,12 +160,22 @@ class MainActivity : Activity() {
         showPage(prefs.getInt("page", 0))
         updater.checkOnLaunch()
         startService(Intent(this, PlaybackService::class.java))
-        bindService(Intent(this, PlaybackService::class.java), conn, BIND_AUTO_CREATE)
+        bound = bindService(Intent(this, PlaybackService::class.java), conn, BIND_AUTO_CREATE)
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        val debuggable = applicationInfo.flags and android.content.pm.ApplicationInfo.FLAG_DEBUGGABLE != 0
+        if (debuggable && intent?.hasExtra("testLocale") == true) {
+            getSharedPreferences("ui", MODE_PRIVATE).edit().putString("testLocale", intent.getStringExtra("testLocale")).commit()
+            setIntent(intent)
+            recreate()
+        }
     }
 
     override fun onResume() {
         super.onResume()
-        ui.post(ticker)
+        if (::chips.isInitialized) ui.post(ticker)
     }
 
     override fun onPause() {
@@ -152,7 +186,7 @@ class MainActivity : Activity() {
     override fun onDestroy() {
         lyricsDialog?.dismiss()
         service?.listener = null
-        unbindService(conn)
+        if (bound) unbindService(conn)
         super.onDestroy()
     }
 
@@ -263,7 +297,7 @@ class MainActivity : Activity() {
         btnQueueAdd.setOnClickListener { if (segment == 0) addBookmarksToQueue() else startPicker(audioPicker(multiple = true), REQ_QUEUE_FILES) }
         btnQueueFolder.setOnClickListener { startPicker(treePicker(), REQ_QUEUE_FOLDER) }
         findViewById<Button>(R.id.btnQueueClear).setOnClickListener {
-            confirm("清空${if (segment == 0) "书签列表" else "文件列表"}？") { if (segment == 0) service?.clearBookmarkQueue() else service?.clearFileQueue() }
+            confirm(getString(if (segment == 0) R.string.confirm_clear_bookmark_list else R.string.confirm_clear_file_list)) { if (segment == 0) service?.clearBookmarkQueue() else service?.clearFileQueue() }
         }
         findViewById<Button>(R.id.btnQueuePlay).setOnClickListener { playQueueFrom(0) }
         queueList = findViewById(R.id.queueList)
@@ -281,17 +315,17 @@ class MainActivity : Activity() {
         }
         findViewById<Button>(R.id.btnRelink).setOnClickListener {
             AlertDialog.Builder(this, DIALOG_THEME)
-                .setTitle("重新关联文件夹")
-                .setMessage("重装应用或恢复备份后，旧的文件授权会失效。\n\n请选择存放音乐的根文件夹（如 Music 或 SD 卡），应用会按原来的路径和文件名自动找回书签、列表里的文件。")
-                .setPositiveButton("选择文件夹") { _, _ -> startPicker(treePicker(), REQ_RELINK) }
-                .setNegativeButton("取消", null).show()
+                .setTitle(R.string.relink_title)
+                .setMessage(R.string.relink_message)
+                .setPositiveButton(R.string.relink_pick) { _, _ -> startPicker(treePicker(), REQ_RELINK) }
+                .setNegativeButton(R.string.cancel, null).show()
         }
 
         // ---- 更新 ----
         val versionText = findViewById<TextView>(R.id.versionText)
         val btnAuto = findViewById<Button>(R.id.btnAutoUpdate)
-        versionText.text = "当前版本 ${updater.currentVersion}"
-        fun bindAuto() { btnAuto.text = if (updater.autoCheck) "自动检查：开" else "自动检查：关" }
+        versionText.text = getString(R.string.version_current, updater.currentVersion)
+        fun bindAuto() { btnAuto.setText(if (updater.autoCheck) R.string.auto_update_on else R.string.auto_update_off) }
         bindAuto()
         btnAuto.setOnClickListener { updater.autoCheck = !updater.autoCheck; bindAuto() }
         findViewById<Button>(R.id.btnCheckUpdate).setOnClickListener { updater.check(manual = true) }
@@ -315,39 +349,39 @@ class MainActivity : Activity() {
         last = s
         // ---- 输出 ----
         val rate = if (s.outputRate > 0) SlotController.khz(s.outputRate) else "—"
-        outputLine.text = "输出 $rate · 32bit float · ${s.outputMode}通道 · " + if (s.outputRunning) "运行中" else "待机"
-        outputDetail.text = "缓冲 ${s.bufferMs}ms · 削波保护 ${s.limiterHits} · 欠载 ${s.xruns}"
+        outputLine.text = getString(R.string.out_line, rate, Labels.outputMode(this, s.outputMode), getString(if (s.outputRunning) R.string.out_running else R.string.out_idle))
+        outputDetail.text = getString(R.string.out_detail, s.bufferMs, s.limiterHits, s.xruns)
         val warn = when {
-            s.outputError.isNotEmpty() -> s.outputError
-            s.outputRate in 1..48000 -> "系统输出仅 ${SlotController.khz(s.outputRate)}：请到 设置 → 声音 打开「High-Res streaming」，再点一次右侧「输出」按钮。"
+            s.outputError.isNotEmpty() -> Labels.nativeError(this, s.outputError)
+            s.outputRate in 1..48000 -> getString(R.string.out_warn_48k, SlotController.khz(s.outputRate))
             else -> ""
         }
         warning.text = warn
         warning.visibility = if (warn.isEmpty()) View.GONE else View.VISIBLE
-        btnMode.text = if (s.standardMode) "输出:标准" else "输出:省电"
+        btnMode.setText(if (s.standardMode) R.string.btn_output_standard else R.string.btn_output_power)
 
         // ---- 组合卡片 ----
         comboTitle.text = s.comboName
         comboSub.text = listOfNotNull(
-            s.bookmarkName?.let { "书签：$it" + if (s.bookmarkDirty) "（已修改）" else "" } ?: "未存为书签",
+            s.bookmarkName?.let { getString(R.string.combo_bookmark, it) + if (s.bookmarkDirty) getString(R.string.combo_modified) else "" } ?: getString(R.string.combo_unsaved),
             queueText(s),
         ).joinToString(" · ")
         tabs.forEachIndexed { i, b ->
             val sl = s.slots[i]
-            b.text = "${"AB"[i]} · " + if (sl.hasFile) sl.title else "未选择"
+            b.text = getString(R.string.tab_label, "AB"[i].toString(), if (sl.hasFile) sl.title else getString(R.string.not_selected))
             val sel = panelOpen && selectedSlot == i
             b.backgroundTintList = ColorStateList.valueOf(if (sel) slotColor(i) else colBtn)
             b.setTextColor(if (sel) colBg else if (sl.enabled) slotColor(i) else colMuted)
         }
         panel.visibility = if (panelOpen) View.VISIBLE else View.GONE
-        btnSave.text = if (panelOpen) "保存" else "编辑"
+        btnSave.setText(if (panelOpen) R.string.btn_save else R.string.btn_edit)
         if (panelOpen) bindSettings(s.slots[selectedSlot])
 
         // ---- 播放 ----
         s.slots.forEachIndexed { i, sl -> chips[i].bind(sl) }
         btnPlay.text = if (s.playing) "❚❚" else "▶"
-        queueLine.text = queueText(s) ?: "单个组合"
-        btnRepeat.text = s.repeat.label
+        queueLine.text = queueText(s) ?: getString(R.string.single_combo)
+        btnRepeat.text = Labels.repeat(this, s.repeat)
         btnExitQueue.visibility = if (s.queueMode == QueueMode.NONE) View.GONE else View.VISIBLE
 
         // ---- 书签 / 列表 ----
@@ -361,13 +395,12 @@ class MainActivity : Activity() {
             b.backgroundTintList = ColorStateList.valueOf(if (segment == i) colA else colBtn)
             b.setTextColor(if (segment == i) colBg else colText)
         }
-        btnQueueAdd.text = if (segment == 0) "＋ 书签" else "＋ 文件"
+        btnQueueAdd.setText(if (segment == 0) R.string.btn_add_bookmark_q else R.string.btn_add_files)
         btnQueueFolder.visibility = if (segment == 1) View.VISIBLE else View.GONE
-        listHint.text = if (segment == 0) "按顺序播放书签：每个书签的 A+B 一起播，放完自动下一个"
-        else "按顺序播放文件：每个文件依次放进 A；B 保持当前设置（在播放页把 B 点灰即只听 A）"
+        listHint.setText(if (segment == 0) R.string.hint_bookmark_list else R.string.hint_file_list)
         val qEmpty = if (segment == 0) s.lib.bookmarkQueue.isEmpty() else s.lib.fileQueue.isEmpty()
         queueEmpty.visibility = if (qEmpty) View.VISIBLE else View.GONE
-        queueEmpty.text = if (segment == 0) "书签列表为空。点「＋ 书签」把已有书签加进来。" else "文件列表为空。点「＋ 文件」或「＋ 文件夹」添加。"
+        queueEmpty.setText(if (segment == 0) R.string.empty_bookmark_list else R.string.empty_file_list)
 
         if (s.messageId != lastMessageId) {
             lastMessageId = s.messageId
@@ -377,13 +410,13 @@ class MainActivity : Activity() {
 
     private fun queueText(s: EngineSnapshot): String? = when (s.queueMode) {
         QueueMode.NONE -> null
-        QueueMode.BOOKMARKS -> "书签列表 ${s.queueIndex + 1}/${s.queueSize}"
-        QueueMode.FILES -> "文件列表 ${s.queueIndex + 1}/${s.queueSize}"
+        QueueMode.BOOKMARKS -> getString(R.string.queue_bookmarks_pos, s.queueIndex + 1, s.queueSize)
+        QueueMode.FILES -> getString(R.string.queue_files_pos, s.queueIndex + 1, s.queueSize)
     }
 
     private fun bindSettings(sl: SlotSnapshot) {
         val c = slotColor(sl.index)
-        setFile.text = if (sl.hasFile) sl.fileName else "未选择音频：点「选择音频」"
+        setFile.text = if (sl.hasFile) sl.fileName else getString(R.string.set_no_file)
         setFile.setTextColor(if (sl.hasFile) colText else colMuted)
         setFormat.text = sl.formatLine
         setFormat.visibility = if (sl.formatLine.isEmpty()) View.GONE else View.VISIBLE
@@ -392,8 +425,8 @@ class MainActivity : Activity() {
         val ly = sl.lyrics
         setLyrics.text = when {
             !sl.hasFile -> ""
-            ly == null -> "歌词：无（可点「选择歌词」指定 .lrc）"
-            else -> "歌词：${ly.source}" + (if (ly.isBilingual) " · 双语" else "") + if (!ly.synced) " · 未同步" else ""
+            ly == null -> getString(R.string.lyrics_none_hint)
+            else -> getString(R.string.lyrics_info, Labels.lyricSource(this, ly.source)) + (if (ly.isBilingual) getString(R.string.lyrics_bilingual_suffix) else "") + if (!ly.synced) getString(R.string.lyrics_unsynced_suffix) else ""
         }
         setError.text = sl.error
         setError.visibility = if (sl.error.isEmpty()) View.GONE else View.VISIBLE
@@ -401,9 +434,9 @@ class MainActivity : Activity() {
         listOf(gain, balance).forEach { it.progressTintList = tint; it.thumbTintList = tint }
         if (!draggingGain) { gain.progress = dbToProgress(sl.gainDb); gainLabel.text = gainText(sl.gainDb) }
         if (!draggingBalance) { balance.progress = (sl.balance * 100 + 100).toInt(); balanceLabel.text = balanceText(sl.balance) }
-        btnLoop.text = if (sl.loop) "单曲循环：开" else "单曲循环：关"
+        btnLoop.setText(if (sl.loop) R.string.loop_on else R.string.loop_off)
         btnLoop.setTextColor(if (sl.loop) c else colText)
-        btnSlotOn.text = if (sl.enabled) "本路：开启" else "本路：关闭"
+        btnSlotOn.setText(if (sl.enabled) R.string.slot_on else R.string.slot_off)
         btnSlotOn.setTextColor(if (sl.enabled) c else colMuted)
         btnPickLrc.isEnabled = sl.hasFile
     }
@@ -442,7 +475,7 @@ class MainActivity : Activity() {
             lyricBox.setOnClickListener { showLyrics(index) }
             lyricBox.setOnLongClickListener {
                 setLyricMode(LyricMode.values()[(lyricMode.ordinal + 1) % LyricMode.values().size])
-                Toast.makeText(this@MainActivity, "歌词：${lyricMode.label}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, getString(R.string.toast_lyric_mode, Labels.lyricMode(this@MainActivity, lyricMode)), Toast.LENGTH_SHORT).show()
                 true
             }
             seek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
@@ -469,14 +502,14 @@ class MainActivity : Activity() {
             seek.progressTintList = ColorStateList.valueOf(c)
             seek.thumbTintList = ColorStateList.valueOf(c)
             seek.isEnabled = sl.hasFile
-            title.text = if (sl.hasFile) sl.title else "未选择音频（在上方 ${"AB"[index]} 中选择）"
+            title.text = if (sl.hasFile) sl.title else getString(R.string.chip_no_file, "AB"[index].toString())
             state.text = when {
                 !sl.hasFile -> ""
-                !sl.enabled -> "已关闭 · 点亮播放"
-                sl.error.isNotEmpty() -> "无法播放"
-                sl.playing -> "播放中"
-                sl.ended -> "已结束"
-                else -> "暂停"
+                !sl.enabled -> getString(R.string.state_off)
+                sl.error.isNotEmpty() -> getString(R.string.state_error)
+                sl.playing -> getString(R.string.state_playing)
+                sl.ended -> getString(R.string.state_ended)
+                else -> getString(R.string.state_paused)
             }
             state.setTextColor(if (sl.error.isNotEmpty()) colBad else if (sl.playing) c else colMuted)
             path.text = sl.error.ifEmpty { listOf(sl.formatLine, sl.pathLine).filter { it.isNotEmpty() }.joinToString(" · ") }
@@ -510,7 +543,7 @@ class MainActivity : Activity() {
             if (key == lastLyricKey) return
             lastLyricKey = key
             if (!l.synced) {
-                show(l.lines.firstOrNull()?.let { LyricText.pick(it, lyricMode) }.orEmpty(), "未同步歌词 · 点击查看全文")
+                show(l.lines.firstOrNull()?.let { LyricText.pick(it, lyricMode) }.orEmpty(), getString(R.string.lyrics_unsynced_tap))
                 return
             }
             val cur = if (idx >= 0) LyricText.pick(l.lines[idx], lyricMode) else emptyList()
@@ -544,35 +577,35 @@ class MainActivity : Activity() {
     }
 
     private fun comboFiles(bm: Bookmark): String {
-        fun n(f: FileRef?, on: Boolean) = f?.name?.substringBeforeLast('.')?.let { if (on) it else "$it（关）" }
+        fun n(f: FileRef?, on: Boolean) = f?.name?.substringBeforeLast('.')?.let { if (on) it else getString(R.string.bm_slot_off, it) }
         return listOfNotNull(
-            n(bm.combo.a.file, bm.combo.a.enabled)?.let { "A：$it" },
-            n(bm.combo.b.file, bm.combo.b.enabled)?.let { "B：$it" },
-        ).joinToString("   ").ifEmpty { "（空组合）" }
+            n(bm.combo.a.file, bm.combo.a.enabled)?.let { getString(R.string.bm_slot_a, it) },
+            n(bm.combo.b.file, bm.combo.b.enabled)?.let { getString(R.string.bm_slot_b, it) },
+        ).joinToString("   ").ifEmpty { getString(R.string.bm_empty) }
     }
 
     private fun askSaveBookmark() {
         val s = last ?: return
         if (s.slots.none { it.hasFile }) {
-            Toast.makeText(this, "请先在 A / B 中选择音频", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.need_audio_first, Toast.LENGTH_SHORT).show()
             return
         }
-        askText("存为书签", "书签名称", s.comboName) { name -> service?.saveBookmark(name) }
+        askText(getString(R.string.save_bookmark_title), getString(R.string.bookmark_name_hint), s.comboName) { name -> service?.saveBookmark(name) }
     }
 
     private fun bookmarkMenu(pos: Int) {
         val bm = last?.lib?.bookmarks?.getOrNull(pos) ?: return
-        val items = arrayOf("播放", "只载入（不播放）", "加入书签列表", "重命名", "用当前组合覆盖", "上移", "下移", "删除")
+        val items = resources.getStringArray(R.array.bookmark_menu)
         AlertDialog.Builder(this, DIALOG_THEME).setTitle(bm.name).setItems(items) { _, w ->
             when (w) {
                 0 -> { service?.loadBookmark(bm.id, play = true); showPage(0) }
                 1 -> { service?.loadBookmark(bm.id, play = false); showPage(0) }
                 2 -> service?.addToBookmarkQueue(listOf(bm.id))
-                3 -> askText("重命名书签", "名称", bm.name) { service?.renameBookmark(bm.id, it) }
-                4 -> confirm("用当前的 A + B 组合覆盖书签「${bm.name}」？") { service?.overwriteBookmark(bm.id) }
+                3 -> askText(getString(R.string.rename_title), getString(R.string.name_hint), bm.name) { service?.renameBookmark(bm.id, it) }
+                4 -> confirm(getString(R.string.confirm_overwrite, bm.name)) { service?.overwriteBookmark(bm.id) }
                 5 -> service?.moveBookmark(pos, -1)
                 6 -> service?.moveBookmark(pos, 1)
-                7 -> confirm("删除书签「${bm.name}」？（书签列表里的对应项也会删除）") { service?.deleteBookmark(bm.id) }
+                7 -> confirm(getString(R.string.confirm_delete_bm, bm.name)) { service?.deleteBookmark(bm.id) }
             }
         }.show()
     }
@@ -595,11 +628,11 @@ class MainActivity : Activity() {
             val num = if (current) "▶" else "${p + 1}"
             return if (segment == 0) {
                 val bm = s.lib.bookmarks.find { it.id == s.lib.bookmarkQueue[p] }
-                if (bm == null) twoLine(convert, "（书签已删除）", "", false, num)
+                if (bm == null) twoLine(convert, getString(R.string.bm_deleted), "", false, num)
                 else twoLine(convert, bm.name, comboFiles(bm), current, num)
             } else {
                 val f = s.lib.fileQueue[p]
-                twoLine(convert, f.name.substringBeforeLast('.'), (f.relPath ?: f.name) + if (f.lrc != null) " · 有歌词" else "", current, num)
+                twoLine(convert, f.name.substringBeforeLast('.'), (f.relPath ?: f.name) + if (f.lrc != null) getString(R.string.has_lyrics_suffix) else "", current, num)
             }
         }
     }
@@ -619,22 +652,21 @@ class MainActivity : Activity() {
     private fun addBookmarksToQueue() {
         val bms = last?.lib?.bookmarks ?: return
         if (bms.isEmpty()) {
-            Toast.makeText(this, "还没有书签：先在播放页「存为书签」", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.no_bookmarks_yet, Toast.LENGTH_LONG).show()
             return
         }
         val checked = BooleanArray(bms.size)
-        AlertDialog.Builder(this, DIALOG_THEME).setTitle("选择要加入列表的书签")
+        AlertDialog.Builder(this, DIALOG_THEME).setTitle(R.string.pick_bookmarks_title)
             .setMultiChoiceItems(bms.map { it.name }.toTypedArray(), checked) { _, w, c -> checked[w] = c }
-            .setPositiveButton("加入") { _, _ -> service?.addToBookmarkQueue(bms.filterIndexed { i, _ -> checked[i] }.map { it.id }) }
-            .setNeutralButton("全部加入") { _, _ -> service?.addToBookmarkQueue(bms.map { it.id }) }
-            .setNegativeButton("取消", null).show()
+            .setPositiveButton(R.string.add) { _, _ -> service?.addToBookmarkQueue(bms.filterIndexed { i, _ -> checked[i] }.map { it.id }) }
+            .setNeutralButton(R.string.add_all) { _, _ -> service?.addToBookmarkQueue(bms.map { it.id }) }
+            .setNegativeButton(R.string.cancel, null).show()
     }
 
     private fun queueMenu(pos: Int) {
         val l = last?.lib ?: return
         val files = segment == 1
-        val items = if (files) arrayOf("从这里开始播放", "放入 A", "放入 B", "上移", "下移", "移出列表")
-        else arrayOf("从这里开始播放", "上移", "下移", "移出列表")
+        val items = resources.getStringArray(if (files) R.array.queue_menu_files else R.array.queue_menu_bookmarks)
         AlertDialog.Builder(this, DIALOG_THEME).setItems(items) { _, w ->
             val action = if (files) w else listOf(0, 3, 4, 5)[w]
             when (action) {
@@ -658,10 +690,10 @@ class MainActivity : Activity() {
             startPicker(audioPicker(multiple = true), slot * 10 + REQ_SLOT_AUDIO)
             return
         }
-        AlertDialog.Builder(this, DIALOG_THEME).setTitle("为 ${"AB"[slot]} 选择音频")
-            .setItems(arrayOf("从设备中选择…", "从文件列表中选择（${files.size} 个）")) { _, w ->
+        AlertDialog.Builder(this, DIALOG_THEME).setTitle(getString(R.string.choose_audio_for, "AB"[slot].toString()))
+            .setItems(arrayOf(getString(R.string.choose_from_device), getString(R.string.choose_from_list, files.size))) { _, w ->
                 if (w == 0) startPicker(audioPicker(multiple = true), slot * 10 + REQ_SLOT_AUDIO)
-                else AlertDialog.Builder(this, DIALOG_THEME).setTitle("文件列表")
+                else AlertDialog.Builder(this, DIALOG_THEME).setTitle(R.string.segment_files)
                     .setItems(files.map { it.name }.toTypedArray()) { _, k -> service?.setSlotFile(slot, files[k]) }
                     .show()
             }.show()
@@ -692,12 +724,12 @@ class MainActivity : Activity() {
         try {
             startActivityForResult(i, code)
         } catch (e: Exception) {
-            Toast.makeText(this, "无法打开系统文件选择器", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.picker_failed, Toast.LENGTH_LONG).show()
         }
     }
 
     private fun startBackup() {
-        val name = "双轨HiFi备份-" + SimpleDateFormat("yyyyMMdd-HHmm", Locale.US).format(Date()) + ".json"
+        val name = getString(R.string.backup_file_prefix) + SimpleDateFormat("yyyyMMdd-HHmm", Locale.US).format(Date()) + ".json"
         startPicker(Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             type = "application/json"
@@ -716,11 +748,11 @@ class MainActivity : Activity() {
             REQ_QUEUE_FOLDER -> {
                 val tree = data.data ?: return
                 persist(tree)
-                Toast.makeText(this, "正在扫描文件夹…", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.scanning_folder, Toast.LENGTH_SHORT).show()
                 Thread {
                     val files = scanTree(tree).first
                     runOnUiThread {
-                        if (files.isEmpty()) Toast.makeText(this, "文件夹里没有音频", Toast.LENGTH_SHORT).show()
+                        if (files.isEmpty()) Toast.makeText(this, R.string.folder_no_audio, Toast.LENGTH_SHORT).show()
                         else service?.addToFileQueue(files)
                     }
                 }.start()
@@ -728,7 +760,7 @@ class MainActivity : Activity() {
             REQ_RELINK -> {
                 val tree = data.data ?: return
                 persist(tree)
-                Toast.makeText(this, "正在扫描并匹配文件…", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.scanning_relink, Toast.LENGTH_SHORT).show()
                 Thread {
                     val entries = scanTree(tree).second
                     runOnUiThread { service?.relink(entries) }
@@ -740,21 +772,21 @@ class MainActivity : Activity() {
                     val ok = runCatching {
                         contentResolver.openOutputStream(uri, "wt")!!.use { it.write(text.toByteArray()) }
                     }.isSuccess
-                    Toast.makeText(this, if (ok) "备份完成" else "写入备份失败", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, if (ok) R.string.backup_done else R.string.backup_failed, Toast.LENGTH_LONG).show()
                 }
             }
             REQ_RESTORE -> {
                 val uri = data.data ?: return
                 val text = runCatching { contentResolver.openInputStream(uri)!!.use { String(it.readBytes()) } }.getOrNull()
                 if (text == null) {
-                    Toast.makeText(this, "读取备份失败", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, R.string.restore_read_failed, Toast.LENGTH_LONG).show()
                     return
                 }
-                AlertDialog.Builder(this, DIALOG_THEME).setTitle("恢复备份")
-                    .setMessage("「替换」：用备份覆盖当前所有书签、列表和组合。\n「合并」：把备份里的书签和列表追加到现有数据。")
-                    .setPositiveButton("替换") { _, _ -> service?.importJson(text, merge = false) }
-                    .setNeutralButton("合并") { _, _ -> service?.importJson(text, merge = true) }
-                    .setNegativeButton("取消", null).show()
+                AlertDialog.Builder(this, DIALOG_THEME).setTitle(R.string.restore_title)
+                    .setMessage(R.string.restore_message)
+                    .setPositiveButton(R.string.restore_replace) { _, _ -> service?.importJson(text, merge = false) }
+                    .setNeutralButton(R.string.restore_merge) { _, _ -> service?.importJson(text, merge = true) }
+                    .setNegativeButton(R.string.cancel, null).show()
             }
             else -> {
                 val slot = requestCode / 10
@@ -914,14 +946,14 @@ class MainActivity : Activity() {
             addView(et, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
         }
         AlertDialog.Builder(this, DIALOG_THEME).setTitle(title).setView(box)
-            .setPositiveButton("确定") { _, _ -> onOk(et.text.toString().trim().ifEmpty { initial }) }
-            .setNegativeButton("取消", null).show()
+            .setPositiveButton(R.string.ok) { _, _ -> onOk(et.text.toString().trim().ifEmpty { initial }) }
+            .setNegativeButton(R.string.cancel, null).show()
     }
 
     private fun confirm(msg: String, onOk: () -> Unit) {
         AlertDialog.Builder(this, DIALOG_THEME).setMessage(msg)
-            .setPositiveButton("确定") { _, _ -> onOk() }
-            .setNegativeButton("取消", null).show()
+            .setPositiveButton(R.string.ok) { _, _ -> onOk() }
+            .setNegativeButton(R.string.cancel, null).show()
     }
 
     private fun seekListener(onChange: (Int) -> Unit, onDrag: (Boolean) -> Unit) = object : SeekBar.OnSeekBarChangeListener {
@@ -931,6 +963,15 @@ class MainActivity : Activity() {
     }
 
     private fun dp(x: Int) = (x * resources.displayMetrics.density).toInt()
+
+    private fun gainText(db: Double) =
+        if (db <= -60.0) getString(R.string.gain_mute) else getString(R.string.gain_db, "%+.1f".format(db).replace("+0.0", "0.0"))
+
+    private fun balanceText(b: Double) = when {
+        b == 0.0 -> getString(R.string.balance_center)
+        b < 0 -> getString(R.string.balance_left, (-b * 100).toInt())
+        else -> getString(R.string.balance_right, (b * 100).toInt())
+    }
 
     companion object {
         const val REQ_SLOT_AUDIO = 1
@@ -948,12 +989,6 @@ class MainActivity : Activity() {
         // 进度条 0..132 ↔ -60..+6 dB，步进 0.5 dB；0 dB 在 120
         fun progressToDb(p: Int) = -60.0 + p * 0.5
         fun dbToProgress(db: Double) = ((db + 60.0) / 0.5).toInt().coerceIn(0, 132)
-        fun gainText(db: Double) = if (db <= -60.0) "音量 静音" else "音量 %+.1f dB".format(db).replace("+0.0", "0.0")
-        fun balanceText(b: Double) = when {
-            b == 0.0 -> "声像 居中"
-            b < 0 -> "声像 左 %d".format((-b * 100).toInt())
-            else -> "声像 右 %d".format((b * 100).toInt())
-        }
         fun fmt(ms: Long): String {
             val s = ms / 1000
             return if (s >= 3600) "%d:%02d:%02d".format(s / 3600, s / 60 % 60, s % 60) else "%d:%02d".format(s / 60, s % 60)

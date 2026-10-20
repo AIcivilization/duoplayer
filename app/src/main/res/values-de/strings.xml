@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 i18n/build_strings.py 生成，请修改 i18n/de.txt -->
+<resources>
+    <string name="app_name">DuoPlayer Hi-Fi</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="close">Schließen</string>
+    <string name="add">Hinzufügen</string>
+    <string name="add_all">Alle hinzufügen</string>
+    <string name="nav_play">Wiedergabe</string>
+    <string name="nav_bookmarks">Lesezeichen</string>
+    <string name="nav_lists">Listen</string>
+    <string name="out_line">Ausgabe %1$s · 32-Bit-Float · %2$s · %3$s</string>
+    <string name="out_mode_power">Energiespar-Pfad</string>
+    <string name="out_mode_standard">Standardpfad</string>
+    <string name="out_running">aktiv</string>
+    <string name="out_idle">Ruhe</string>
+    <string name="out_detail">Puffer %1$d ms · Clipping-Schutz %2$d · Unterläufe %3$d</string>
+    <string name="out_warn_48k">Die Systemausgabe hat nur %1$s: Einstellungen → Ton öffnen und „High-Res streaming“ einschalten, dann einmal auf „Ausgabe“ tippen.</string>
+    <string name="btn_output_power">Ausgabe: Eco</string>
+    <string name="btn_output_standard">Ausgabe: Std</string>
+    <string name="combo_bookmark">Lesezeichen: %1$s</string>
+    <string name="combo_modified">" (geändert)"</string>
+    <string name="combo_unsaved">Nicht als Lesezeichen gespeichert</string>
+    <string name="combo_none">Kein Audio ausgewählt</string>
+    <string name="tab_label">%1$s · %2$s</string>
+    <string name="not_selected">Keins</string>
+    <string name="btn_save">Speichern</string>
+    <string name="btn_edit">Bearbeiten</string>
+    <string name="btn_save_bookmark">Als Lesezeichen speichern</string>
+    <string name="btn_choose_audio">Audio wählen</string>
+    <string name="btn_choose_lyrics">Liedtext wählen</string>
+    <string name="btn_remove">Entfernen</string>
+    <string name="loop_on">Titel wiederholen: an</string>
+    <string name="loop_off">Titel wiederholen: aus</string>
+    <string name="slot_on">Diese Spur: an</string>
+    <string name="slot_off">Diese Spur: aus</string>
+    <string name="set_no_file">Kein Audio: auf „Audio wählen“ tippen</string>
+    <string name="lyrics_none_hint">Liedtext: keiner (mit „Liedtext wählen“ eine .lrc angeben)</string>
+    <string name="lyrics_info">Liedtext: %1$s</string>
+    <string name="lyrics_bilingual_suffix">" · zweisprachig"</string>
+    <string name="lyrics_unsynced_suffix">" · nicht synchron"</string>
+    <string name="lyrics_src_lrc">LRC-Datei</string>
+    <string name="lyrics_src_embedded">eingebettet</string>
+    <string name="gain_mute">Lautstärke: stumm</string>
+    <string name="gain_db">Lautstärke %1$s dB</string>
+    <string name="balance_center">Balance: Mitte</string>
+    <string name="balance_left">Balance: L %1$d</string>
+    <string name="balance_right">Balance: R %1$d</string>
+    <string name="chip_hint">A / B antippen zum Umschalten: hell = spielt, grau = aus</string>
+    <string name="chip_no_file">Kein Audio (oben in %1$s wählen)</string>
+    <string name="state_off">Aus · antippen zum Einschalten</string>
+    <string name="state_error">Nicht abspielbar</string>
+    <string name="state_playing">Spielt</string>
+    <string name="state_ended">Beendet</string>
+    <string name="state_paused">Pausiert</string>
+    <string name="lyrics_unsynced_tap">Nicht synchroner Liedtext · antippen zum Anzeigen</string>
+    <string name="toast_lyric_mode">Liedtext: %1$s</string>
+    <string name="lyric_mode_both">Beide</string>
+    <string name="lyric_mode_cjk">CJK</string>
+    <string name="lyric_mode_latin">Latein</string>
+    <string name="single_combo">Einzelne Kombination</string>
+    <string name="queue_bookmarks_pos">Lesezeichenliste %1$d/%2$d</string>
+    <string name="queue_files_pos">Dateiliste %1$d/%2$d</string>
+    <string name="repeat_off">Der Reihe nach</string>
+    <string name="repeat_all">Liste wiederholen</string>
+    <string name="repeat_one">Eintrag wiederholen</string>
+    <string name="btn_exit_queue">Liste beenden</string>
+    <string name="bookmarks_title">Lesezeichen</string>
+    <string name="btn_add_bookmark">+ Aktuelle speichern</string>
+    <string name="bookmark_page_hint">Tippen: laden und abspielen · Lang drücken: umbenennen / überschreiben / zur Liste / sortieren / löschen</string>
+    <string name="bookmark_empty">Noch keine Lesezeichen.\nStelle auf der Wiedergabeseite A + B ein und tippe auf „Als Lesezeichen speichern“ – beim nächsten Mal startet ein Tipp genau diese Kombination.</string>
+    <string name="bm_slot_off">%1$s (aus)</string>
+    <string name="bm_slot_a">A: %1$s</string>
+    <string name="bm_slot_b">B: %1$s</string>
+    <string name="bm_empty">(leere Kombination)</string>
+    <string name="bm_deleted">(Lesezeichen gelöscht)</string>
+    <string name="need_audio_first">Wähle zuerst Audio für A oder B</string>
+    <string name="save_bookmark_title">Als Lesezeichen speichern</string>
+    <string name="bookmark_name_hint">Name des Lesezeichens</string>
+    <string name="rename_title">Lesezeichen umbenennen</string>
+    <string name="name_hint">Name</string>
+    <string name="confirm_overwrite">Lesezeichen „%1$s“ mit der aktuellen A + B-Kombination überschreiben?</string>
+    <string name="confirm_delete_bm">Lesezeichen „%1$s“ löschen? (Es wird auch aus der Lesezeichenliste entfernt.)</string>
+    <string name="segment_bookmarks">Lesezeichenliste</string>
+    <string name="segment_files">Dateiliste</string>
+    <string name="hint_bookmark_list">Spielt Lesezeichen der Reihe nach: A + B jedes Lesezeichens laufen zusammen, danach startet das nächste.</string>
+    <string name="hint_file_list">Spielt Dateien der Reihe nach: jede Datei kommt in A; B behält seine Einstellung (B auf der Wiedergabeseite ausgrauen, um nur A zu hören).</string>
+    <string name="btn_add_bookmark_q">+ Lesezeichen</string>
+    <string name="btn_add_files">+ Dateien</string>
+    <string name="btn_add_folder">+ Ordner</string>
+    <string name="btn_clear">Leeren</string>
+    <string name="btn_play_list">▶ Abspielen</string>
+    <string name="empty_bookmark_list">Die Lesezeichenliste ist leer. Mit „+ Lesezeichen“ hinzufügen.</string>
+    <string name="empty_file_list">Die Dateiliste ist leer. Mit „+ Dateien“ oder „+ Ordner“ hinzufügen.</string>
+    <string name="confirm_clear_bookmark_list">Lesezeichenliste leeren?</string>
+    <string name="confirm_clear_file_list">Dateiliste leeren?</string>
+    <string name="has_lyrics_suffix">" · Liedtext"</string>
+    <string name="no_bookmarks_yet">Noch keine Lesezeichen: tippe zuerst auf der Wiedergabeseite auf „Als Lesezeichen speichern“</string>
+    <string name="pick_bookmarks_title">Lesezeichen zum Hinzufügen wählen</string>
+    <string name="choose_audio_for">Audio für %1$s wählen</string>
+    <string name="choose_from_device">Vom Gerät…</string>
+    <string name="choose_from_list">Aus der Dateiliste (%1$d)</string>
+    <string name="picker_failed">Die Dateiauswahl des Systems lässt sich nicht öffnen</string>
+    <string name="btn_backup">Sichern</string>
+    <string name="btn_restore">Wiederherstellen</string>
+    <string name="btn_relink">Ordner neu verknüpfen</string>
+    <string name="relink_title">Ordner neu verknüpfen</string>
+    <string name="relink_message">Nach einer Neuinstallation oder Wiederherstellung gehen die alten Dateiberechtigungen verloren.\n\nWähle den Stammordner deiner Musik (z. B. Music oder die SD-Karte). Die App findet die Dateien in Lesezeichen und Listen anhand der ursprünglichen Pfade und Namen wieder.</string>
+    <string name="relink_pick">Ordner wählen</string>
+    <string name="backup_file_prefix">DuoPlayer-Sicherung-</string>
+    <string name="scanning_folder">Ordner wird durchsucht…</string>
+    <string name="folder_no_audio">Kein Audio in diesem Ordner</string>
+    <string name="scanning_relink">Dateien werden durchsucht und zugeordnet…</string>
+    <string name="backup_done">Sicherung gespeichert</string>
+    <string name="backup_failed">Sicherung konnte nicht geschrieben werden</string>
+    <string name="restore_read_failed">Sicherung konnte nicht gelesen werden</string>
+    <string name="restore_title">Sicherung wiederherstellen</string>
+    <string name="restore_message">„Ersetzen“: alle aktuellen Lesezeichen, Listen und die Kombination durch die Sicherung ersetzen.\n„Zusammenführen“: Lesezeichen und Listen der Sicherung zu den aktuellen Daten hinzufügen.</string>
+    <string name="restore_replace">Ersetzen</string>
+    <string name="restore_merge">Zusammenführen</string>
+    <string name="version_current">Version %1$s</string>
+    <string name="auto_update_on">Auto-Prüfung: an</string>
+    <string name="auto_update_off">Auto-Prüfung: aus</string>
+    <string name="check_update">Update prüfen</string>
+    <string name="toast_bookmark_saved">Lesezeichen „%1$s“ gespeichert</string>
+    <string name="toast_bookmark_overwritten">Lesezeichen mit der aktuellen Kombination überschrieben</string>
+    <string name="toast_files_added">%1$d Datei(en) hinzugefügt</string>
+    <string name="toast_bad_backup">Keine gültige Sicherungsdatei</string>
+    <string name="toast_merged">Zusammengeführt: insgesamt %1$d Lesezeichen</string>
+    <string name="toast_restored">Wiederhergestellt: %1$d Lesezeichen, %2$d Dateien</string>
+    <string name="toast_missing_files">%1$d Datei(en) nicht erreichbar – mit „Ordner neu verknüpfen“ wiederfinden</string>
+    <string name="toast_relink_ok_all">Zugriff wiederhergestellt – alle Dateien erreichbar</string>
+    <string name="toast_relink_fixed">%1$d Datei(en) gefunden</string>
+    <string name="toast_relink_left">, %1$d weiterhin fehlend</string>
+    <string name="toast_both_off">A und B sind beide aus: mindestens eine einschalten</string>
+    <string name="toast_choose_first">Wähle zuerst eine Audiodatei für A / B</string>
+    <string name="toast_not_in_list">Gerade wird keine Liste abgespielt</string>
+    <string name="toast_list_finished">Liste beendet</string>
+    <string name="notif_channel">Wiedergabe</string>
+    <string name="notif_prev">Zurück</string>
+    <string name="notif_pause">Pause</string>
+    <string name="notif_play">Abspielen</string>
+    <string name="notif_next">Weiter</string>
+    <string name="err_io">Datei kann nicht geöffnet werden</string>
+    <string name="err_no_permission">Keine Zugriffsberechtigung: „Ordner neu verknüpfen“ auf der Seite Listen verwenden</string>
+    <string name="err_not_found">Datei nicht gefunden: „Ordner neu verknüpfen“ auf der Seite Listen verwenden</string>
+    <string name="err_corrupt">Die %1$s-Datei ist beschädigt oder nicht lesbar</string>
+    <string name="err_unsupported">Nicht unterstütztes %1$s-Format</string>
+    <string name="err_unknown_format">Unbekanntes Dateiformat</string>
+    <string name="err_no_audio_track">Die Datei enthält keine Audiospur</string>
+    <string name="err_no_decoder">Dieses System hat keinen Decoder für %1$s</string>
+    <string name="err_bad_format">Der Decoder lieferte ein ungültiges Format</string>
+    <string name="err_bad_rate">Ungültige Abtastrate</string>
+    <string name="err_rate_ratio">Nicht unterstützte Abtastratenwandlung %1$s</string>
+    <string name="err_aaudio">Audioausgabe (AAudio) nicht verfügbar</string>
+    <string name="err_output_open">Audioausgabe konnte nicht geöffnet werden: %1$s</string>
+    <string name="err_output_start">Audioausgabe konnte nicht gestartet werden: %1$s</string>
+    <string name="err_unknown">Unbekannter Fehler (%1$s)</string>
+    <string name="fmt_lossless">verlustfrei</string>
+    <string name="fmt_lossy">verlustbehaftet</string>
+    <string name="path_direct_gain">Direkt %1$s · 64-Bit-Pegel</string>
+    <string name="path_bitperfect">Direkt %1$s · bit-perfect</string>
+    <string name="path_direct">Direkt %1$s</string>
+    <string name="path_resample">Resampling %1$s → %2$s</string>
+    <string name="path_mix">" · gemischt"</string>
+    <string name="lyrics_none_long">Für diesen Titel wurde kein Liedtext gefunden.\n\n· Mit „+ Ordner“ wird eine gleichnamige .lrc im selben Ordner automatisch verknüpft\n· Mit „+ Dateien“ die .lrc zusammen mit dem Titel auswählen\n· Oder oben „Liedtext wählen“ antippen\n· In FLAC / MP3 / DSF eingebettete Liedtexte werden ebenfalls gelesen</string>
+    <string name="lyrics_none">Kein Liedtext</string>
+    <string name="lyrics_src_unsynced">%1$s · nicht synchron</string>
+    <string name="lyrics_src_bilingual">%1$s · zweisprachig · %2$d Zeilen</string>
+    <string name="lyrics_src_lines">%1$s · %2$d Zeilen</string>
+    <string name="upd_checking">Suche nach Updates…</string>
+    <string name="upd_none_published">Auf GitHub wurde noch keine Version veröffentlicht</string>
+    <string name="upd_latest">Du bist auf dem neuesten Stand (%1$s)</string>
+    <string name="upd_check_failed">Update-Prüfung fehlgeschlagen</string>
+    <string name="upd_check_failed_msg">%1$s\n\nGitHub kann in manchen Netzen langsam oder nicht erreichbar sein. Versuche es später erneut oder öffne die Release-Seite im Browser.</string>
+    <string name="upd_open_page">Release-Seite öffnen</string>
+    <string name="upd_found">Neue Version %1$s</string>
+    <string name="upd_current">Aktuelle Version %1$s%2$s</string>
+    <string name="upd_download_install">Herunterladen &amp; installieren</string>
+    <string name="upd_skip">Diese Version überspringen</string>
+    <string name="upd_later">Später</string>
+    <string name="upd_need_perm_title">Einmalige Berechtigung nötig</string>
+    <string name="upd_need_perm_msg">Android muss „%1$s“ das Installieren von Apps erlauben, damit es sich selbst aktualisieren kann.\n\n„Einstellungen“ antippen → „Aus dieser Quelle zulassen“ einschalten → zurück und erneut „Update prüfen“ antippen.</string>
+    <string name="upd_go_settings">Einstellungen</string>
+    <string name="upd_downloading">%1$s wird heruntergeladen</string>
+    <string name="upd_preparing">Vorbereitung…</string>
+    <string name="upd_progress">%1$s / %2$s MB (%3$d %%)</string>
+    <string name="upd_progress_unknown">%1$s MB</string>
+    <string name="upd_installer_failed">Installer kann nicht geöffnet werden: %1$s</string>
+    <string name="upd_failed">Update fehlgeschlagen</string>
+    <string name="upd_no_browser">Kein Browser verfügbar: %1$s</string>
+    <string name="upd_err_rate_limited">GitHub-Anfragelimit erreicht, bitte später erneut versuchen</string>
+    <string name="upd_err_http">GitHub antwortete mit %1$s</string>
+    <string name="upd_err_redirect">Weiterleitung beim Download fehlgeschlagen</string>
+    <string name="upd_err_download">Download fehlgeschlagen: HTTP %1$s</string>
+    <string name="upd_err_save">Paket konnte nicht gespeichert werden</string>
+    <string name="upd_err_redirects">Zu viele Weiterleitungen</string>
+    <string name="upd_err_damaged">Das Paket ist beschädigt</string>
+    <string name="upd_err_wrong_pkg">Das Paket gehört nicht zu dieser App</string>
+    <string name="upd_err_not_newer">Das Paket ist nicht neuer als die installierte Version</string>
+    <string name="upd_err_signature">Die Signatur passt nicht zur installierten App, daher ist kein Update möglich.\n(Version 1.2 und älter nutzten eine temporäre Signatur: auf der Seite Listen sichern, alte Version deinstallieren und die neue einmal von GitHub installieren – danach klappen Updates in der App.)</string>
+    <string-array name="bookmark_menu">
+        <item>Abspielen</item>
+        <item>Nur laden (nicht abspielen)</item>
+        <item>Zur Lesezeichenliste</item>
+        <item>Umbenennen</item>
+        <item>Mit aktueller Kombination überschreiben</item>
+        <item>Nach oben</item>
+        <item>Nach unten</item>
+        <item>Löschen</item>
+    </string-array>
+    <string-array name="queue_menu_files">
+        <item>Ab hier abspielen</item>
+        <item>In A legen</item>
+        <item>In B legen</item>
+        <item>Nach oben</item>
+        <item>Nach unten</item>
+        <item>Aus Liste entfernen</item>
+    </string-array>
+    <string-array name="queue_menu_bookmarks">
+        <item>Ab hier abspielen</item>
+        <item>Nach oben</item>
+        <item>Nach unten</item>
+        <item>Aus Liste entfernen</item>
+    </string-array>
+</resources>

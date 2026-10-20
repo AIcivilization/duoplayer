@@ -9,7 +9,7 @@ namespace zx {
 std::unique_ptr<Decoder> openDecoder(int fd, std::string& error) {
     uint8_t magic[12] = {0};
     ssize_t n = ::pread64(fd, magic, sizeof(magic), 0);
-    if (n < 4) { error = "文件为空或无法读取"; return nullptr; }
+    if (n < 4) { error = "io"; return nullptr; }
 
     std::unique_ptr<Decoder> d;
     if (memcmp(magic, "fLaC", 4) == 0 || memcmp(magic, "ID3", 3) == 0) {
@@ -24,7 +24,7 @@ std::unique_ptr<Decoder> openDecoder(int fd, std::string& error) {
     if (d) return d;
     std::string first = error;
     d = openMediaCodec(fd, error);
-    if (!d && !first.empty()) error = first + " / " + error;
+    if (!d && !first.empty()) error = first;  // 优先报告原生解码器的错误
     return d;
 }
 

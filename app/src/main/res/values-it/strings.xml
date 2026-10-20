@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 i18n/build_strings.py 生成，请修改 i18n/it.txt -->
+<resources>
+    <string name="app_name">DuoPlayer Hi-Fi</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Annulla</string>
+    <string name="close">Chiudi</string>
+    <string name="add">Aggiungi</string>
+    <string name="add_all">Aggiungi tutti</string>
+    <string name="nav_play">Riproduci</string>
+    <string name="nav_bookmarks">Segnalibri</string>
+    <string name="nav_lists">Liste</string>
+    <string name="out_line">Uscita %1$s · float 32 bit · %2$s · %3$s</string>
+    <string name="out_mode_power">percorso eco</string>
+    <string name="out_mode_standard">percorso standard</string>
+    <string name="out_running">attiva</string>
+    <string name="out_idle">inattiva</string>
+    <string name="out_detail">Buffer %1$d ms · Anti-clipping %2$d · Underrun %3$d</string>
+    <string name="out_warn_48k">L’uscita di sistema è solo %1$s: apri Impostazioni → Suono e attiva «High-Res streaming», poi tocca una volta il pulsante «Uscita».</string>
+    <string name="btn_output_power">Uscita: Eco</string>
+    <string name="btn_output_standard">Uscita: Std</string>
+    <string name="combo_bookmark">Segnalibro: %1$s</string>
+    <string name="combo_modified">" (modificato)"</string>
+    <string name="combo_unsaved">Non salvato come segnalibro</string>
+    <string name="combo_none">Nessun audio selezionato</string>
+    <string name="tab_label">%1$s · %2$s</string>
+    <string name="not_selected">Nessuno</string>
+    <string name="btn_save">Salva</string>
+    <string name="btn_edit">Modifica</string>
+    <string name="btn_save_bookmark">Salva come segnalibro</string>
+    <string name="btn_choose_audio">Scegli audio</string>
+    <string name="btn_choose_lyrics">Scegli testo</string>
+    <string name="btn_remove">Rimuovi</string>
+    <string name="loop_on">Ripeti brano: sì</string>
+    <string name="loop_off">Ripeti brano: no</string>
+    <string name="slot_on">Questa traccia: attiva</string>
+    <string name="slot_off">Questa traccia: spenta</string>
+    <string name="set_no_file">Nessun audio: tocca «Scegli audio»</string>
+    <string name="lyrics_none_hint">Testo: nessuno (tocca «Scegli testo» per un .lrc)</string>
+    <string name="lyrics_info">Testo: %1$s</string>
+    <string name="lyrics_bilingual_suffix">" · bilingue"</string>
+    <string name="lyrics_unsynced_suffix">" · non sincronizzato"</string>
+    <string name="lyrics_src_lrc">file LRC</string>
+    <string name="lyrics_src_embedded">incorporato</string>
+    <string name="gain_mute">Volume: muto</string>
+    <string name="gain_db">Volume %1$s dB</string>
+    <string name="balance_center">Bilanciamento: centro</string>
+    <string name="balance_left">Bilanciamento: S %1$d</string>
+    <string name="balance_right">Bilanciamento: D %1$d</string>
+    <string name="chip_hint">Tocca A / B per cambiare: acceso = in riproduzione, grigio = spento</string>
+    <string name="chip_no_file">Nessun audio (sceglilo in %1$s sopra)</string>
+    <string name="state_off">Spenta · tocca per attivare</string>
+    <string name="state_error">Impossibile riprodurre</string>
+    <string name="state_playing">In riproduzione</string>
+    <string name="state_ended">Terminata</string>
+    <string name="state_paused">In pausa</string>
+    <string name="lyrics_unsynced_tap">Testo non sincronizzato · tocca per vedere</string>
+    <string name="toast_lyric_mode">Testo: %1$s</string>
+    <string name="lyric_mode_both">Entrambi</string>
+    <string name="lyric_mode_cjk">CJK</string>
+    <string name="lyric_mode_latin">Latino</string>
+    <string name="single_combo">Combinazione singola</string>
+    <string name="queue_bookmarks_pos">Lista segnalibri %1$d/%2$d</string>
+    <string name="queue_files_pos">Lista file %1$d/%2$d</string>
+    <string name="repeat_off">In ordine</string>
+    <string name="repeat_all">Ripeti lista</string>
+    <string name="repeat_one">Ripeti elemento</string>
+    <string name="btn_exit_queue">Esci dalla lista</string>
+    <string name="bookmarks_title">Segnalibri</string>
+    <string name="btn_add_bookmark">+ Salva attuale</string>
+    <string name="bookmark_page_hint">Tocca: carica e riproduci · Tieni premuto: rinomina / sovrascrivi / aggiungi alla lista / riordina / elimina</string>
+    <string name="bookmark_empty">Ancora nessun segnalibro.\nImposta A + B nella pagina Riproduci e tocca «Salva come segnalibro»: la prossima volta un tocco riprodurrà quella combinazione.</string>
+    <string name="bm_slot_off">%1$s (spento)</string>
+    <string name="bm_slot_a">A: %1$s</string>
+    <string name="bm_slot_b">B: %1$s</string>
+    <string name="bm_empty">(combinazione vuota)</string>
+    <string name="bm_deleted">(segnalibro eliminato)</string>
+    <string name="need_audio_first">Scegli prima un audio per A o B</string>
+    <string name="save_bookmark_title">Salva come segnalibro</string>
+    <string name="bookmark_name_hint">Nome del segnalibro</string>
+    <string name="rename_title">Rinomina segnalibro</string>
+    <string name="name_hint">Nome</string>
+    <string name="confirm_overwrite">Sovrascrivere il segnalibro «%1$s» con la combinazione A + B attuale?</string>
+    <string name="confirm_delete_bm">Eliminare il segnalibro «%1$s»? (Verrà rimosso anche dalla lista segnalibri.)</string>
+    <string name="segment_bookmarks">Lista segnalibri</string>
+    <string name="segment_files">Lista file</string>
+    <string name="hint_bookmark_list">Riproduce i segnalibri in ordine: A + B di ogni segnalibro suonano insieme, poi parte il successivo.</string>
+    <string name="hint_file_list">Riproduce i file in ordine: ogni file va in A; B mantiene la sua impostazione (spegni B nella pagina Riproduci per sentire solo A).</string>
+    <string name="btn_add_bookmark_q">+ Segnalibri</string>
+    <string name="btn_add_files">+ File</string>
+    <string name="btn_add_folder">+ Cartella</string>
+    <string name="btn_clear">Svuota</string>
+    <string name="btn_play_list">▶ Riproduci</string>
+    <string name="empty_bookmark_list">La lista segnalibri è vuota. Tocca «+ Segnalibri» per aggiungerne.</string>
+    <string name="empty_file_list">La lista file è vuota. Tocca «+ File» o «+ Cartella».</string>
+    <string name="confirm_clear_bookmark_list">Svuotare la lista segnalibri?</string>
+    <string name="confirm_clear_file_list">Svuotare la lista file?</string>
+    <string name="has_lyrics_suffix">" · testo"</string>
+    <string name="no_bookmarks_yet">Nessun segnalibro: prima tocca «Salva come segnalibro» nella pagina Riproduci</string>
+    <string name="pick_bookmarks_title">Scegli i segnalibri da aggiungere</string>
+    <string name="choose_audio_for">Scegli audio per %1$s</string>
+    <string name="choose_from_device">Dal dispositivo…</string>
+    <string name="choose_from_list">Dalla lista file (%1$d)</string>
+    <string name="picker_failed">Impossibile aprire il selettore di file</string>
+    <string name="btn_backup">Backup</string>
+    <string name="btn_restore">Ripristina</string>
+    <string name="btn_relink">Ricollega cartella</string>
+    <string name="relink_title">Ricollega cartella</string>
+    <string name="relink_message">Dopo una reinstallazione o un ripristino, i vecchi permessi di accesso ai file vanno persi.\n\nScegli la cartella principale della tua musica (es. Music o la scheda SD): l’app ritroverà i file di segnalibri e liste in base ai percorsi e ai nomi originali.</string>
+    <string name="relink_pick">Scegli cartella</string>
+    <string name="backup_file_prefix">DuoPlayer-backup-</string>
+    <string name="scanning_folder">Analisi della cartella…</string>
+    <string name="folder_no_audio">Nessun audio in questa cartella</string>
+    <string name="scanning_relink">Analisi e abbinamento dei file…</string>
+    <string name="backup_done">Backup salvato</string>
+    <string name="backup_failed">Impossibile scrivere il backup</string>
+    <string name="restore_read_failed">Impossibile leggere il backup</string>
+    <string name="restore_title">Ripristina backup</string>
+    <string name="restore_message">«Sostituisci»: sovrascrive tutti i segnalibri, le liste e la combinazione attuali.\n«Unisci»: aggiunge segnalibri e liste del backup ai dati attuali.</string>
+    <string name="restore_replace">Sostituisci</string>
+    <string name="restore_merge">Unisci</string>
+    <string name="version_current">Versione %1$s</string>
+    <string name="auto_update_on">Controllo auto: sì</string>
+    <string name="auto_update_off">Controllo auto: no</string>
+    <string name="check_update">Cerca aggiornamenti</string>
+    <string name="toast_bookmark_saved">Segnalibro «%1$s» salvato</string>
+    <string name="toast_bookmark_overwritten">Segnalibro sovrascritto con la combinazione attuale</string>
+    <string name="toast_files_added">%1$d file aggiunti</string>
+    <string name="toast_bad_backup">Non è un file di backup valido</string>
+    <string name="toast_merged">Unito: %1$d segnalibri in totale</string>
+    <string name="toast_restored">Ripristinati: %1$d segnalibri, %2$d file</string>
+    <string name="toast_missing_files">%1$d file non accessibili: usa «Ricollega cartella»</string>
+    <string name="toast_relink_ok_all">Accesso ripristinato: tutti i file sono raggiungibili</string>
+    <string name="toast_relink_fixed">Trovati %1$d file</string>
+    <string name="toast_relink_left">, %1$d ancora mancanti</string>
+    <string name="toast_both_off">A e B sono spente: attivane almeno una</string>
+    <string name="toast_choose_first">Scegli prima un file audio per A / B</string>
+    <string name="toast_not_in_list">Nessuna lista in riproduzione</string>
+    <string name="toast_list_finished">Lista terminata</string>
+    <string name="notif_channel">Riproduzione</string>
+    <string name="notif_prev">Precedente</string>
+    <string name="notif_pause">Pausa</string>
+    <string name="notif_play">Riproduci</string>
+    <string name="notif_next">Successivo</string>
+    <string name="err_io">Impossibile aprire il file</string>
+    <string name="err_no_permission">Nessun permesso di accesso: usa «Ricollega cartella» nella pagina Liste</string>
+    <string name="err_not_found">File non trovato: usa «Ricollega cartella» nella pagina Liste</string>
+    <string name="err_corrupt">Il file %1$s è danneggiato o illeggibile</string>
+    <string name="err_unsupported">Formato %1$s non supportato</string>
+    <string name="err_unknown_format">Formato file non riconosciuto</string>
+    <string name="err_no_audio_track">Il file non ha una traccia audio</string>
+    <string name="err_no_decoder">Questo sistema non ha un decoder per %1$s</string>
+    <string name="err_bad_format">Il decoder ha restituito un formato non valido</string>
+    <string name="err_bad_rate">Frequenza di campionamento non valida</string>
+    <string name="err_rate_ratio">Conversione di frequenza non supportata %1$s</string>
+    <string name="err_aaudio">Uscita audio (AAudio) non disponibile</string>
+    <string name="err_output_open">Impossibile aprire l’uscita audio: %1$s</string>
+    <string name="err_output_start">Impossibile avviare l’uscita audio: %1$s</string>
+    <string name="err_unknown">Errore sconosciuto (%1$s)</string>
+    <string name="fmt_lossless">lossless</string>
+    <string name="fmt_lossy">compresso</string>
+    <string name="path_direct_gain">Diretto %1$s · guadagno 64 bit</string>
+    <string name="path_bitperfect">Diretto %1$s · bit-perfect</string>
+    <string name="path_direct">Diretto %1$s</string>
+    <string name="path_resample">Ricampionamento %1$s → %2$s</string>
+    <string name="path_mix">" · mix"</string>
+    <string name="lyrics_none_long">Nessun testo trovato per questo brano.\n\n· Con «+ Cartella», un .lrc con lo stesso nome nella stessa cartella viene collegato automaticamente\n· Con «+ File», seleziona il .lrc insieme al brano\n· Oppure tocca «Scegli testo» sopra\n· Vengono letti anche i testi incorporati in FLAC / MP3 / DSF</string>
+    <string name="lyrics_none">Nessun testo</string>
+    <string name="lyrics_src_unsynced">%1$s · non sincronizzato</string>
+    <string name="lyrics_src_bilingual">%1$s · bilingue · %2$d righe</string>
+    <string name="lyrics_src_lines">%1$s · %2$d righe</string>
+    <string name="upd_checking">Ricerca aggiornamenti…</string>
+    <string name="upd_none_published">Nessuna versione pubblicata su GitHub</string>
+    <string name="upd_latest">Sei aggiornato (%1$s)</string>
+    <string name="upd_check_failed">Ricerca aggiornamenti non riuscita</string>
+    <string name="upd_check_failed_msg">%1$s\n\nGitHub può essere lento o irraggiungibile su alcune reti. Riprova più tardi o apri la pagina delle versioni nel browser.</string>
+    <string name="upd_open_page">Apri pagina versioni</string>
+    <string name="upd_found">Nuova versione %1$s</string>
+    <string name="upd_current">Versione attuale %1$s%2$s</string>
+    <string name="upd_download_install">Scarica e installa</string>
+    <string name="upd_skip">Salta questa versione</string>
+    <string name="upd_later">Più tardi</string>
+    <string name="upd_need_perm_title">Serve un permesso (una volta)</string>
+    <string name="upd_need_perm_msg">Android deve consentire a «%1$s» di installare app per potersi aggiornare.\n\nTocca «Impostazioni» → attiva «Consenti da questa fonte» → torna indietro e tocca di nuovo «Cerca aggiornamenti».</string>
+    <string name="upd_go_settings">Impostazioni</string>
+    <string name="upd_downloading">Download di %1$s</string>
+    <string name="upd_preparing">Preparazione…</string>
+    <string name="upd_progress">%1$s / %2$s MB (%3$d%%)</string>
+    <string name="upd_progress_unknown">%1$s MB</string>
+    <string name="upd_installer_failed">Impossibile aprire il programma di installazione: %1$s</string>
+    <string name="upd_failed">Aggiornamento non riuscito</string>
+    <string name="upd_no_browser">Nessun browser disponibile: %1$s</string>
+    <string name="upd_err_rate_limited">Limite di richieste GitHub raggiunto, riprova più tardi</string>
+    <string name="upd_err_http">GitHub ha risposto %1$s</string>
+    <string name="upd_err_redirect">Reindirizzamento del download non riuscito</string>
+    <string name="upd_err_download">Download non riuscito: HTTP %1$s</string>
+    <string name="upd_err_save">Impossibile salvare il pacchetto</string>
+    <string name="upd_err_redirects">Troppi reindirizzamenti</string>
+    <string name="upd_err_damaged">Il pacchetto è danneggiato</string>
+    <string name="upd_err_wrong_pkg">Il pacchetto non è questa app</string>
+    <string name="upd_err_not_newer">Il pacchetto non è più recente della versione installata</string>
+    <string name="upd_err_signature">La firma non corrisponde all’app installata, quindi non è possibile aggiornarla.\n(Le versioni 1.2 e precedenti usavano una firma temporanea: fai un backup nella pagina Liste, disinstalla la vecchia versione e installa una volta la nuova da GitHub; poi gli aggiornamenti funzioneranno nell’app.)</string>
+    <string-array name="bookmark_menu">
+        <item>Riproduci</item>
+        <item>Solo carica (non riprodurre)</item>
+        <item>Aggiungi alla lista segnalibri</item>
+        <item>Rinomina</item>
+        <item>Sovrascrivi con l’attuale</item>
+        <item>Sposta su</item>
+        <item>Sposta giù</item>
+        <item>Elimina</item>
+    </string-array>
+    <string-array name="queue_menu_files">
+        <item>Riproduci da qui</item>
+        <item>Metti in A</item>
+        <item>Metti in B</item>
+        <item>Sposta su</item>
+        <item>Sposta giù</item>
+        <item>Rimuovi dalla lista</item>
+    </string-array>
+    <string-array name="queue_menu_bookmarks">
+        <item>Riproduci da qui</item>
+        <item>Sposta su</item>
+        <item>Sposta giù</item>
+        <item>Rimuovi dalla lista</item>
+    </string-array>
+</resources>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 i18n/build_strings.py 生成，请修改 i18n/vi.txt -->
+<resources>
+    <string name="app_name">DuoPlayer Hi-Fi</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Hủy</string>
+    <string name="close">Đóng</string>
+    <string name="add">Thêm</string>
+    <string name="add_all">Thêm tất cả</string>
+    <string name="nav_play">Phát</string>
+    <string name="nav_bookmarks">Dấu trang</string>
+    <string name="nav_lists">Danh sách</string>
+    <string name="out_line">Đầu ra %1$s · float 32-bit · %2$s · %3$s</string>
+    <string name="out_mode_power">đường tiết kiệm</string>
+    <string name="out_mode_standard">đường tiêu chuẩn</string>
+    <string name="out_running">đang chạy</string>
+    <string name="out_idle">chờ</string>
+    <string name="out_detail">Bộ đệm %1$d ms · Chống méo %2$d · Thiếu dữ liệu %3$d</string>
+    <string name="out_warn_48k">Đầu ra hệ thống chỉ %1$s: mở Cài đặt → Âm thanh và bật “High-Res streaming”, rồi chạm nút “Đầu ra” một lần.</string>
+    <string name="btn_output_power">Đầu ra: Eco</string>
+    <string name="btn_output_standard">Đầu ra: Std</string>
+    <string name="combo_bookmark">Dấu trang: %1$s</string>
+    <string name="combo_modified">" (đã sửa)"</string>
+    <string name="combo_unsaved">Chưa lưu dấu trang</string>
+    <string name="combo_none">Chưa chọn âm thanh</string>
+    <string name="tab_label">%1$s · %2$s</string>
+    <string name="not_selected">Chưa chọn</string>
+    <string name="btn_save">Lưu</string>
+    <string name="btn_edit">Sửa</string>
+    <string name="btn_save_bookmark">Lưu dấu trang</string>
+    <string name="btn_choose_audio">Chọn âm thanh</string>
+    <string name="btn_choose_lyrics">Chọn lời bài hát</string>
+    <string name="btn_remove">Gỡ</string>
+    <string name="loop_on">Lặp một bài: bật</string>
+    <string name="loop_off">Lặp một bài: tắt</string>
+    <string name="slot_on">Kênh này: bật</string>
+    <string name="slot_off">Kênh này: tắt</string>
+    <string name="set_no_file">Chưa có âm thanh: chạm “Chọn âm thanh”</string>
+    <string name="lyrics_none_hint">Lời: không có (chạm “Chọn lời bài hát” để chọn .lrc)</string>
+    <string name="lyrics_info">Lời: %1$s</string>
+    <string name="lyrics_bilingual_suffix">" · song ngữ"</string>
+    <string name="lyrics_unsynced_suffix">" · không đồng bộ"</string>
+    <string name="lyrics_src_lrc">tệp LRC</string>
+    <string name="lyrics_src_embedded">nhúng</string>
+    <string name="gain_mute">Âm lượng: tắt tiếng</string>
+    <string name="gain_db">Âm lượng %1$s dB</string>
+    <string name="balance_center">Cân bằng: giữa</string>
+    <string name="balance_left">Cân bằng: T %1$d</string>
+    <string name="balance_right">Cân bằng: P %1$d</string>
+    <string name="chip_hint">Chạm A / B để chuyển: sáng = đang phát, xám = tắt</string>
+    <string name="chip_no_file">Chưa có âm thanh (chọn trong %1$s phía trên)</string>
+    <string name="state_off">Tắt · chạm để bật</string>
+    <string name="state_error">Không phát được</string>
+    <string name="state_playing">Đang phát</string>
+    <string name="state_ended">Đã hết</string>
+    <string name="state_paused">Tạm dừng</string>
+    <string name="lyrics_unsynced_tap">Lời không đồng bộ · chạm để xem</string>
+    <string name="toast_lyric_mode">Lời: %1$s</string>
+    <string name="lyric_mode_both">Cả hai</string>
+    <string name="lyric_mode_cjk">CJK</string>
+    <string name="lyric_mode_latin">Latinh</string>
+    <string name="single_combo">Một tổ hợp</string>
+    <string name="queue_bookmarks_pos">Danh sách dấu trang %1$d/%2$d</string>
+    <string name="queue_files_pos">Danh sách tệp %1$d/%2$d</string>
+    <string name="repeat_off">Theo thứ tự</string>
+    <string name="repeat_all">Lặp danh sách</string>
+    <string name="repeat_one">Lặp một mục</string>
+    <string name="btn_exit_queue">Thoát danh sách</string>
+    <string name="bookmarks_title">Dấu trang</string>
+    <string name="btn_add_bookmark">+ Lưu hiện tại</string>
+    <string name="bookmark_page_hint">Chạm: tải và phát · Nhấn giữ: đổi tên / ghi đè / thêm vào danh sách / sắp xếp / xóa</string>
+    <string name="bookmark_empty">Chưa có dấu trang.\nThiết lập A + B ở trang Phát rồi chạm “Lưu dấu trang” — lần sau chỉ một chạm là phát tổ hợp đó.</string>
+    <string name="bm_slot_off">%1$s (tắt)</string>
+    <string name="bm_slot_a">A: %1$s</string>
+    <string name="bm_slot_b">B: %1$s</string>
+    <string name="bm_empty">(tổ hợp trống)</string>
+    <string name="bm_deleted">(dấu trang đã xóa)</string>
+    <string name="need_audio_first">Hãy chọn âm thanh cho A hoặc B trước</string>
+    <string name="save_bookmark_title">Lưu dấu trang</string>
+    <string name="bookmark_name_hint">Tên dấu trang</string>
+    <string name="rename_title">Đổi tên dấu trang</string>
+    <string name="name_hint">Tên</string>
+    <string name="confirm_overwrite">Ghi đè dấu trang “%1$s” bằng tổ hợp A + B hiện tại?</string>
+    <string name="confirm_delete_bm">Xóa dấu trang “%1$s”? (Nó cũng sẽ bị gỡ khỏi danh sách dấu trang.)</string>
+    <string name="segment_bookmarks">Danh sách dấu trang</string>
+    <string name="segment_files">Danh sách tệp</string>
+    <string name="hint_bookmark_list">Phát dấu trang theo thứ tự: A + B của mỗi dấu trang phát cùng lúc, xong thì sang cái tiếp theo.</string>
+    <string name="hint_file_list">Phát tệp theo thứ tự: mỗi tệp được đưa vào A; B giữ thiết lập hiện tại (làm xám B ở trang Phát để chỉ nghe A).</string>
+    <string name="btn_add_bookmark_q">+ Dấu trang</string>
+    <string name="btn_add_files">+ Tệp</string>
+    <string name="btn_add_folder">+ Thư mục</string>
+    <string name="btn_clear">Xóa hết</string>
+    <string name="btn_play_list">▶ Phát</string>
+    <string name="empty_bookmark_list">Danh sách dấu trang trống. Chạm “+ Dấu trang” để thêm.</string>
+    <string name="empty_file_list">Danh sách tệp trống. Chạm “+ Tệp” hoặc “+ Thư mục”.</string>
+    <string name="confirm_clear_bookmark_list">Xóa hết danh sách dấu trang?</string>
+    <string name="confirm_clear_file_list">Xóa hết danh sách tệp?</string>
+    <string name="has_lyrics_suffix">" · có lời"</string>
+    <string name="no_bookmarks_yet">Chưa có dấu trang: hãy chạm “Lưu dấu trang” ở trang Phát trước</string>
+    <string name="pick_bookmarks_title">Chọn dấu trang để thêm</string>
+    <string name="choose_audio_for">Chọn âm thanh cho %1$s</string>
+    <string name="choose_from_device">Từ thiết bị…</string>
+    <string name="choose_from_list">Từ danh sách tệp (%1$d)</string>
+    <string name="picker_failed">Không mở được trình chọn tệp của hệ thống</string>
+    <string name="btn_backup">Sao lưu</string>
+    <string name="btn_restore">Khôi phục</string>
+    <string name="btn_relink">Liên kết lại thư mục</string>
+    <string name="relink_title">Liên kết lại thư mục</string>
+    <string name="relink_message">Sau khi cài lại ứng dụng hoặc khôi phục bản sao lưu, quyền truy cập tệp cũ sẽ mất.\n\nHãy chọn thư mục gốc chứa nhạc (ví dụ Music hoặc thẻ SD), ứng dụng sẽ tìm lại các tệp trong dấu trang và danh sách theo đường dẫn và tên ban đầu.</string>
+    <string name="relink_pick">Chọn thư mục</string>
+    <string name="backup_file_prefix">DuoPlayer-saoluu-</string>
+    <string name="scanning_folder">Đang quét thư mục…</string>
+    <string name="folder_no_audio">Thư mục này không có âm thanh</string>
+    <string name="scanning_relink">Đang quét và đối chiếu tệp…</string>
+    <string name="backup_done">Đã lưu bản sao lưu</string>
+    <string name="backup_failed">Ghi bản sao lưu thất bại</string>
+    <string name="restore_read_failed">Không đọc được bản sao lưu</string>
+    <string name="restore_title">Khôi phục bản sao lưu</string>
+    <string name="restore_message">“Thay thế”: ghi đè toàn bộ dấu trang, danh sách và tổ hợp hiện tại bằng bản sao lưu.\n“Gộp”: thêm dấu trang và danh sách trong bản sao lưu vào dữ liệu hiện có.</string>
+    <string name="restore_replace">Thay thế</string>
+    <string name="restore_merge">Gộp</string>
+    <string name="version_current">Phiên bản %1$s</string>
+    <string name="auto_update_on">Tự kiểm tra: bật</string>
+    <string name="auto_update_off">Tự kiểm tra: tắt</string>
+    <string name="check_update">Kiểm tra cập nhật</string>
+    <string name="toast_bookmark_saved">Đã lưu dấu trang “%1$s”</string>
+    <string name="toast_bookmark_overwritten">Đã ghi đè dấu trang bằng tổ hợp hiện tại</string>
+    <string name="toast_files_added">Đã thêm %1$d tệp</string>
+    <string name="toast_bad_backup">Không phải tệp sao lưu hợp lệ</string>
+    <string name="toast_merged">Đã gộp: tổng %1$d dấu trang</string>
+    <string name="toast_restored">Đã khôi phục: %1$d dấu trang, %2$d tệp</string>
+    <string name="toast_missing_files">Không truy cập được %1$d tệp — hãy dùng “Liên kết lại thư mục”</string>
+    <string name="toast_relink_ok_all">Đã khôi phục quyền — mọi tệp đều truy cập được</string>
+    <string name="toast_relink_fixed">Đã tìm thấy %1$d tệp</string>
+    <string name="toast_relink_left">, còn %1$d tệp chưa tìm thấy</string>
+    <string name="toast_both_off">A và B đều đang tắt: hãy bật ít nhất một</string>
+    <string name="toast_choose_first">Hãy chọn tệp âm thanh cho A / B trước</string>
+    <string name="toast_not_in_list">Hiện không phát danh sách</string>
+    <string name="toast_list_finished">Đã phát hết danh sách</string>
+    <string name="notif_channel">Phát nhạc</string>
+    <string name="notif_prev">Trước</string>
+    <string name="notif_pause">Tạm dừng</string>
+    <string name="notif_play">Phát</string>
+    <string name="notif_next">Tiếp</string>
+    <string name="err_io">Không mở được tệp</string>
+    <string name="err_no_permission">Không có quyền truy cập: dùng “Liên kết lại thư mục” ở trang Danh sách</string>
+    <string name="err_not_found">Không tìm thấy tệp: dùng “Liên kết lại thư mục” ở trang Danh sách</string>
+    <string name="err_corrupt">Tệp %1$s bị hỏng hoặc không đọc được</string>
+    <string name="err_unsupported">Định dạng %1$s không được hỗ trợ</string>
+    <string name="err_unknown_format">Không nhận dạng được định dạng tệp</string>
+    <string name="err_no_audio_track">Tệp không có rãnh âm thanh</string>
+    <string name="err_no_decoder">Hệ thống không có bộ giải mã cho %1$s</string>
+    <string name="err_bad_format">Bộ giải mã trả về định dạng không hợp lệ</string>
+    <string name="err_bad_rate">Tần số lấy mẫu không hợp lệ</string>
+    <string name="err_rate_ratio">Không hỗ trợ chuyển đổi tần số %1$s</string>
+    <string name="err_aaudio">Không dùng được đầu ra âm thanh (AAudio)</string>
+    <string name="err_output_open">Không mở được đầu ra âm thanh: %1$s</string>
+    <string name="err_output_start">Không khởi động được đầu ra âm thanh: %1$s</string>
+    <string name="err_unknown">Lỗi không xác định (%1$s)</string>
+    <string name="fmt_lossless">lossless</string>
+    <string name="fmt_lossy">nén mất dữ liệu</string>
+    <string name="path_direct_gain">Trực tiếp %1$s · khuếch đại 64-bit</string>
+    <string name="path_bitperfect">Trực tiếp %1$s · bit-perfect</string>
+    <string name="path_direct">Trực tiếp %1$s</string>
+    <string name="path_resample">Lấy mẫu lại %1$s → %2$s</string>
+    <string name="path_mix">" · trộn"</string>
+    <string name="lyrics_none_long">Không tìm thấy lời cho bài này.\n\n· Khi nhập bằng “+ Thư mục”, tệp .lrc cùng tên trong cùng thư mục sẽ tự liên kết\n· Khi dùng “+ Tệp”, hãy chọn .lrc cùng với bài hát\n· Hoặc chạm “Chọn lời bài hát” phía trên\n· Lời nhúng trong FLAC / MP3 / DSF cũng được đọc</string>
+    <string name="lyrics_none">Không có lời</string>
+    <string name="lyrics_src_unsynced">%1$s · không đồng bộ</string>
+    <string name="lyrics_src_bilingual">%1$s · song ngữ · %2$d dòng</string>
+    <string name="lyrics_src_lines">%1$s · %2$d dòng</string>
+    <string name="upd_checking">Đang kiểm tra cập nhật…</string>
+    <string name="upd_none_published">Chưa có bản phát hành nào trên GitHub</string>
+    <string name="upd_latest">Bạn đang dùng bản mới nhất (%1$s)</string>
+    <string name="upd_check_failed">Kiểm tra cập nhật thất bại</string>
+    <string name="upd_check_failed_msg">%1$s\n\nỞ một số mạng GitHub có thể chậm hoặc không truy cập được. Hãy thử lại sau hoặc mở trang phát hành bằng trình duyệt.</string>
+    <string name="upd_open_page">Mở trang phát hành</string>
+    <string name="upd_found">Phiên bản mới %1$s</string>
+    <string name="upd_current">Phiên bản hiện tại %1$s%2$s</string>
+    <string name="upd_download_install">Tải về và cài đặt</string>
+    <string name="upd_skip">Bỏ qua phiên bản này</string>
+    <string name="upd_later">Để sau</string>
+    <string name="upd_need_perm_title">Cần cấp quyền một lần</string>
+    <string name="upd_need_perm_msg">Android cần cho phép “%1$s” cài ứng dụng thì nó mới tự cập nhật được.\n\nChạm “Cài đặt” → bật “Cho phép từ nguồn này” → quay lại và chạm “Kiểm tra cập nhật” lần nữa.</string>
+    <string name="upd_go_settings">Cài đặt</string>
+    <string name="upd_downloading">Đang tải %1$s</string>
+    <string name="upd_preparing">Đang chuẩn bị…</string>
+    <string name="upd_progress">%1$s / %2$s MB (%3$d%%)</string>
+    <string name="upd_progress_unknown">%1$s MB</string>
+    <string name="upd_installer_failed">Không mở được trình cài đặt: %1$s</string>
+    <string name="upd_failed">Cập nhật thất bại</string>
+    <string name="upd_no_browser">Không có trình duyệt: %1$s</string>
+    <string name="upd_err_rate_limited">Đã chạm giới hạn truy cập GitHub, hãy thử lại sau</string>
+    <string name="upd_err_http">GitHub trả về %1$s</string>
+    <string name="upd_err_redirect">Chuyển hướng tải xuống thất bại</string>
+    <string name="upd_err_download">Tải xuống thất bại: HTTP %1$s</string>
+    <string name="upd_err_save">Không lưu được gói cài đặt</string>
+    <string name="upd_err_redirects">Quá nhiều lần chuyển hướng</string>
+    <string name="upd_err_damaged">Gói cài đặt bị hỏng</string>
+    <string name="upd_err_wrong_pkg">Gói này không phải của ứng dụng này</string>
+    <string name="upd_err_not_newer">Gói không mới hơn phiên bản đã cài</string>
+    <string name="upd_err_signature">Chữ ký không khớp với ứng dụng đã cài nên không thể cập nhật đè.\n(Phiên bản 1.2 trở về trước dùng chữ ký tạm: hãy sao lưu ở trang Danh sách, gỡ bản cũ rồi cài bản mới từ GitHub một lần — sau đó có thể cập nhật ngay trong ứng dụng.)</string>
+    <string-array name="bookmark_menu">
+        <item>Phát</item>
+        <item>Chỉ tải (không phát)</item>
+        <item>Thêm vào danh sách dấu trang</item>
+        <item>Đổi tên</item>
+        <item>Ghi đè bằng hiện tại</item>
+        <item>Lên</item>
+        <item>Xuống</item>
+        <item>Xóa</item>
+    </string-array>
+    <string-array name="queue_menu_files">
+        <item>Phát từ đây</item>
+        <item>Đưa vào A</item>
+        <item>Đưa vào B</item>
+        <item>Lên</item>
+        <item>Xuống</item>
+        <item>Gỡ khỏi danh sách</item>
+    </string-array>
+    <string-array name="queue_menu_bookmarks">
+        <item>Phát từ đây</item>
+        <item>Lên</item>
+        <item>Xuống</item>
+        <item>Gỡ khỏi danh sách</item>
+    </string-array>
+</resources>

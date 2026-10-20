@@ -8,6 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import android.provider.Settings
 import android.widget.Toast
+import com.zxdual.player.R
 
 /**
  * 检查更新的界面流程：
@@ -35,7 +36,7 @@ class UpdateUi(private val activity: Activity, private val dialogTheme: Int) {
     fun check(manual: Boolean) {
         if (busy) return
         busy = true
-        if (manual) toast("正在检查更新…")
+        if (manual) toast(str(R.string.upd_checking))
         Thread {
             val result = runCatching { Updater.fetchLatest() }
             main.post {
@@ -45,17 +46,17 @@ class UpdateUi(private val activity: Activity, private val dialogTheme: Int) {
                 result.onSuccess { r ->
                     val skipped = prefs.getString("skip", null)
                     when {
-                        r == null -> if (manual) toast("GitHub 上还没有发布版本")
-                        !Updater.isNewer(r.tag, currentVersion) -> if (manual) toast("已是最新版本（$currentVersion）")
+                        r == null -> if (manual) toast(str(R.string.upd_none_published))
+                        !Updater.isNewer(r.tag, currentVersion) -> if (manual) toast(str(R.string.upd_latest, currentVersion))
                         !manual && r.tag == skipped -> Unit
                         else -> offer(r)
                     }
                 }.onFailure { e ->
                     if (manual) {
-                        AlertDialog.Builder(activity, dialogTheme).setTitle("检查更新失败")
-                            .setMessage("${e.message ?: e.javaClass.simpleName}\n\n国内网络访问 GitHub 可能不稳定，可以稍后再试，或用浏览器打开发布页手动下载。")
-                            .setPositiveButton("打开发布页") { _, _ -> openReleases() }
-                            .setNegativeButton("关闭", null).show()
+                        AlertDialog.Builder(activity, dialogTheme).setTitle(str(R.string.upd_check_failed))
+                            .setMessage(str(R.string.upd_check_failed_msg, describe(e)))
+                            .setPositiveButton(str(R.string.upd_open_page)) { _, _ -> openReleases() }
+                            .setNegativeButton(str(R.string.close), null).show()
                     }
                 }
             }
@@ -65,11 +66,11 @@ class UpdateUi(private val activity: Activity, private val dialogTheme: Int) {
     private fun offer(r: Updater.Release) {
         val size = if (r.apkSize > 0) " · %.1f MB".format(r.apkSize / 1048576.0) else ""
         AlertDialog.Builder(activity, dialogTheme)
-            .setTitle("发现新版本 ${r.tag}")
-            .setMessage("当前版本 $currentVersion$size\n\n" + plainNotes(r.notes).take(1500).ifEmpty { r.title })
-            .setPositiveButton("下载并安装") { _, _ -> ensureInstallAllowed { download(r) } }
-            .setNeutralButton("跳过此版本") { _, _ -> prefs.edit().putString("skip", r.tag).apply() }
-            .setNegativeButton("以后", null)
+            .setTitle(str(R.string.upd_found, r.tag))
+            .setMessage(str(R.string.upd_current, currentVersion, size) + "\n\n" + plainNotes(r.notes).take(1500).ifEmpty { r.title })
+            .setPositiveButton(str(R.string.upd_download_install)) { _, _ -> ensureInstallAllowed { download(r) } }
+            .setNeutralButton(str(R.string.upd_skip)) { _, _ -> prefs.edit().putString("skip", r.tag).apply() }
+            .setNegativeButton(str(R.string.upd_later), null)
             .show()
     }
 
@@ -77,30 +78,30 @@ class UpdateUi(private val activity: Activity, private val dialogTheme: Int) {
     private fun ensureInstallAllowed(then: () -> Unit) {
         if (activity.packageManager.canRequestPackageInstalls()) { then(); return }
         AlertDialog.Builder(activity, dialogTheme)
-            .setTitle("需要一次授权")
-            .setMessage("安卓要求允许「双轨 Hi-Fi」安装应用，才能自己更新。\n\n点「去设置」→ 打开「允许来自此来源的应用」→ 返回，再点一次「检查更新」。")
-            .setPositiveButton("去设置") { _, _ ->
+            .setTitle(str(R.string.upd_need_perm_title))
+            .setMessage(str(R.string.upd_need_perm_msg, str(R.string.app_name)))
+            .setPositiveButton(str(R.string.upd_go_settings)) { _, _ ->
                 activity.startActivity(Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, Uri.parse("package:${activity.packageName}")))
             }
-            .setNegativeButton("取消", null).show()
+            .setNegativeButton(str(R.string.cancel), null).show()
     }
 
     private fun download(r: Updater.Release) {
         if (busy) return
         busy = true
         val dlg = AlertDialog.Builder(activity, dialogTheme)
-            .setTitle("正在下载 ${r.tag}")
-            .setMessage("准备中…")
+            .setTitle(str(R.string.upd_downloading, r.tag))
+            .setMessage(str(R.string.upd_preparing))
             .setCancelable(false)
             .show()
         Thread {
             val result = runCatching {
                 val f = Updater.download(activity, r) { done, total ->
-                    val text = if (total > 0) "%.1f / %.1f MB（%d%%）".format(done / 1048576.0, total / 1048576.0, done * 100 / total)
-                    else "%.1f MB".format(done / 1048576.0)
+                    val text = if (total > 0) str(R.string.upd_progress, "%.1f".format(done / 1048576.0), "%.1f".format(total / 1048576.0), (done * 100 / total).toInt())
+                    else str(R.string.upd_progress_unknown, "%.1f".format(done / 1048576.0))
                     main.post { dlg.setMessage(text) }
                 }
-                Updater.verify(activity, f)?.let { throw IllegalStateException(it) }
+                Updater.verify(activity, f)?.let { throw UpdateException(it) }
                 f
             }
             main.post {
@@ -110,12 +111,12 @@ class UpdateUi(private val activity: Activity, private val dialogTheme: Int) {
                     val i = Intent(Intent.ACTION_VIEW)
                         .setDataAndType(ApkProvider.uriFor(f), ApkProvider.MIME)
                         .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_ACTIVITY_NEW_TASK)
-                    runCatching { activity.startActivity(i) }.onFailure { toast("无法打开系统安装器：${it.message}") }
+                    runCatching { activity.startActivity(i) }.onFailure { toast(str(R.string.upd_installer_failed, it.message ?: "")) }
                 }.onFailure { e ->
-                    AlertDialog.Builder(activity, dialogTheme).setTitle("更新失败")
-                        .setMessage(e.message ?: e.javaClass.simpleName)
-                        .setPositiveButton("打开发布页") { _, _ -> openReleases() }
-                        .setNegativeButton("关闭", null).show()
+                    AlertDialog.Builder(activity, dialogTheme).setTitle(str(R.string.upd_failed))
+                        .setMessage(describe(e))
+                        .setPositiveButton(str(R.string.upd_open_page)) { _, _ -> openReleases() }
+                        .setNegativeButton(str(R.string.close), null).show()
                 }
             }
         }.start()
@@ -128,8 +129,13 @@ class UpdateUi(private val activity: Activity, private val dialogTheme: Int) {
 
     fun openReleases() {
         runCatching { activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(Updater.RELEASES_PAGE))) }
-            .onFailure { toast("没有可用的浏览器：${Updater.RELEASES_PAGE}") }
+            .onFailure { toast(str(R.string.upd_no_browser, Updater.RELEASES_PAGE)) }
     }
+
+    private fun str(id: Int, vararg args: Any): String = activity.getString(id, *args)
+
+    private fun describe(e: Throwable): String =
+        if (e is UpdateException) (if (e.arg.isEmpty()) str(e.res) else str(e.res, e.arg)) else e.message ?: e.javaClass.simpleName
 
     private fun toast(s: String) = Toast.makeText(activity, s, Toast.LENGTH_LONG).show()
 }

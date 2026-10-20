@@ -24,12 +24,14 @@ class Lyrics(val lines: List<LyricLine>, val synced: Boolean, val source: String
     val isBilingual: Boolean get() = lines.any { it.texts.size >= 2 }
 }
 
-enum class LyricMode(val label: String) { BOTH("双语"), ZH("中文"), EN("English") }
+/** 显示模式：两行都显示 / 只显示含中日韩文字的行 / 只显示拉丁字母的行（界面文字见 Labels.kt） */
+enum class LyricMode { BOTH, ZH, EN }
 
 object LyricText {
-    private val HAN = Regex("[\\u3400-\\u9FFF\\uF900-\\uFAFF]")
+    // 汉字 + 日文假名 + 韩文，用来区分「原文 / 译文」两行
+    private val CJK = Regex("[\\u3040-\\u30FF\\u3400-\\u9FFF\\uF900-\\uFAFF\\uAC00-\\uD7AF\\u1100-\\u11FF]")
 
-    fun hasHan(s: String) = HAN.containsMatchIn(s)
+    fun hasHan(s: String) = CJK.containsMatchIn(s)
 
     /** 按显示模式挑出要显示的行 */
     fun pick(line: LyricLine, mode: LyricMode): List<String> {
@@ -52,7 +54,7 @@ object LrcParser {
         var offset = 0L
         val timed = LinkedHashMap<Long, MutableList<String>>()
         val plain = mutableListOf<String>()
-        for (raw in text.replace("﻿", "").split('\n')) {
+        for (raw in text.replace("\uFEFF", "").split('\n')) {
             val line = raw.trimEnd('\r')
             if (line.isBlank()) continue
             val stamps = mutableListOf<Long>()

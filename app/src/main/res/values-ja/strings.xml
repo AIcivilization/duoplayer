@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 i18n/build_strings.py 生成，请修改 i18n/ja.txt -->
+<resources>
+    <string name="app_name">DuoPlayer Hi-Fi</string>
+    <string name="ok">OK</string>
+    <string name="cancel">キャンセル</string>
+    <string name="close">閉じる</string>
+    <string name="add">追加</string>
+    <string name="add_all">すべて追加</string>
+    <string name="nav_play">再生</string>
+    <string name="nav_bookmarks">ブックマーク</string>
+    <string name="nav_lists">リスト</string>
+    <string name="out_line">出力 %1$s · 32bit float · %2$s · %3$s</string>
+    <string name="out_mode_power">省電力パス</string>
+    <string name="out_mode_standard">標準パス</string>
+    <string name="out_running">動作中</string>
+    <string name="out_idle">待機</string>
+    <string name="out_detail">バッファ %1$d ms · クリップ保護 %2$d · アンダーラン %3$d</string>
+    <string name="out_warn_48k">システム出力が %1$s のみです：設定 → 音 で「High-Res streaming（ハイレゾストリーミング）」をオンにし、右の「出力」ボタンを一度タップしてください。</string>
+    <string name="btn_output_power">出力:省電力</string>
+    <string name="btn_output_standard">出力:標準</string>
+    <string name="combo_bookmark">ブックマーク：%1$s</string>
+    <string name="combo_modified">（変更あり）</string>
+    <string name="combo_unsaved">未保存</string>
+    <string name="combo_none">音源が未選択</string>
+    <string name="tab_label">%1$s · %2$s</string>
+    <string name="not_selected">未選択</string>
+    <string name="btn_save">保存</string>
+    <string name="btn_edit">編集</string>
+    <string name="btn_save_bookmark">ブックマークに保存</string>
+    <string name="btn_choose_audio">音源を選択</string>
+    <string name="btn_choose_lyrics">歌詞を選択</string>
+    <string name="btn_remove">解除</string>
+    <string name="loop_on">1曲リピート：オン</string>
+    <string name="loop_off">1曲リピート：オフ</string>
+    <string name="slot_on">このトラック：オン</string>
+    <string name="slot_off">このトラック：オフ</string>
+    <string name="set_no_file">音源が未選択です：「音源を選択」をタップ</string>
+    <string name="lyrics_none_hint">歌詞：なし（「歌詞を選択」で .lrc を指定）</string>
+    <string name="lyrics_info">歌詞：%1$s</string>
+    <string name="lyrics_bilingual_suffix">" · 対訳"</string>
+    <string name="lyrics_unsynced_suffix">" · 非同期"</string>
+    <string name="lyrics_src_lrc">LRC ファイル</string>
+    <string name="lyrics_src_embedded">埋め込み</string>
+    <string name="gain_mute">音量 ミュート</string>
+    <string name="gain_db">音量 %1$s dB</string>
+    <string name="balance_center">定位 中央</string>
+    <string name="balance_left">定位 左 %1$d</string>
+    <string name="balance_right">定位 右 %1$d</string>
+    <string name="chip_hint">A / B をタップで切替：明るい = 再生、グレー = オフ</string>
+    <string name="chip_no_file">音源なし（上の %1$s で選択）</string>
+    <string name="state_off">オフ · タップで有効化</string>
+    <string name="state_error">再生できません</string>
+    <string name="state_playing">再生中</string>
+    <string name="state_ended">終了</string>
+    <string name="state_paused">一時停止</string>
+    <string name="lyrics_unsynced_tap">非同期の歌詞 · タップで全文表示</string>
+    <string name="toast_lyric_mode">歌詞：%1$s</string>
+    <string name="lyric_mode_both">対訳</string>
+    <string name="lyric_mode_cjk">日本語</string>
+    <string name="lyric_mode_latin">English</string>
+    <string name="single_combo">単一の組み合わせ</string>
+    <string name="queue_bookmarks_pos">ブックマークリスト %1$d/%2$d</string>
+    <string name="queue_files_pos">ファイルリスト %1$d/%2$d</string>
+    <string name="repeat_off">順番に再生</string>
+    <string name="repeat_all">リストをリピート</string>
+    <string name="repeat_one">1項目リピート</string>
+    <string name="btn_exit_queue">リスト終了</string>
+    <string name="bookmarks_title">ブックマーク</string>
+    <string name="btn_add_bookmark">＋ 現在の組み合わせを保存</string>
+    <string name="bookmark_page_hint">タップ：読み込んで再生 · 長押し：名前変更 / 上書き / リストに追加 / 並べ替え / 削除</string>
+    <string name="bookmark_empty">ブックマークはまだありません。\n再生ページで A + B を設定して「ブックマークに保存」をタップすると、次からワンタップでその組み合わせを再生できます。</string>
+    <string name="bm_slot_off">%1$s（オフ）</string>
+    <string name="bm_slot_a">A：%1$s</string>
+    <string name="bm_slot_b">B：%1$s</string>
+    <string name="bm_empty">（空の組み合わせ）</string>
+    <string name="bm_deleted">（削除されたブックマーク）</string>
+    <string name="need_audio_first">先に A / B の音源を選択してください</string>
+    <string name="save_bookmark_title">ブックマークに保存</string>
+    <string name="bookmark_name_hint">ブックマーク名</string>
+    <string name="rename_title">ブックマーク名を変更</string>
+    <string name="name_hint">名前</string>
+    <string name="confirm_overwrite">ブックマーク「%1$s」を現在の A + B で上書きしますか？</string>
+    <string name="confirm_delete_bm">ブックマーク「%1$s」を削除しますか？（ブックマークリストからも削除されます）</string>
+    <string name="segment_bookmarks">ブックマークリスト</string>
+    <string name="segment_files">ファイルリスト</string>
+    <string name="hint_bookmark_list">ブックマークを順に再生：各ブックマークの A+B を同時に再生し、終わると次へ</string>
+    <string name="hint_file_list">ファイルを順に再生：各ファイルを A に入れて再生。B は現在の設定のまま（再生ページで B をグレーにすると A だけ）</string>
+    <string name="btn_add_bookmark_q">＋ ブックマーク</string>
+    <string name="btn_add_files">＋ ファイル</string>
+    <string name="btn_add_folder">＋ フォルダ</string>
+    <string name="btn_clear">クリア</string>
+    <string name="btn_play_list">▶ 再生</string>
+    <string name="empty_bookmark_list">ブックマークリストは空です。「＋ ブックマーク」で追加してください。</string>
+    <string name="empty_file_list">ファイルリストは空です。「＋ ファイル」または「＋ フォルダ」で追加してください。</string>
+    <string name="confirm_clear_bookmark_list">ブックマークリストをクリアしますか？</string>
+    <string name="confirm_clear_file_list">ファイルリストをクリアしますか？</string>
+    <string name="has_lyrics_suffix">" · 歌詞あり"</string>
+    <string name="no_bookmarks_yet">ブックマークがありません：先に再生ページで「ブックマークに保存」してください</string>
+    <string name="pick_bookmarks_title">追加するブックマークを選択</string>
+    <string name="choose_audio_for">%1$s の音源を選択</string>
+    <string name="choose_from_device">端末から選択…</string>
+    <string name="choose_from_list">ファイルリストから選択（%1$d 件）</string>
+    <string name="picker_failed">システムのファイル選択画面を開けません</string>
+    <string name="btn_backup">バックアップ</string>
+    <string name="btn_restore">復元</string>
+    <string name="btn_relink">フォルダを再リンク</string>
+    <string name="relink_title">フォルダを再リンク</string>
+    <string name="relink_message">アプリの再インストールやバックアップの復元後は、以前のファイルへのアクセス許可が失われます。\n\n音楽を保存しているルートフォルダ（Music や SD カードなど）を選ぶと、元のパスとファイル名からブックマークやリストのファイルを自動で見つけ直します。</string>
+    <string name="relink_pick">フォルダを選択</string>
+    <string name="backup_file_prefix">DuoPlayer-backup-</string>
+    <string name="scanning_folder">フォルダをスキャン中…</string>
+    <string name="folder_no_audio">このフォルダに音源がありません</string>
+    <string name="scanning_relink">ファイルをスキャンして照合中…</string>
+    <string name="backup_done">バックアップしました</string>
+    <string name="backup_failed">バックアップの書き込みに失敗しました</string>
+    <string name="restore_read_failed">バックアップを読み込めません</string>
+    <string name="restore_title">バックアップを復元</string>
+    <string name="restore_message">「置き換え」：現在のブックマーク・リスト・組み合わせをすべてバックアップで上書きします。\n「結合」：バックアップのブックマークとリストを現在のデータに追加します。</string>
+    <string name="restore_replace">置き換え</string>
+    <string name="restore_merge">結合</string>
+    <string name="version_current">バージョン %1$s</string>
+    <string name="auto_update_on">自動確認：オン</string>
+    <string name="auto_update_off">自動確認：オフ</string>
+    <string name="check_update">更新を確認</string>
+    <string name="toast_bookmark_saved">ブックマーク「%1$s」を保存しました</string>
+    <string name="toast_bookmark_overwritten">現在の組み合わせでブックマークを上書きしました</string>
+    <string name="toast_files_added">%1$d 件のファイルを追加しました</string>
+    <string name="toast_bad_backup">有効なバックアップファイルではありません</string>
+    <string name="toast_merged">結合しました：ブックマーク計 %1$d 件</string>
+    <string name="toast_restored">復元しました：ブックマーク %1$d 件、ファイル %2$d 件</string>
+    <string name="toast_missing_files">%1$d 件のファイルにアクセスできません。「フォルダを再リンク」で見つけ直してください</string>
+    <string name="toast_relink_ok_all">アクセス許可が戻りました。すべてのファイルにアクセスできます</string>
+    <string name="toast_relink_fixed">%1$d 件のファイルを見つけました</string>
+    <string name="toast_relink_left">、%1$d 件は見つかりません</string>
+    <string name="toast_both_off">A と B が両方オフです：少なくとも一方をオンにしてください</string>
+    <string name="toast_choose_first">先に A / B の音源ファイルを選択してください</string>
+    <string name="toast_not_in_list">リスト再生中ではありません</string>
+    <string name="toast_list_finished">リストの再生が終わりました</string>
+    <string name="notif_channel">再生</string>
+    <string name="notif_prev">前へ</string>
+    <string name="notif_pause">一時停止</string>
+    <string name="notif_play">再生</string>
+    <string name="notif_next">次へ</string>
+    <string name="err_io">ファイルを開けません</string>
+    <string name="err_no_permission">アクセス許可がありません：「リスト」ページの「フォルダを再リンク」を使ってください</string>
+    <string name="err_not_found">ファイルが見つかりません：「リスト」ページの「フォルダを再リンク」を使ってください</string>
+    <string name="err_corrupt">%1$s ファイルが壊れているか解析できません</string>
+    <string name="err_unsupported">未対応の %1$s 形式です</string>
+    <string name="err_unknown_format">認識できないファイル形式です</string>
+    <string name="err_no_audio_track">ファイルに音声トラックがありません</string>
+    <string name="err_no_decoder">このシステムには %1$s のデコーダーがありません</string>
+    <string name="err_bad_format">デコーダーが無効な形式を返しました</string>
+    <string name="err_bad_rate">サンプリングレートが無効です</string>
+    <string name="err_rate_ratio">未対応のサンプリングレート変換 %1$s</string>
+    <string name="err_aaudio">音声出力（AAudio）を利用できません</string>
+    <string name="err_output_open">音声出力を開けません：%1$s</string>
+    <string name="err_output_start">音声出力を開始できません：%1$s</string>
+    <string name="err_unknown">不明なエラー（%1$s）</string>
+    <string name="fmt_lossless">ロスレス</string>
+    <string name="fmt_lossy">非可逆</string>
+    <string name="path_direct_gain">ダイレクト %1$s · 64bit ゲイン</string>
+    <string name="path_bitperfect">ダイレクト %1$s · ビットパーフェクト</string>
+    <string name="path_direct">ダイレクト %1$s</string>
+    <string name="path_resample">リサンプル %1$s → %2$s</string>
+    <string name="path_mix">" · ミックス"</string>
+    <string name="lyrics_none_long">この曲の歌詞が見つかりません。\n\n·「＋ フォルダ」で読み込むと、同じフォルダの同名 .lrc が自動で関連付けられます\n·「＋ ファイル」では曲と一緒に .lrc も選択してください\n· 上の「歌詞を選択」で指定することもできます\n· FLAC / MP3 / DSF の埋め込み歌詞も読み込みます</string>
+    <string name="lyrics_none">歌詞なし</string>
+    <string name="lyrics_src_unsynced">%1$s · 非同期の歌詞</string>
+    <string name="lyrics_src_bilingual">%1$s · 対訳 · %2$d 行</string>
+    <string name="lyrics_src_lines">%1$s · %2$d 行</string>
+    <string name="upd_checking">更新を確認中…</string>
+    <string name="upd_none_published">GitHub にまだリリースがありません</string>
+    <string name="upd_latest">最新版です（%1$s）</string>
+    <string name="upd_check_failed">更新の確認に失敗しました</string>
+    <string name="upd_check_failed_msg">%1$s\n\nネットワークによっては GitHub に接続しにくい場合があります。後でもう一度試すか、ブラウザでリリースページを開いてください。</string>
+    <string name="upd_open_page">リリースページを開く</string>
+    <string name="upd_found">新しいバージョン %1$s</string>
+    <string name="upd_current">現在のバージョン %1$s%2$s</string>
+    <string name="upd_download_install">ダウンロードしてインストール</string>
+    <string name="upd_skip">このバージョンをスキップ</string>
+    <string name="upd_later">後で</string>
+    <string name="upd_need_perm_title">一度だけ許可が必要です</string>
+    <string name="upd_need_perm_msg">自動更新するには、「%1$s」にアプリのインストールを許可する必要があります。\n\n「設定へ」→「この提供元のアプリを許可」をオン → 戻って、もう一度「更新を確認」をタップしてください。</string>
+    <string name="upd_go_settings">設定へ</string>
+    <string name="upd_downloading">%1$s をダウンロード中</string>
+    <string name="upd_preparing">準備中…</string>
+    <string name="upd_progress">%1$s / %2$s MB（%3$d%%）</string>
+    <string name="upd_progress_unknown">%1$s MB</string>
+    <string name="upd_installer_failed">システムのインストーラーを開けません：%1$s</string>
+    <string name="upd_failed">更新に失敗しました</string>
+    <string name="upd_no_browser">利用できるブラウザがありません：%1$s</string>
+    <string name="upd_err_rate_limited">GitHub のアクセス制限に達しました。しばらくしてから再試行してください</string>
+    <string name="upd_err_http">GitHub が %1$s を返しました</string>
+    <string name="upd_err_redirect">ダウンロードのリダイレクトに失敗しました</string>
+    <string name="upd_err_download">ダウンロードに失敗しました：HTTP %1$s</string>
+    <string name="upd_err_save">パッケージを保存できません</string>
+    <string name="upd_err_redirects">リダイレクトが多すぎます</string>
+    <string name="upd_err_damaged">パッケージが壊れています</string>
+    <string name="upd_err_wrong_pkg">このアプリのパッケージではありません</string>
+    <string name="upd_err_not_newer">パッケージがインストール済みのバージョンより新しくありません</string>
+    <string name="upd_err_signature">署名がインストール済みのアプリと一致しないため、上書きインストールできません。\n（1.2 以前は一時的な署名でした：「リスト」ページでバックアップし、旧バージョンをアンインストールしてから GitHub から新バージョンを一度だけ手動でインストールしてください。以降はアプリ内で更新できます。）</string>
+    <string-array name="bookmark_menu">
+        <item>再生</item>
+        <item>読み込みのみ（再生しない）</item>
+        <item>ブックマークリストに追加</item>
+        <item>名前を変更</item>
+        <item>現在の組み合わせで上書き</item>
+        <item>上へ</item>
+        <item>下へ</item>
+        <item>削除</item>
+    </string-array>
+    <string-array name="queue_menu_files">
+        <item>ここから再生</item>
+        <item>A に入れる</item>
+        <item>B に入れる</item>
+        <item>上へ</item>
+        <item>下へ</item>
+        <item>リストから削除</item>
+    </string-array>
+    <string-array name="queue_menu_bookmarks">
+        <item>ここから再生</item>
+        <item>上へ</item>
+        <item>下へ</item>
+        <item>リストから削除</item>
+    </string-array>
+</resources>

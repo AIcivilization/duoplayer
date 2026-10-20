@@ -177,13 +177,13 @@ class PlaybackService : Service() {
     fun saveBookmark(name: String) = post {
         val bm = Bookmark(Bookmark.newId(), name.ifBlank { comboName() }, lib.current)
         lib = lib.copy(bookmarks = lib.bookmarks + bm, currentBookmarkId = bm.id)
-        toast("已保存书签「${bm.name}」")
+        toast(getString(R.string.toast_bookmark_saved, bm.name))
         changed()
     }
 
     fun overwriteBookmark(id: String) = post {
         lib = lib.copy(bookmarks = lib.bookmarks.map { if (it.id == id) it.copy(combo = lib.current) else it }, currentBookmarkId = id)
-        toast("已用当前组合覆盖书签")
+        toast(getString(R.string.toast_bookmark_overwritten))
         changed()
     }
 
@@ -220,7 +220,7 @@ class PlaybackService : Service() {
     fun playBookmarkQueue(pos: Int) = post { playQueueItem(QueueMode.BOOKMARKS, pos) }
 
     // ---- 文件列表 ----
-    fun addToFileQueue(files: List<FileRef>) = post { lib = lib.copy(fileQueue = lib.fileQueue + files); toast("已加入 ${files.size} 个文件"); changed() }
+    fun addToFileQueue(files: List<FileRef>) = post { lib = lib.copy(fileQueue = lib.fileQueue + files); toast(getString(R.string.toast_files_added, files.size)); changed() }
     fun removeFromFileQueue(pos: Int) = post { lib = lib.copy(fileQueue = lib.fileQueue.removedAt(pos)).fixIndex(QueueMode.FILES, pos); changed() }
     fun moveInFileQueue(pos: Int, delta: Int) = post { lib = lib.copy(fileQueue = lib.fileQueue.moved(pos, delta)).followMove(QueueMode.FILES, pos, delta); changed() }
     fun clearFileQueue() = post { lib = lib.copy(fileQueue = emptyList()).leaveQueue(QueueMode.FILES); changed() }
@@ -242,7 +242,7 @@ class PlaybackService : Service() {
     fun importJson(text: String, merge: Boolean) = post {
         val o = try { JSONObject(text) } catch (e: Exception) { null }
         if (o == null || !Library.isBackup(o)) {
-            toast("不是有效的备份文件")
+            toast(getString(R.string.toast_bad_backup))
             publish()
             return@post
         }
@@ -252,8 +252,8 @@ class PlaybackService : Service() {
         if (!merge) applyCurrent()
         val missing = lib.allFiles().distinctBy { it.uri }.count { !canOpen(it.uri) }
         toast(
-            (if (merge) "已合并：共 ${lib.bookmarks.size} 个书签" else "已恢复：${lib.bookmarks.size} 个书签、${lib.fileQueue.size} 个文件") +
-                if (missing > 0) "\n有 $missing 个文件无法访问，请用「重新关联文件夹」找回" else "",
+            (if (merge) getString(R.string.toast_merged, lib.bookmarks.size) else getString(R.string.toast_restored, lib.bookmarks.size, lib.fileQueue.size)) +
+                if (missing > 0) "\n" + getString(R.string.toast_missing_files, missing) else "",
         )
         changed()
     }
@@ -268,7 +268,7 @@ class PlaybackService : Service() {
         lib = lib.remap { map[it.uri]?.let { n -> n.copy(lrc = it.lrc) } }
         applyCurrent()
         val left = broken.size - fixed
-        toast(if (broken.isEmpty()) "授权已恢复，所有文件都能正常访问" else "已找回 $fixed 个文件" + if (left > 0) "，仍有 $left 个找不到" else "")
+        toast(if (broken.isEmpty()) getString(R.string.toast_relink_ok_all) else getString(R.string.toast_relink_fixed, fixed) + if (left > 0) getString(R.string.toast_relink_left, left) else "")
         changed()
     }
 
@@ -279,7 +279,7 @@ class PlaybackService : Service() {
     private fun comboName(): String = Combo.displayName(
         slots[0].displayName.takeIf { lib.current.a.file != null },
         slots[1].displayName.takeIf { lib.current.b.file != null },
-    )
+    ).ifEmpty { getString(R.string.combo_none) }
 
     private fun updateSlot(i: Int, save: Boolean = true, f: (SlotConfig) -> SlotConfig) {
         val before = lib.current.slot(i)
@@ -316,7 +316,7 @@ class PlaybackService : Service() {
     private fun startPlay() {
         val playable = slots.filter { it.config.enabled && it.loaded }
         if (playable.isEmpty()) {
-            toast(if (slots.any { it.config.file != null }) "A、B 都已关闭：点亮至少一路再播放" else "请先在 A / B 中选择音频文件")
+            toast(getString(if (slots.any { it.config.file != null }) R.string.toast_both_off else R.string.toast_choose_first))
             playing = false
             publish()
             return
@@ -368,7 +368,7 @@ class PlaybackService : Service() {
     private fun next(auto: Boolean) {
         val n = queueSize()
         if (lib.queueMode == QueueMode.NONE || n == 0) {
-            if (!auto) toast("当前不在列表播放中")
+            if (!auto) toast(getString(R.string.toast_not_in_list))
             publish()
             return
         }
@@ -376,7 +376,7 @@ class PlaybackService : Service() {
         if (i >= n) {
             if (auto && lib.repeat == Repeat.OFF) {
                 pause()
-                toast("列表已播放完毕")
+                toast(getString(R.string.toast_list_finished))
                 return
             }
             i = 0
@@ -544,7 +544,7 @@ class PlaybackService : Service() {
     }
 
     private fun createChannel() {
-        val ch = NotificationChannel(CHANNEL, "播放", NotificationManager.IMPORTANCE_LOW).apply { setShowBadge(false) }
+        val ch = NotificationChannel(CHANNEL, getString(R.string.notif_channel), NotificationManager.IMPORTANCE_LOW).apply { setShowBadge(false) }
         getSystemService(NotificationManager::class.java).createNotificationChannel(ch)
     }
 
@@ -558,17 +558,17 @@ class PlaybackService : Service() {
         return Notification.Builder(this, CHANNEL)
             .setSmallIcon(R.drawable.ic_stat)
             .setContentTitle(s.comboName)
-            .setContentText(listOfNotNull(s.bookmarkName?.let { "书签：$it" }, on, SlotController.khz(s.outputRate)).joinToString(" · "))
+            .setContentText(listOfNotNull(s.bookmarkName?.let { getString(R.string.combo_bookmark, it) }, on, SlotController.khz(s.outputRate)).joinToString(" · "))
             .setContentIntent(open)
             .setOngoing(s.playing)
-            .addAction(Notification.Action.Builder(Icon.createWithResource(this, android.R.drawable.ic_media_previous), "上一项", pi(ACTION_PREV, 1)).build())
+            .addAction(Notification.Action.Builder(Icon.createWithResource(this, android.R.drawable.ic_media_previous), getString(R.string.notif_prev), pi(ACTION_PREV, 1)).build())
             .addAction(
                 Notification.Action.Builder(
                     Icon.createWithResource(this, if (s.playing) android.R.drawable.ic_media_pause else android.R.drawable.ic_media_play),
-                    if (s.playing) "暂停" else "播放", pi(ACTION_TOGGLE, 2),
+                    getString(if (s.playing) R.string.notif_pause else R.string.notif_play), pi(ACTION_TOGGLE, 2),
                 ).build(),
             )
-            .addAction(Notification.Action.Builder(Icon.createWithResource(this, android.R.drawable.ic_media_next), "下一项", pi(ACTION_NEXT, 3)).build())
+            .addAction(Notification.Action.Builder(Icon.createWithResource(this, android.R.drawable.ic_media_next), getString(R.string.notif_next), pi(ACTION_NEXT, 3)).build())
             .setStyle(Notification.MediaStyle().setMediaSession(session.sessionToken).setShowActionsInCompactView(0, 1, 2))
             .build()
     }

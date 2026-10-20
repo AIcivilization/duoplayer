@@ -32,7 +32,7 @@ Engine::~Engine() {
 bool Engine::openStream() {
     std::lock_guard<std::mutex> lk(streamMtx_);
     AAudioStreamBuilder* b = nullptr;
-    if (AAudio_createStreamBuilder(&b) != AAUDIO_OK) { lastError_ = "AAudio 不可用"; return false; }
+    if (AAudio_createStreamBuilder(&b) != AAUDIO_OK) { lastError_ = "aaudio_unavailable"; return false; }
     AAudioStreamBuilder_setDirection(b, AAUDIO_DIRECTION_OUTPUT);
     AAudioStreamBuilder_setFormat(b, AAUDIO_FORMAT_PCM_FLOAT);
     AAudioStreamBuilder_setChannelCount(b, 2);
@@ -49,7 +49,7 @@ bool Engine::openStream() {
     aaudio_result_t r = AAudioStreamBuilder_openStream(b, &s);
     AAudioStreamBuilder_delete(b);
     if (r != AAUDIO_OK || !s) {
-        lastError_ = std::string("打开音频输出失败: ") + AAudio_convertResultToText(r);
+        lastError_ = std::string("output_open:") + AAudio_convertResultToText(r);
         LOGE("%s", lastError_.c_str());
         return false;
     }
@@ -101,7 +101,7 @@ void Engine::ensureRunning() {
     aaudio_stream_state_t st = AAudioStream_getState(stream_);
     if (st != AAUDIO_STREAM_STATE_STARTED && st != AAUDIO_STREAM_STATE_STARTING) {
         aaudio_result_t r = AAudioStream_requestStart(stream_);
-        if (r != AAUDIO_OK) lastError_ = std::string("启动输出失败: ") + AAudio_convertResultToText(r);
+        if (r != AAUDIO_OK) lastError_ = std::string("output_start:") + AAudio_convertResultToText(r);
     }
     idleTicks_ = 0;
 }
@@ -146,7 +146,7 @@ OutputStatus Engine::outputStatus() {
     std::lock_guard<std::mutex> lk(streamMtx_);
     s.sampleRate = rate_.load();
     s.limiterHits = limiterHits_.load();
-    s.mode = mode_ == OutputMode::PowerSaving ? "省电" : "标准";
+    s.mode = mode_ == OutputMode::PowerSaving ? "power" : "standard";
     s.error = lastError_;
     if (stream_) {
         s.framesPerBurst = AAudioStream_getFramesPerBurst(stream_);

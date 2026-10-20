@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 i18n/build_strings.py 生成，请修改 i18n/nl.txt -->
+<resources>
+    <string name="app_name">DuoPlayer Hi-Fi</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Annuleren</string>
+    <string name="close">Sluiten</string>
+    <string name="add">Toevoegen</string>
+    <string name="add_all">Alles toevoegen</string>
+    <string name="nav_play">Afspelen</string>
+    <string name="nav_bookmarks">Bladwijzers</string>
+    <string name="nav_lists">Lijsten</string>
+    <string name="out_line">Uitvoer %1$s · 32-bit float · %2$s · %3$s</string>
+    <string name="out_mode_power">zuinig pad</string>
+    <string name="out_mode_standard">standaardpad</string>
+    <string name="out_running">actief</string>
+    <string name="out_idle">inactief</string>
+    <string name="out_detail">Buffer %1$d ms · Clipbeveiliging %2$d · Underruns %3$d</string>
+    <string name="out_warn_48k">De systeemuitvoer is maar %1$s: open Instellingen → Geluid en zet „High-Res streaming” aan, tik daarna één keer op „Uitvoer”.</string>
+    <string name="btn_output_power">Uitvoer: Eco</string>
+    <string name="btn_output_standard">Uitvoer: Std</string>
+    <string name="combo_bookmark">Bladwijzer: %1$s</string>
+    <string name="combo_modified">" (gewijzigd)"</string>
+    <string name="combo_unsaved">Niet als bladwijzer opgeslagen</string>
+    <string name="combo_none">Geen audio gekozen</string>
+    <string name="tab_label">%1$s · %2$s</string>
+    <string name="not_selected">Geen</string>
+    <string name="btn_save">Opslaan</string>
+    <string name="btn_edit">Bewerken</string>
+    <string name="btn_save_bookmark">Als bladwijzer opslaan</string>
+    <string name="btn_choose_audio">Audio kiezen</string>
+    <string name="btn_choose_lyrics">Songtekst kiezen</string>
+    <string name="btn_remove">Verwijderen</string>
+    <string name="loop_on">Nummer herhalen: aan</string>
+    <string name="loop_off">Nummer herhalen: uit</string>
+    <string name="slot_on">Dit spoor: aan</string>
+    <string name="slot_off">Dit spoor: uit</string>
+    <string name="set_no_file">Geen audio: tik op „Audio kiezen”</string>
+    <string name="lyrics_none_hint">Songtekst: geen (tik op „Songtekst kiezen” voor een .lrc)</string>
+    <string name="lyrics_info">Songtekst: %1$s</string>
+    <string name="lyrics_bilingual_suffix">" · tweetalig"</string>
+    <string name="lyrics_unsynced_suffix">" · niet gesynchroniseerd"</string>
+    <string name="lyrics_src_lrc">LRC-bestand</string>
+    <string name="lyrics_src_embedded">ingebed</string>
+    <string name="gain_mute">Volume: dempen</string>
+    <string name="gain_db">Volume %1$s dB</string>
+    <string name="balance_center">Balans: midden</string>
+    <string name="balance_left">Balans: L %1$d</string>
+    <string name="balance_right">Balans: R %1$d</string>
+    <string name="chip_hint">Tik op A / B om te wisselen: licht = speelt, grijs = uit</string>
+    <string name="chip_no_file">Geen audio (kies het in %1$s hierboven)</string>
+    <string name="state_off">Uit · tik om aan te zetten</string>
+    <string name="state_error">Kan niet afspelen</string>
+    <string name="state_playing">Speelt</string>
+    <string name="state_ended">Afgelopen</string>
+    <string name="state_paused">Gepauzeerd</string>
+    <string name="lyrics_unsynced_tap">Niet-gesynchroniseerde tekst · tik om te bekijken</string>
+    <string name="toast_lyric_mode">Songtekst: %1$s</string>
+    <string name="lyric_mode_both">Beide</string>
+    <string name="lyric_mode_cjk">CJK</string>
+    <string name="lyric_mode_latin">Latijns</string>
+    <string name="single_combo">Losse combinatie</string>
+    <string name="queue_bookmarks_pos">Bladwijzerlijst %1$d/%2$d</string>
+    <string name="queue_files_pos">Bestandslijst %1$d/%2$d</string>
+    <string name="repeat_off">Op volgorde</string>
+    <string name="repeat_all">Lijst herhalen</string>
+    <string name="repeat_one">Item herhalen</string>
+    <string name="btn_exit_queue">Lijst verlaten</string>
+    <string name="bookmarks_title">Bladwijzers</string>
+    <string name="btn_add_bookmark">+ Huidige opslaan</string>
+    <string name="bookmark_page_hint">Tikken: laden en afspelen · Lang drukken: hernoemen / overschrijven / aan lijst toevoegen / ordenen / verwijderen</string>
+    <string name="bookmark_empty">Nog geen bladwijzers.\nStel A + B in op de pagina Afspelen en tik op „Als bladwijzer opslaan” — de volgende keer speelt één tik die combinatie af.</string>
+    <string name="bm_slot_off">%1$s (uit)</string>
+    <string name="bm_slot_a">A: %1$s</string>
+    <string name="bm_slot_b">B: %1$s</string>
+    <string name="bm_empty">(lege combinatie)</string>
+    <string name="bm_deleted">(bladwijzer verwijderd)</string>
+    <string name="need_audio_first">Kies eerst audio voor A of B</string>
+    <string name="save_bookmark_title">Als bladwijzer opslaan</string>
+    <string name="bookmark_name_hint">Naam van bladwijzer</string>
+    <string name="rename_title">Bladwijzer hernoemen</string>
+    <string name="name_hint">Naam</string>
+    <string name="confirm_overwrite">Bladwijzer „%1$s” overschrijven met de huidige A + B-combinatie?</string>
+    <string name="confirm_delete_bm">Bladwijzer „%1$s” verwijderen? (Hij wordt ook uit de bladwijzerlijst gehaald.)</string>
+    <string name="segment_bookmarks">Bladwijzerlijst</string>
+    <string name="segment_files">Bestandslijst</string>
+    <string name="hint_bookmark_list">Speelt bladwijzers op volgorde: A + B van elke bladwijzer spelen samen, daarna start de volgende.</string>
+    <string name="hint_file_list">Speelt bestanden op volgorde: elk bestand gaat naar A; B houdt zijn instelling (maak B grijs op de pagina Afspelen om alleen A te horen).</string>
+    <string name="btn_add_bookmark_q">+ Bladwijzers</string>
+    <string name="btn_add_files">+ Bestanden</string>
+    <string name="btn_add_folder">+ Map</string>
+    <string name="btn_clear">Leegmaken</string>
+    <string name="btn_play_list">▶ Afspelen</string>
+    <string name="empty_bookmark_list">De bladwijzerlijst is leeg. Tik op „+ Bladwijzers” om toe te voegen.</string>
+    <string name="empty_file_list">De bestandslijst is leeg. Tik op „+ Bestanden” of „+ Map”.</string>
+    <string name="confirm_clear_bookmark_list">Bladwijzerlijst leegmaken?</string>
+    <string name="confirm_clear_file_list">Bestandslijst leegmaken?</string>
+    <string name="has_lyrics_suffix">" · songtekst"</string>
+    <string name="no_bookmarks_yet">Nog geen bladwijzers: tik eerst op „Als bladwijzer opslaan” op de pagina Afspelen</string>
+    <string name="pick_bookmarks_title">Kies bladwijzers om toe te voegen</string>
+    <string name="choose_audio_for">Audio kiezen voor %1$s</string>
+    <string name="choose_from_device">Van apparaat…</string>
+    <string name="choose_from_list">Uit bestandslijst (%1$d)</string>
+    <string name="picker_failed">Kan de bestandskiezer van het systeem niet openen</string>
+    <string name="btn_backup">Back-up</string>
+    <string name="btn_restore">Herstellen</string>
+    <string name="btn_relink">Map opnieuw koppelen</string>
+    <string name="relink_title">Map opnieuw koppelen</string>
+    <string name="relink_message">Na het opnieuw installeren of herstellen van een back-up zijn de oude bestandsrechten weg.\n\nKies de hoofdmap van je muziek (bijv. Music of de SD-kaart) en de app vindt de bestanden van je bladwijzers en lijsten terug op hun oorspronkelijke paden en namen.</string>
+    <string name="relink_pick">Map kiezen</string>
+    <string name="backup_file_prefix">DuoPlayer-back-up-</string>
+    <string name="scanning_folder">Map wordt gescand…</string>
+    <string name="folder_no_audio">Geen audio in deze map</string>
+    <string name="scanning_relink">Bestanden scannen en koppelen…</string>
+    <string name="backup_done">Back-up opgeslagen</string>
+    <string name="backup_failed">Back-up kon niet worden geschreven</string>
+    <string name="restore_read_failed">Back-up kon niet worden gelezen</string>
+    <string name="restore_title">Back-up herstellen</string>
+    <string name="restore_message">„Vervangen”: alle huidige bladwijzers, lijsten en de combinatie vervangen door de back-up.\n„Samenvoegen”: bladwijzers en lijsten uit de back-up aan je gegevens toevoegen.</string>
+    <string name="restore_replace">Vervangen</string>
+    <string name="restore_merge">Samenvoegen</string>
+    <string name="version_current">Versie %1$s</string>
+    <string name="auto_update_on">Auto-controle: aan</string>
+    <string name="auto_update_off">Auto-controle: uit</string>
+    <string name="check_update">Op updates controleren</string>
+    <string name="toast_bookmark_saved">Bladwijzer „%1$s” opgeslagen</string>
+    <string name="toast_bookmark_overwritten">Bladwijzer overschreven met huidige combinatie</string>
+    <string name="toast_files_added">%1$d bestand(en) toegevoegd</string>
+    <string name="toast_bad_backup">Geen geldig back-upbestand</string>
+    <string name="toast_merged">Samengevoegd: in totaal %1$d bladwijzers</string>
+    <string name="toast_restored">Hersteld: %1$d bladwijzers, %2$d bestanden</string>
+    <string name="toast_missing_files">%1$d bestand(en) niet bereikbaar — gebruik „Map opnieuw koppelen”</string>
+    <string name="toast_relink_ok_all">Toegang hersteld — alle bestanden zijn bereikbaar</string>
+    <string name="toast_relink_fixed">%1$d bestand(en) gevonden</string>
+    <string name="toast_relink_left">, %1$d nog niet gevonden</string>
+    <string name="toast_both_off">A en B staan allebei uit: zet er minstens één aan</string>
+    <string name="toast_choose_first">Kies eerst een audiobestand voor A / B</string>
+    <string name="toast_not_in_list">Er wordt nu geen lijst afgespeeld</string>
+    <string name="toast_list_finished">Lijst afgelopen</string>
+    <string name="notif_channel">Afspelen</string>
+    <string name="notif_prev">Vorige</string>
+    <string name="notif_pause">Pauze</string>
+    <string name="notif_play">Afspelen</string>
+    <string name="notif_next">Volgende</string>
+    <string name="err_io">Kan het bestand niet openen</string>
+    <string name="err_no_permission">Geen toegang: gebruik „Map opnieuw koppelen” op de pagina Lijsten</string>
+    <string name="err_not_found">Bestand niet gevonden: gebruik „Map opnieuw koppelen” op de pagina Lijsten</string>
+    <string name="err_corrupt">Het %1$s-bestand is beschadigd of onleesbaar</string>
+    <string name="err_unsupported">Niet-ondersteund %1$s-formaat</string>
+    <string name="err_unknown_format">Onbekend bestandsformaat</string>
+    <string name="err_no_audio_track">Het bestand heeft geen audiospoor</string>
+    <string name="err_no_decoder">Dit systeem heeft geen decoder voor %1$s</string>
+    <string name="err_bad_format">De decoder gaf een ongeldig formaat terug</string>
+    <string name="err_bad_rate">Ongeldige samplefrequentie</string>
+    <string name="err_rate_ratio">Niet-ondersteunde frequentieconversie %1$s</string>
+    <string name="err_aaudio">Audio-uitvoer (AAudio) niet beschikbaar</string>
+    <string name="err_output_open">Audio-uitvoer openen mislukt: %1$s</string>
+    <string name="err_output_start">Audio-uitvoer starten mislukt: %1$s</string>
+    <string name="err_unknown">Onbekende fout (%1$s)</string>
+    <string name="fmt_lossless">lossless</string>
+    <string name="fmt_lossy">lossy</string>
+    <string name="path_direct_gain">Direct %1$s · 64-bit versterking</string>
+    <string name="path_bitperfect">Direct %1$s · bit-perfect</string>
+    <string name="path_direct">Direct %1$s</string>
+    <string name="path_resample">Resampling %1$s → %2$s</string>
+    <string name="path_mix">\u0020· mix</string>
+    <string name="lyrics_none_long">Geen songtekst gevonden voor dit nummer.\n\n· Met „+ Map” wordt een .lrc met dezelfde naam in dezelfde map automatisch gekoppeld\n· Met „+ Bestanden” selecteer je de .lrc samen met het nummer\n· Of tik hierboven op „Songtekst kiezen”\n· Ingebedde songteksten in FLAC / MP3 / DSF worden ook gelezen</string>
+    <string name="lyrics_none">Geen songtekst</string>
+    <string name="lyrics_src_unsynced">%1$s · niet gesynchroniseerd</string>
+    <string name="lyrics_src_bilingual">%1$s · tweetalig · %2$d regels</string>
+    <string name="lyrics_src_lines">%1$s · %2$d regels</string>
+    <string name="upd_checking">Zoeken naar updates…</string>
+    <string name="upd_none_published">Nog geen release gepubliceerd op GitHub</string>
+    <string name="upd_latest">Je hebt de nieuwste versie (%1$s)</string>
+    <string name="upd_check_failed">Zoeken naar updates mislukt</string>
+    <string name="upd_check_failed_msg">%1$s\n\nGitHub kan op sommige netwerken traag of onbereikbaar zijn. Probeer het later opnieuw of open de releasepagina in een browser.</string>
+    <string name="upd_open_page">Releasepagina openen</string>
+    <string name="upd_found">Nieuwe versie %1$s</string>
+    <string name="upd_current">Huidige versie %1$s%2$s</string>
+    <string name="upd_download_install">Downloaden en installeren</string>
+    <string name="upd_skip">Deze versie overslaan</string>
+    <string name="upd_later">Later</string>
+    <string name="upd_need_perm_title">Eenmalige toestemming nodig</string>
+    <string name="upd_need_perm_msg">Android moet „%1$s” toestaan apps te installeren voordat het zichzelf kan bijwerken.\n\nTik op „Instellingen” → zet „Toestaan van deze bron” aan → ga terug en tik opnieuw op „Op updates controleren”.</string>
+    <string name="upd_go_settings">Instellingen</string>
+    <string name="upd_downloading">%1$s downloaden</string>
+    <string name="upd_preparing">Voorbereiden…</string>
+    <string name="upd_progress">%1$s / %2$s MB (%3$d%%)</string>
+    <string name="upd_progress_unknown">%1$s MB</string>
+    <string name="upd_installer_failed">Kan het installatieprogramma niet openen: %1$s</string>
+    <string name="upd_failed">Update mislukt</string>
+    <string name="upd_no_browser">Geen browser beschikbaar: %1$s</string>
+    <string name="upd_err_rate_limited">GitHub-limiet bereikt, probeer het later opnieuw</string>
+    <string name="upd_err_http">GitHub antwoordde %1$s</string>
+    <string name="upd_err_redirect">Doorverwijzing van download mislukt</string>
+    <string name="upd_err_download">Download mislukt: HTTP %1$s</string>
+    <string name="upd_err_save">Pakket kon niet worden opgeslagen</string>
+    <string name="upd_err_redirects">Te veel doorverwijzingen</string>
+    <string name="upd_err_damaged">Het pakket is beschadigd</string>
+    <string name="upd_err_wrong_pkg">Dit pakket hoort niet bij deze app</string>
+    <string name="upd_err_not_newer">Het pakket is niet nieuwer dan de geïnstalleerde versie</string>
+    <string name="upd_err_signature">De handtekening komt niet overeen met de geïnstalleerde app, dus bijwerken is niet mogelijk.\n(Versie 1.2 en ouder gebruikten een tijdelijke handtekening: maak een back-up op de pagina Lijsten, verwijder de oude versie en installeer de nieuwe één keer via GitHub — daarna werken updates in de app.)</string>
+    <string-array name="bookmark_menu">
+        <item>Afspelen</item>
+        <item>Alleen laden (niet afspelen)</item>
+        <item>Aan bladwijzerlijst toevoegen</item>
+        <item>Hernoemen</item>
+        <item>Overschrijven met huidige</item>
+        <item>Omhoog</item>
+        <item>Omlaag</item>
+        <item>Verwijderen</item>
+    </string-array>
+    <string-array name="queue_menu_files">
+        <item>Vanaf hier afspelen</item>
+        <item>In A zetten</item>
+        <item>In B zetten</item>
+        <item>Omhoog</item>
+        <item>Omlaag</item>
+        <item>Uit lijst halen</item>
+    </string-array>
+    <string-array name="queue_menu_bookmarks">
+        <item>Vanaf hier afspelen</item>
+        <item>Omhoog</item>
+        <item>Omlaag</item>
+        <item>Uit lijst halen</item>
+    </string-array>
+</resources>

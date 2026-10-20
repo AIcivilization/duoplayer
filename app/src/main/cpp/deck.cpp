@@ -42,7 +42,7 @@ Deck::~Deck() {
 std::string Deck::load(int fd, int outRate, StreamInfo& info) {
     std::string err;
     auto dec = openDecoder(fd, err);
-    if (!dec) return err.empty() ? "无法打开文件" : err;
+    if (!dec) return err.empty() ? "io" : err;
     Resampler rs;
     if (!rs.configure(dec->info().sampleRate, outRate, err)) return err;
     info = dec->info();

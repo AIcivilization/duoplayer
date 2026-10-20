@@ -10,6 +10,10 @@ import java.io.File
 import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL
+import com.zxdual.player.R
+
+/** 带本地化文字资源的更新错误（界面层用 getString 显示） */
+class UpdateException(val res: Int, val arg: String = "") : IOException(arg)
 
 /**
  * 从 GitHub Releases 检查并下载新版本。
@@ -75,8 +79,8 @@ object Updater {
             when (c.responseCode) {
                 200 -> return parseRelease(c.inputStream.bufferedReader().use { it.readText() })
                 404 -> return null  // 还没有发布任何版本
-                403, 429 -> throw IOException("GitHub 访问频率受限，请稍后再试")
-                else -> throw IOException("GitHub 返回 ${c.responseCode}")
+                403, 429 -> throw UpdateException(R.string.upd_err_rate_limited)
+                else -> throw UpdateException(R.string.upd_err_http, c.responseCode.toString())
             }
         } finally {
             c.disconnect()
@@ -96,11 +100,11 @@ object Updater {
             c.instanceFollowRedirects = false
             val code = c.responseCode
             if (code in 300..399) {
-                url = c.getHeaderField("Location") ?: throw IOException("下载跳转失败")
+                url = c.getHeaderField("Location") ?: throw UpdateException(R.string.upd_err_redirect)
                 c.disconnect()
                 return@repeat
             }
-            if (code != 200) { c.disconnect(); throw IOException("下载失败：HTTP $code") }
+            if (code != 200) { c.disconnect(); throw UpdateException(R.string.upd_err_download, code.toString()) }
             val total = c.contentLengthLong.takeIf { it > 0 } ?: r.apkSize
             c.inputStream.use { input ->
                 tmp.outputStream().use { o ->
@@ -118,28 +122,28 @@ object Updater {
                 }
             }
             c.disconnect()
-            if (!tmp.renameTo(out)) throw IOException("保存安装包失败")
+            if (!tmp.renameTo(out)) throw UpdateException(R.string.upd_err_save)
             return out
         }
-        throw IOException("下载跳转次数过多")
+        throw UpdateException(R.string.upd_err_redirects)
     }
 
     /**
      * 安装前校验：包名一致、版本更高、签名与当前安装的完全相同。
-     * 返回 null 表示通过，否则返回原因。
+     * 返回 null 表示通过，否则返回原因（文字资源 id）。
      */
     @Suppress("DEPRECATION")
-    fun verify(ctx: Context, apk: File): String? {
+    fun verify(ctx: Context, apk: File): Int? {
         val pm = ctx.packageManager
         val flags = if (Build.VERSION.SDK_INT >= 28) PackageManager.GET_SIGNING_CERTIFICATES else PackageManager.GET_SIGNATURES
-        val newInfo = pm.getPackageArchiveInfo(apk.path, flags) ?: return "安装包已损坏"
+        val newInfo = pm.getPackageArchiveInfo(apk.path, flags) ?: return R.string.upd_err_damaged
         val cur = pm.getPackageInfo(ctx.packageName, flags)
-        if (newInfo.packageName != ctx.packageName) return "安装包不是本应用"
-        if (versionCode(newInfo) <= versionCode(cur)) return "安装包版本不比当前新"
+        if (newInfo.packageName != ctx.packageName) return R.string.upd_err_wrong_pkg
+        if (versionCode(newInfo) <= versionCode(cur)) return R.string.upd_err_not_newer
         val a = signatures(newInfo).map { it.toCharsString() }.toSet()
         val b = signatures(cur).map { it.toCharsString() }.toSet()
         if (a.isEmpty() || a != b) {
-            return "签名与当前安装的不一致，无法覆盖安装。\n（1.2 及更早版本用的是临时签名：请先在「列表」页备份，卸载旧版，再从 GitHub 手动安装一次新版，以后即可自动更新。）"
+            return R.string.upd_err_signature
         }
         return null
     }

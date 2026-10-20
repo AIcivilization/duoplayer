@@ -41,7 +41,7 @@ class NativeEngine {
 
     fun load(deck: Int, fd: Int): LoadResult {
         val p = nLoad(handle, deck, fd).split('\t')
-        if (p[0] != "OK") return LoadResult(false, error = p.getOrElse(1) { "未知错误" })
+        if (p[0] != "OK") return LoadResult(false, error = p.getOrElse(1) { "unknown" })
         return LoadResult(
             ok = true, codec = p[1], sampleRate = p[2].toInt(), sourceRate = p[3].toInt(),
             bits = p[4].toInt(), channels = p[5].toInt(), durationMs = p[6].toLong(), lossless = p[7] == "1",

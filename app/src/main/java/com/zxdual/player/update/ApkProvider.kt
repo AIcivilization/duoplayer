@@ -26,7 +26,7 @@ class ApkProvider : ContentProvider() {
     }
 
     override fun openFile(uri: Uri, mode: String): ParcelFileDescriptor {
-        if (mode != "r") throw SecurityException("只读")
+        if (mode != "r") throw SecurityException("read-only")
         return ParcelFileDescriptor.open(fileFor(uri), ParcelFileDescriptor.MODE_READ_ONLY)
     }
 

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 i18n/build_strings.py 生成，请修改 i18n/zh-Hant.txt -->
+<resources>
+    <string name="app_name">雙軌 Hi-Fi</string>
+    <string name="ok">確定</string>
+    <string name="cancel">取消</string>
+    <string name="close">關閉</string>
+    <string name="add">加入</string>
+    <string name="add_all">全部加入</string>
+    <string name="nav_play">播放</string>
+    <string name="nav_bookmarks">書籤</string>
+    <string name="nav_lists">清單</string>
+    <string name="out_line">輸出 %1$s · 32bit float · %2$s · %3$s</string>
+    <string name="out_mode_power">省電通道</string>
+    <string name="out_mode_standard">標準通道</string>
+    <string name="out_running">執行中</string>
+    <string name="out_idle">待機</string>
+    <string name="out_detail">緩衝 %1$d ms · 削波保護 %2$d · 欠載 %3$d</string>
+    <string name="out_warn_48k">系統輸出僅 %1$s：請到 設定 → 聲音 開啟「High-Res streaming」，再點一次右側「輸出」按鈕。</string>
+    <string name="btn_output_power">輸出:省電</string>
+    <string name="btn_output_standard">輸出:標準</string>
+    <string name="combo_bookmark">書籤：%1$s</string>
+    <string name="combo_modified">（已修改）</string>
+    <string name="combo_unsaved">尚未存為書籤</string>
+    <string name="combo_none">未選擇音訊</string>
+    <string name="tab_label">%1$s · %2$s</string>
+    <string name="not_selected">未選擇</string>
+    <string name="btn_save">儲存</string>
+    <string name="btn_edit">編輯</string>
+    <string name="btn_save_bookmark">存為書籤</string>
+    <string name="btn_choose_audio">選擇音訊</string>
+    <string name="btn_choose_lyrics">選擇歌詞</string>
+    <string name="btn_remove">移除</string>
+    <string name="loop_on">單曲循環：開</string>
+    <string name="loop_off">單曲循環：關</string>
+    <string name="slot_on">本路：開啟</string>
+    <string name="slot_off">本路：關閉</string>
+    <string name="set_no_file">未選擇音訊：點「選擇音訊」</string>
+    <string name="lyrics_none_hint">歌詞：無（可點「選擇歌詞」指定 .lrc）</string>
+    <string name="lyrics_info">歌詞：%1$s</string>
+    <string name="lyrics_bilingual_suffix">" · 雙語"</string>
+    <string name="lyrics_unsynced_suffix">" · 未同步"</string>
+    <string name="lyrics_src_lrc">LRC 檔案</string>
+    <string name="lyrics_src_embedded">內嵌</string>
+    <string name="gain_mute">音量 靜音</string>
+    <string name="gain_db">音量 %1$s dB</string>
+    <string name="balance_center">聲像 置中</string>
+    <string name="balance_left">聲像 左 %1$d</string>
+    <string name="balance_right">聲像 右 %1$d</string>
+    <string name="chip_hint">點 A / B 切換：亮 = 播放，灰 = 不播放</string>
+    <string name="chip_no_file">未選擇音訊（在上方 %1$s 中選擇）</string>
+    <string name="state_off">已關閉 · 點亮播放</string>
+    <string name="state_error">無法播放</string>
+    <string name="state_playing">播放中</string>
+    <string name="state_ended">已結束</string>
+    <string name="state_paused">暫停</string>
+    <string name="lyrics_unsynced_tap">未同步歌詞 · 點擊檢視全文</string>
+    <string name="toast_lyric_mode">歌詞：%1$s</string>
+    <string name="lyric_mode_both">雙語</string>
+    <string name="lyric_mode_cjk">中文</string>
+    <string name="lyric_mode_latin">English</string>
+    <string name="single_combo">單一組合</string>
+    <string name="queue_bookmarks_pos">書籤清單 %1$d/%2$d</string>
+    <string name="queue_files_pos">檔案清單 %1$d/%2$d</string>
+    <string name="repeat_off">順序播放</string>
+    <string name="repeat_all">清單循環</string>
+    <string name="repeat_one">單項循環</string>
+    <string name="btn_exit_queue">退出清單</string>
+    <string name="bookmarks_title">書籤</string>
+    <string name="btn_add_bookmark">＋ 存目前組合</string>
+    <string name="bookmark_page_hint">點一下：載入並播放 · 長按：重新命名 / 覆蓋 / 加入清單 / 排序 / 刪除</string>
+    <string name="bookmark_empty">還沒有書籤。\n在播放頁設定好 A + B 後點「存為書籤」，之後一點就能直接播放這個組合。</string>
+    <string name="bm_slot_off">%1$s（關）</string>
+    <string name="bm_slot_a">A：%1$s</string>
+    <string name="bm_slot_b">B：%1$s</string>
+    <string name="bm_empty">（空組合）</string>
+    <string name="bm_deleted">（書籤已刪除）</string>
+    <string name="need_audio_first">請先在 A / B 中選擇音訊</string>
+    <string name="save_bookmark_title">存為書籤</string>
+    <string name="bookmark_name_hint">書籤名稱</string>
+    <string name="rename_title">重新命名書籤</string>
+    <string name="name_hint">名稱</string>
+    <string name="confirm_overwrite">用目前的 A + B 組合覆蓋書籤「%1$s」？</string>
+    <string name="confirm_delete_bm">刪除書籤「%1$s」？（書籤清單裡的對應項目也會刪除）</string>
+    <string name="segment_bookmarks">書籤清單</string>
+    <string name="segment_files">檔案清單</string>
+    <string name="hint_bookmark_list">依序播放書籤：每個書籤的 A+B 一起播，播完自動下一個</string>
+    <string name="hint_file_list">依序播放檔案：每個檔案依次放進 A；B 保持目前設定（在播放頁把 B 點灰即只聽 A）</string>
+    <string name="btn_add_bookmark_q">＋ 書籤</string>
+    <string name="btn_add_files">＋ 檔案</string>
+    <string name="btn_add_folder">＋ 資料夾</string>
+    <string name="btn_clear">清空</string>
+    <string name="btn_play_list">▶ 播放</string>
+    <string name="empty_bookmark_list">書籤清單是空的。點「＋ 書籤」把已有書籤加進來。</string>
+    <string name="empty_file_list">檔案清單是空的。點「＋ 檔案」或「＋ 資料夾」新增。</string>
+    <string name="confirm_clear_bookmark_list">清空書籤清單？</string>
+    <string name="confirm_clear_file_list">清空檔案清單？</string>
+    <string name="has_lyrics_suffix">" · 有歌詞"</string>
+    <string name="no_bookmarks_yet">還沒有書籤：請先在播放頁「存為書籤」</string>
+    <string name="pick_bookmarks_title">選擇要加入清單的書籤</string>
+    <string name="choose_audio_for">為 %1$s 選擇音訊</string>
+    <string name="choose_from_device">從裝置中選擇…</string>
+    <string name="choose_from_list">從檔案清單中選擇（%1$d 個）</string>
+    <string name="picker_failed">無法開啟系統檔案選擇器</string>
+    <string name="btn_backup">備份</string>
+    <string name="btn_restore">還原</string>
+    <string name="btn_relink">重新關聯資料夾</string>
+    <string name="relink_title">重新關聯資料夾</string>
+    <string name="relink_message">重新安裝 App 或還原備份後，舊的檔案授權會失效。\n\n請選擇存放音樂的根資料夾（如 Music 或 SD 卡），App 會依原本的路徑和檔名自動找回書籤、清單裡的檔案。</string>
+    <string name="relink_pick">選擇資料夾</string>
+    <string name="backup_file_prefix">雙軌HiFi備份-</string>
+    <string name="scanning_folder">正在掃描資料夾…</string>
+    <string name="folder_no_audio">資料夾裡沒有音訊</string>
+    <string name="scanning_relink">正在掃描並比對檔案…</string>
+    <string name="backup_done">備份完成</string>
+    <string name="backup_failed">寫入備份失敗</string>
+    <string name="restore_read_failed">讀取備份失敗</string>
+    <string name="restore_title">還原備份</string>
+    <string name="restore_message">「取代」：用備份覆蓋目前所有書籤、清單和組合。\n「合併」：把備份裡的書籤和清單加到現有資料。</string>
+    <string name="restore_replace">取代</string>
+    <string name="restore_merge">合併</string>
+    <string name="version_current">目前版本 %1$s</string>
+    <string name="auto_update_on">自動檢查：開</string>
+    <string name="auto_update_off">自動檢查：關</string>
+    <string name="check_update">檢查更新</string>
+    <string name="toast_bookmark_saved">已儲存書籤「%1$s」</string>
+    <string name="toast_bookmark_overwritten">已用目前組合覆蓋書籤</string>
+    <string name="toast_files_added">已加入 %1$d 個檔案</string>
+    <string name="toast_bad_backup">不是有效的備份檔</string>
+    <string name="toast_merged">已合併：共 %1$d 個書籤</string>
+    <string name="toast_restored">已還原：%1$d 個書籤、%2$d 個檔案</string>
+    <string name="toast_missing_files">有 %1$d 個檔案無法存取，請用「重新關聯資料夾」找回</string>
+    <string name="toast_relink_ok_all">授權已恢復，所有檔案都能正常存取</string>
+    <string name="toast_relink_fixed">已找回 %1$d 個檔案</string>
+    <string name="toast_relink_left">，仍有 %1$d 個找不到</string>
+    <string name="toast_both_off">A、B 都已關閉：請點亮至少一路再播放</string>
+    <string name="toast_choose_first">請先在 A / B 中選擇音訊檔</string>
+    <string name="toast_not_in_list">目前不在清單播放中</string>
+    <string name="toast_list_finished">清單已播放完畢</string>
+    <string name="notif_channel">播放</string>
+    <string name="notif_prev">上一項</string>
+    <string name="notif_pause">暫停</string>
+    <string name="notif_play">播放</string>
+    <string name="notif_next">下一項</string>
+    <string name="err_io">無法開啟檔案</string>
+    <string name="err_no_permission">沒有存取權限：請在「清單」頁用「重新關聯資料夾」找回檔案</string>
+    <string name="err_not_found">找不到檔案：請在「清單」頁用「重新關聯資料夾」找回</string>
+    <string name="err_corrupt">%1$s 檔案損壞或無法解析</string>
+    <string name="err_unsupported">不支援的 %1$s 格式</string>
+    <string name="err_unknown_format">無法辨識的檔案格式</string>
+    <string name="err_no_audio_track">檔案中沒有音軌</string>
+    <string name="err_no_decoder">系統沒有 %1$s 的解碼器</string>
+    <string name="err_bad_format">解碼器未提供有效格式</string>
+    <string name="err_bad_rate">取樣率無效</string>
+    <string name="err_rate_ratio">不支援的取樣率轉換 %1$s</string>
+    <string name="err_aaudio">音訊輸出（AAudio）無法使用</string>
+    <string name="err_output_open">開啟音訊輸出失敗：%1$s</string>
+    <string name="err_output_start">啟動音訊輸出失敗：%1$s</string>
+    <string name="err_unknown">未知錯誤（%1$s）</string>
+    <string name="fmt_lossless">無損</string>
+    <string name="fmt_lossy">有損</string>
+    <string name="path_direct_gain">直通 %1$s · 64bit 增益</string>
+    <string name="path_bitperfect">直通 %1$s · 位元精確</string>
+    <string name="path_direct">直通 %1$s</string>
+    <string name="path_resample">重新取樣 %1$s → %2$s</string>
+    <string name="path_mix">" · 混音"</string>
+    <string name="lyrics_none_long">這首沒有找到歌詞。\n\n· 用「＋資料夾」匯入時，同資料夾下同名的 .lrc 會自動關聯\n· 用「＋檔案」時把同名 .lrc 一起選取\n· 或點上方「選擇歌詞」手動指定\n· 也會讀取 FLAC / MP3 / DSF 內嵌的歌詞</string>
+    <string name="lyrics_none">無歌詞</string>
+    <string name="lyrics_src_unsynced">%1$s · 未同步歌詞</string>
+    <string name="lyrics_src_bilingual">%1$s · 雙語 · %2$d 句</string>
+    <string name="lyrics_src_lines">%1$s · %2$d 句</string>
+    <string name="upd_checking">正在檢查更新…</string>
+    <string name="upd_none_published">GitHub 上還沒有發布版本</string>
+    <string name="upd_latest">已是最新版本（%1$s）</string>
+    <string name="upd_check_failed">檢查更新失敗</string>
+    <string name="upd_check_failed_msg">%1$s\n\n部分網路存取 GitHub 可能不穩定，可以稍後再試，或用瀏覽器開啟發布頁手動下載。</string>
+    <string name="upd_open_page">開啟發布頁</string>
+    <string name="upd_found">發現新版本 %1$s</string>
+    <string name="upd_current">目前版本 %1$s%2$s</string>
+    <string name="upd_download_install">下載並安裝</string>
+    <string name="upd_skip">略過此版本</string>
+    <string name="upd_later">以後</string>
+    <string name="upd_need_perm_title">需要一次授權</string>
+    <string name="upd_need_perm_msg">Android 要求允許「%1$s」安裝 App，才能自行更新。\n\n點「前往設定」→ 開啟「允許來自這個來源的應用程式」→ 返回，再點一次「檢查更新」。</string>
+    <string name="upd_go_settings">前往設定</string>
+    <string name="upd_downloading">正在下載 %1$s</string>
+    <string name="upd_preparing">準備中…</string>
+    <string name="upd_progress">%1$s / %2$s MB（%3$d%%）</string>
+    <string name="upd_progress_unknown">%1$s MB</string>
+    <string name="upd_installer_failed">無法開啟系統安裝程式：%1$s</string>
+    <string name="upd_failed">更新失敗</string>
+    <string name="upd_no_browser">沒有可用的瀏覽器：%1$s</string>
+    <string name="upd_err_rate_limited">GitHub 存取頻率受限，請稍後再試</string>
+    <string name="upd_err_http">GitHub 回傳 %1$s</string>
+    <string name="upd_err_redirect">下載轉址失敗</string>
+    <string name="upd_err_download">下載失敗：HTTP %1$s</string>
+    <string name="upd_err_save">儲存安裝檔失敗</string>
+    <string name="upd_err_redirects">下載轉址次數過多</string>
+    <string name="upd_err_damaged">安裝檔已損壞</string>
+    <string name="upd_err_wrong_pkg">安裝檔不是本 App</string>
+    <string name="upd_err_not_newer">安裝檔版本沒有比目前新</string>
+    <string name="upd_err_signature">簽章與目前安裝的不一致，無法覆蓋安裝。\n（1.2 及更早版本使用臨時簽章：請先在「清單」頁備份，解除安裝舊版，再從 GitHub 手動安裝一次新版，之後即可自動更新。）</string>
+    <string-array name="bookmark_menu">
+        <item>播放</item>
+        <item>只載入（不播放）</item>
+        <item>加入書籤清單</item>
+        <item>重新命名</item>
+        <item>用目前組合覆蓋</item>
+        <item>上移</item>
+        <item>下移</item>
+        <item>刪除</item>
+    </string-array>
+    <string-array name="queue_menu_files">
+        <item>從這裡開始播放</item>
+        <item>放入 A</item>
+        <item>放入 B</item>
+        <item>上移</item>
+        <item>下移</item>
+        <item>移出清單</item>
+    </string-array>
+    <string-array name="queue_menu_bookmarks">
+        <item>從這裡開始播放</item>
+        <item>上移</item>
+        <item>下移</item>
+        <item>移出清單</item>
+    </string-array>
+</resources>

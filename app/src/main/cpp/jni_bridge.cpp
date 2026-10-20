@@ -20,9 +20,9 @@ JNIEXPORT jlong JNICALL FN(nCreate)(JNIEnv*, jclass) { return reinterpret_cast<j
 
 JNIEXPORT void JNICALL FN(nDestroy)(JNIEnv*, jclass, jlong h) { delete E(h); }
 
-// 返回 "OK\tcodec\trate\tsourceRate\tbits\tchannels\tdurationMs\tlossless" 或 "ERR\t原因"
+// 返回 "OK\tcodec\trate\tsourceRate\tbits\tchannels\tdurationMs\tlossless" 或 "ERR\t错误码[:详情]"（错误码由 Kotlin 层翻译成界面语言）
 JNIEXPORT jstring JNICALL FN(nLoad)(JNIEnv* env, jclass, jlong h, jint d, jint fd) {
-    if (!validDeck(d)) return str(env, "ERR\t无效的轨道");
+    if (!validDeck(d)) return str(env, "ERR\tinvalid_slot");
     zx::StreamInfo info;
     std::string err = E(h)->load(d, fd, info);
     if (!err.empty()) return str(env, "ERR\t" + err);

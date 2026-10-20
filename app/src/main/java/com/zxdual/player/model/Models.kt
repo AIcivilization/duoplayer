@@ -71,9 +71,9 @@ data class Combo(val a: SlotConfig = SlotConfig(), val b: SlotConfig = SlotConfi
     companion object {
         fun fromJson(o: JSONObject?) = Combo(SlotConfig.fromJson(o?.optJSONObject("a")), SlotConfig.fromJson(o?.optJSONObject("b")))
 
-        /** 「A名 + B名」 */
+        /** 「A名 + B名」；两路都没选时返回空串（由界面显示本地化的「未选择音频」） */
         fun displayName(a: String?, b: String?): String = listOfNotNull(a?.takeIf { it.isNotBlank() }, b?.takeIf { it.isNotBlank() })
-            .joinToString(" + ").ifEmpty { "未选择音频" }
+            .joinToString(" + ")
     }
 }
 
@@ -88,7 +88,7 @@ data class Bookmark(val id: String, val name: String, val combo: Combo) {
 
 enum class QueueMode { NONE, BOOKMARKS, FILES }
 
-enum class Repeat(val label: String) { OFF("顺序播放"), ALL("列表循环"), ONE("单项循环") }
+enum class Repeat { OFF, ALL, ONE }
 
 /**
  * 应用的全部可持久化数据；内部保存与「备份」用同一种 JSON 格式。

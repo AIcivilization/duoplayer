@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 i18n/build_strings.py 生成，请修改 i18n/id.txt -->
+<resources>
+    <string name="app_name">DuoPlayer Hi-Fi</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Batal</string>
+    <string name="close">Tutup</string>
+    <string name="add">Tambah</string>
+    <string name="add_all">Tambah semua</string>
+    <string name="nav_play">Putar</string>
+    <string name="nav_bookmarks">Penanda</string>
+    <string name="nav_lists">Daftar</string>
+    <string name="out_line">Keluaran %1$s · float 32-bit · %2$s · %3$s</string>
+    <string name="out_mode_power">jalur hemat</string>
+    <string name="out_mode_standard">jalur standar</string>
+    <string name="out_running">berjalan</string>
+    <string name="out_idle">siaga</string>
+    <string name="out_detail">Buffer %1$d ms · Pelindung clipping %2$d · Underrun %3$d</string>
+    <string name="out_warn_48k">Keluaran sistem hanya %1$s: buka Setelan → Suara dan aktifkan “High-Res streaming”, lalu ketuk tombol “Keluaran” sekali.</string>
+    <string name="btn_output_power">Keluaran: Hemat</string>
+    <string name="btn_output_standard">Keluaran: Std</string>
+    <string name="combo_bookmark">Penanda: %1$s</string>
+    <string name="combo_modified">" (diubah)"</string>
+    <string name="combo_unsaved">Belum disimpan sebagai penanda</string>
+    <string name="combo_none">Belum ada audio dipilih</string>
+    <string name="tab_label">%1$s · %2$s</string>
+    <string name="not_selected">Tidak ada</string>
+    <string name="btn_save">Simpan</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_save_bookmark">Simpan sebagai penanda</string>
+    <string name="btn_choose_audio">Pilih audio</string>
+    <string name="btn_choose_lyrics">Pilih lirik</string>
+    <string name="btn_remove">Hapus</string>
+    <string name="loop_on">Ulangi satu lagu: aktif</string>
+    <string name="loop_off">Ulangi satu lagu: mati</string>
+    <string name="slot_on">Trek ini: aktif</string>
+    <string name="slot_off">Trek ini: mati</string>
+    <string name="set_no_file">Belum ada audio: ketuk “Pilih audio”</string>
+    <string name="lyrics_none_hint">Lirik: tidak ada (ketuk “Pilih lirik” untuk memilih .lrc)</string>
+    <string name="lyrics_info">Lirik: %1$s</string>
+    <string name="lyrics_bilingual_suffix">" · dwibahasa"</string>
+    <string name="lyrics_unsynced_suffix">" · tidak sinkron"</string>
+    <string name="lyrics_src_lrc">file LRC</string>
+    <string name="lyrics_src_embedded">tersemat</string>
+    <string name="gain_mute">Volume: bisu</string>
+    <string name="gain_db">Volume %1$s dB</string>
+    <string name="balance_center">Balans: tengah</string>
+    <string name="balance_left">Balans: K %1$d</string>
+    <string name="balance_right">Balans: Ka %1$d</string>
+    <string name="chip_hint">Ketuk A / B untuk beralih: terang = diputar, abu-abu = mati</string>
+    <string name="chip_no_file">Belum ada audio (pilih di %1$s di atas)</string>
+    <string name="state_off">Mati · ketuk untuk mengaktifkan</string>
+    <string name="state_error">Tidak dapat diputar</string>
+    <string name="state_playing">Diputar</string>
+    <string name="state_ended">Selesai</string>
+    <string name="state_paused">Dijeda</string>
+    <string name="lyrics_unsynced_tap">Lirik tidak sinkron · ketuk untuk melihat</string>
+    <string name="toast_lyric_mode">Lirik: %1$s</string>
+    <string name="lyric_mode_both">Keduanya</string>
+    <string name="lyric_mode_cjk">CJK</string>
+    <string name="lyric_mode_latin">Latin</string>
+    <string name="single_combo">Satu kombinasi</string>
+    <string name="queue_bookmarks_pos">Daftar penanda %1$d/%2$d</string>
+    <string name="queue_files_pos">Daftar file %1$d/%2$d</string>
+    <string name="repeat_off">Berurutan</string>
+    <string name="repeat_all">Ulangi daftar</string>
+    <string name="repeat_one">Ulangi item</string>
+    <string name="btn_exit_queue">Keluar daftar</string>
+    <string name="bookmarks_title">Penanda</string>
+    <string name="btn_add_bookmark">+ Simpan saat ini</string>
+    <string name="bookmark_page_hint">Ketuk: muat dan putar · Tekan lama: ganti nama / timpa / tambah ke daftar / urutkan / hapus</string>
+    <string name="bookmark_empty">Belum ada penanda.\nAtur A + B di halaman Putar lalu ketuk “Simpan sebagai penanda” — lain kali cukup satu ketukan untuk memutar kombinasi itu.</string>
+    <string name="bm_slot_off">%1$s (mati)</string>
+    <string name="bm_slot_a">A: %1$s</string>
+    <string name="bm_slot_b">B: %1$s</string>
+    <string name="bm_empty">(kombinasi kosong)</string>
+    <string name="bm_deleted">(penanda dihapus)</string>
+    <string name="need_audio_first">Pilih dulu audio untuk A atau B</string>
+    <string name="save_bookmark_title">Simpan sebagai penanda</string>
+    <string name="bookmark_name_hint">Nama penanda</string>
+    <string name="rename_title">Ganti nama penanda</string>
+    <string name="name_hint">Nama</string>
+    <string name="confirm_overwrite">Timpa penanda “%1$s” dengan kombinasi A + B saat ini?</string>
+    <string name="confirm_delete_bm">Hapus penanda “%1$s”? (Juga akan dihapus dari daftar penanda.)</string>
+    <string name="segment_bookmarks">Daftar penanda</string>
+    <string name="segment_files">Daftar file</string>
+    <string name="hint_bookmark_list">Memutar penanda berurutan: A + B dari tiap penanda diputar bersama, lalu lanjut ke berikutnya.</string>
+    <string name="hint_file_list">Memutar file berurutan: tiap file masuk ke A; B tetap dengan setelannya (buat B abu-abu di halaman Putar untuk mendengar A saja).</string>
+    <string name="btn_add_bookmark_q">+ Penanda</string>
+    <string name="btn_add_files">+ File</string>
+    <string name="btn_add_folder">+ Folder</string>
+    <string name="btn_clear">Kosongkan</string>
+    <string name="btn_play_list">▶ Putar</string>
+    <string name="empty_bookmark_list">Daftar penanda kosong. Ketuk “+ Penanda” untuk menambah.</string>
+    <string name="empty_file_list">Daftar file kosong. Ketuk “+ File” atau “+ Folder”.</string>
+    <string name="confirm_clear_bookmark_list">Kosongkan daftar penanda?</string>
+    <string name="confirm_clear_file_list">Kosongkan daftar file?</string>
+    <string name="has_lyrics_suffix">" · ada lirik"</string>
+    <string name="no_bookmarks_yet">Belum ada penanda: ketuk dulu “Simpan sebagai penanda” di halaman Putar</string>
+    <string name="pick_bookmarks_title">Pilih penanda untuk ditambahkan</string>
+    <string name="choose_audio_for">Pilih audio untuk %1$s</string>
+    <string name="choose_from_device">Dari perangkat…</string>
+    <string name="choose_from_list">Dari daftar file (%1$d)</string>
+    <string name="picker_failed">Tidak dapat membuka pemilih file sistem</string>
+    <string name="btn_backup">Cadangkan</string>
+    <string name="btn_restore">Pulihkan</string>
+    <string name="btn_relink">Tautkan ulang folder</string>
+    <string name="relink_title">Tautkan ulang folder</string>
+    <string name="relink_message">Setelah memasang ulang aplikasi atau memulihkan cadangan, izin akses file lama akan hilang.\n\nPilih folder utama musik Anda (mis. Music atau kartu SD), aplikasi akan menemukan lagi file di penanda dan daftar berdasarkan jalur dan nama aslinya.</string>
+    <string name="relink_pick">Pilih folder</string>
+    <string name="backup_file_prefix">DuoPlayer-cadangan-</string>
+    <string name="scanning_folder">Memindai folder…</string>
+    <string name="folder_no_audio">Tidak ada audio di folder ini</string>
+    <string name="scanning_relink">Memindai dan mencocokkan file…</string>
+    <string name="backup_done">Cadangan disimpan</string>
+    <string name="backup_failed">Gagal menulis cadangan</string>
+    <string name="restore_read_failed">Gagal membaca cadangan</string>
+    <string name="restore_title">Pulihkan cadangan</string>
+    <string name="restore_message">“Ganti”: menimpa semua penanda, daftar, dan kombinasi saat ini dengan cadangan.\n“Gabung”: menambahkan penanda dan daftar dari cadangan ke data Anda.</string>
+    <string name="restore_replace">Ganti</string>
+    <string name="restore_merge">Gabung</string>
+    <string name="version_current">Versi %1$s</string>
+    <string name="auto_update_on">Cek otomatis: aktif</string>
+    <string name="auto_update_off">Cek otomatis: mati</string>
+    <string name="check_update">Cek pembaruan</string>
+    <string name="toast_bookmark_saved">Penanda “%1$s” disimpan</string>
+    <string name="toast_bookmark_overwritten">Penanda ditimpa dengan kombinasi saat ini</string>
+    <string name="toast_files_added">%1$d file ditambahkan</string>
+    <string name="toast_bad_backup">Bukan file cadangan yang valid</string>
+    <string name="toast_merged">Digabung: total %1$d penanda</string>
+    <string name="toast_restored">Dipulihkan: %1$d penanda, %2$d file</string>
+    <string name="toast_missing_files">%1$d file tidak dapat diakses — gunakan “Tautkan ulang folder”</string>
+    <string name="toast_relink_ok_all">Akses pulih — semua file dapat diakses</string>
+    <string name="toast_relink_fixed">%1$d file ditemukan</string>
+    <string name="toast_relink_left">, %1$d masih belum ditemukan</string>
+    <string name="toast_both_off">A dan B sama-sama mati: aktifkan minimal satu</string>
+    <string name="toast_choose_first">Pilih dulu file audio untuk A / B</string>
+    <string name="toast_not_in_list">Saat ini tidak memutar daftar</string>
+    <string name="toast_list_finished">Daftar selesai diputar</string>
+    <string name="notif_channel">Pemutaran</string>
+    <string name="notif_prev">Sebelumnya</string>
+    <string name="notif_pause">Jeda</string>
+    <string name="notif_play">Putar</string>
+    <string name="notif_next">Berikutnya</string>
+    <string name="err_io">Tidak dapat membuka file</string>
+    <string name="err_no_permission">Tidak ada izin akses: gunakan “Tautkan ulang folder” di halaman Daftar</string>
+    <string name="err_not_found">File tidak ditemukan: gunakan “Tautkan ulang folder” di halaman Daftar</string>
+    <string name="err_corrupt">File %1$s rusak atau tidak dapat dibaca</string>
+    <string name="err_unsupported">Format %1$s tidak didukung</string>
+    <string name="err_unknown_format">Format file tidak dikenali</string>
+    <string name="err_no_audio_track">File tidak memiliki trek audio</string>
+    <string name="err_no_decoder">Sistem ini tidak punya dekoder untuk %1$s</string>
+    <string name="err_bad_format">Dekoder mengembalikan format tidak valid</string>
+    <string name="err_bad_rate">Laju sampel tidak valid</string>
+    <string name="err_rate_ratio">Konversi laju sampel tidak didukung %1$s</string>
+    <string name="err_aaudio">Keluaran audio (AAudio) tidak tersedia</string>
+    <string name="err_output_open">Gagal membuka keluaran audio: %1$s</string>
+    <string name="err_output_start">Gagal memulai keluaran audio: %1$s</string>
+    <string name="err_unknown">Kesalahan tak dikenal (%1$s)</string>
+    <string name="fmt_lossless">lossless</string>
+    <string name="fmt_lossy">lossy</string>
+    <string name="path_direct_gain">Langsung %1$s · gain 64-bit</string>
+    <string name="path_bitperfect">Langsung %1$s · bit-perfect</string>
+    <string name="path_direct">Langsung %1$s</string>
+    <string name="path_resample">Resample %1$s → %2$s</string>
+    <string name="path_mix">" · campuran"</string>
+    <string name="lyrics_none_long">Lirik lagu ini tidak ditemukan.\n\n· Saat mengimpor dengan “+ Folder”, .lrc bernama sama di folder yang sama ditautkan otomatis\n· Saat memakai “+ File”, pilih .lrc bersama lagunya\n· Atau ketuk “Pilih lirik” di atas\n· Lirik yang tersemat di FLAC / MP3 / DSF juga dibaca</string>
+    <string name="lyrics_none">Tidak ada lirik</string>
+    <string name="lyrics_src_unsynced">%1$s · tidak sinkron</string>
+    <string name="lyrics_src_bilingual">%1$s · dwibahasa · %2$d baris</string>
+    <string name="lyrics_src_lines">%1$s · %2$d baris</string>
+    <string name="upd_checking">Memeriksa pembaruan…</string>
+    <string name="upd_none_published">Belum ada rilis di GitHub</string>
+    <string name="upd_latest">Anda sudah memakai versi terbaru (%1$s)</string>
+    <string name="upd_check_failed">Gagal memeriksa pembaruan</string>
+    <string name="upd_check_failed_msg">%1$s\n\nDi beberapa jaringan GitHub bisa lambat atau tidak terjangkau. Coba lagi nanti, atau buka halaman rilis di browser.</string>
+    <string name="upd_open_page">Buka halaman rilis</string>
+    <string name="upd_found">Versi baru %1$s</string>
+    <string name="upd_current">Versi saat ini %1$s%2$s</string>
+    <string name="upd_download_install">Unduh &amp; pasang</string>
+    <string name="upd_skip">Lewati versi ini</string>
+    <string name="upd_later">Nanti</string>
+    <string name="upd_need_perm_title">Perlu izin satu kali</string>
+    <string name="upd_need_perm_msg">Android perlu mengizinkan “%1$s” memasang aplikasi agar bisa memperbarui dirinya.\n\nKetuk “Setelan” → aktifkan “Izinkan dari sumber ini” → kembali lalu ketuk lagi “Cek pembaruan”.</string>
+    <string name="upd_go_settings">Setelan</string>
+    <string name="upd_downloading">Mengunduh %1$s</string>
+    <string name="upd_preparing">Menyiapkan…</string>
+    <string name="upd_progress">%1$s / %2$s MB (%3$d%%)</string>
+    <string name="upd_progress_unknown">%1$s MB</string>
+    <string name="upd_installer_failed">Tidak dapat membuka pemasang sistem: %1$s</string>
+    <string name="upd_failed">Pembaruan gagal</string>
+    <string name="upd_no_browser">Tidak ada browser: %1$s</string>
+    <string name="upd_err_rate_limited">Batas akses GitHub tercapai, coba lagi nanti</string>
+    <string name="upd_err_http">GitHub membalas %1$s</string>
+    <string name="upd_err_redirect">Pengalihan unduhan gagal</string>
+    <string name="upd_err_download">Unduhan gagal: HTTP %1$s</string>
+    <string name="upd_err_save">Gagal menyimpan paket</string>
+    <string name="upd_err_redirects">Terlalu banyak pengalihan</string>
+    <string name="upd_err_damaged">Paket rusak</string>
+    <string name="upd_err_wrong_pkg">Paket ini bukan untuk aplikasi ini</string>
+    <string name="upd_err_not_newer">Paket tidak lebih baru dari versi terpasang</string>
+    <string name="upd_err_signature">Tanda tangan tidak cocok dengan aplikasi terpasang, jadi tidak dapat diperbarui langsung.\n(Versi 1.2 dan sebelumnya memakai tanda tangan sementara: cadangkan di halaman Daftar, copot versi lama, lalu pasang versi baru dari GitHub sekali — setelah itu pembaruan bisa dari dalam aplikasi.)</string>
+    <string-array name="bookmark_menu">
+        <item>Putar</item>
+        <item>Muat saja (tanpa memutar)</item>
+        <item>Tambah ke daftar penanda</item>
+        <item>Ganti nama</item>
+        <item>Timpa dengan saat ini</item>
+        <item>Naik</item>
+        <item>Turun</item>
+        <item>Hapus</item>
+    </string-array>
+    <string-array name="queue_menu_files">
+        <item>Putar dari sini</item>
+        <item>Masukkan ke A</item>
+        <item>Masukkan ke B</item>
+        <item>Naik</item>
+        <item>Turun</item>
+        <item>Hapus dari daftar</item>
+    </string-array>
+    <string-array name="queue_menu_bookmarks">
+        <item>Putar dari sini</item>
+        <item>Naik</item>
+        <item>Turun</item>
+        <item>Hapus dari daftar</item>
+    </string-array>
+</resources>

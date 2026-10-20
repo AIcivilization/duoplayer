@@ -72,6 +72,6 @@ class ModelsTest {
     @Test fun displayName() {
         assertEquals("雨声 + Song", Combo.displayName("雨声", "Song"))
         assertEquals("雨声", Combo.displayName("雨声", null))
-        assertEquals("未选择音频", Combo.displayName(null, ""))
+        assertEquals("", Combo.displayName(null, ""))
     }
 }

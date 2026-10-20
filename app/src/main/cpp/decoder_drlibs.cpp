@@ -150,11 +150,11 @@ private:
 
 std::unique_ptr<Decoder> openFlac(int fd, std::string& error) {
     int own = ::dup(fd);
-    if (own < 0) { error = "dup 失败"; return nullptr; }
+    if (own < 0) { error = "io"; return nullptr; }
     ::lseek64(own, 0, SEEK_SET);
     auto dec = std::make_unique<FlacDecoder>(own, nullptr);
     drflac* f = drflac_open(fdRead, flacSeek, flacTell, dec->fdPtr(), nullptr);
-    if (!f) { error = "FLAC 解析失败"; return nullptr; }
+    if (!f) { error = "corrupt:FLAC"; return nullptr; }
     dec->attach(f);
     dec->fillInfo();
     return dec;
@@ -162,10 +162,10 @@ std::unique_ptr<Decoder> openFlac(int fd, std::string& error) {
 
 std::unique_ptr<Decoder> openWavOrAiff(int fd, std::string& error) {
     int own = ::dup(fd);
-    if (own < 0) { error = "dup 失败"; return nullptr; }
+    if (own < 0) { error = "io"; return nullptr; }
     ::lseek64(own, 0, SEEK_SET);
     auto dec = std::make_unique<WavDecoder>(own);
-    if (!dec->init()) { error = "WAV/AIFF 解析失败"; return nullptr; }
+    if (!dec->init()) { error = "corrupt:WAV/AIFF"; return nullptr; }
     return dec;
 }
 

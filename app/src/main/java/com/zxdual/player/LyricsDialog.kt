@@ -47,7 +47,7 @@ class LyricsDialog(
         setTextColor(muted)
         setTextSize(TypedValue.COMPLEX_UNIT_SP, 12f)
     }
-    private val modeBtn = smallButton("双语") {
+    private val modeBtn = smallButton(Labels.lyricMode(activity, LyricMode.BOTH)) {
         mode = LyricMode.values()[(mode.ordinal + 1) % LyricMode.values().size]
         onModeChange(mode)
         applyMode()
@@ -57,7 +57,7 @@ class LyricsDialog(
         setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
         gravity = Gravity.CENTER
         setPadding(dp(24), dp(48), dp(24), dp(48))
-        text = "这首没有找到歌词。\n\n· 用「＋文件夹」导入时，同目录下同名的 .lrc 会自动关联\n· 用「＋文件」时把同名 .lrc 一起选中\n· 或点上方「选择歌词」手动指定\n· 也会读取 FLAC / MP3 / DSF 里内嵌的歌词"
+        text = activity.getString(R.string.lyrics_none_long)
     }
     private val list = ListView(activity).apply {
         divider = null
@@ -117,9 +117,9 @@ class LyricsDialog(
             addView(source)
         }
         bar.addView(titles, LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f))
-        bar.addView(modeBtn, LinearLayout.LayoutParams(dp(74), dp(36)).apply { marginEnd = dp(4) })
-        bar.addView(smallButton("选择歌词") { onPickLrc() }, LinearLayout.LayoutParams(dp(78), dp(36)).apply { marginEnd = dp(4) })
-        bar.addView(smallButton("关闭") { dismiss() }, LinearLayout.LayoutParams(dp(56), dp(36)))
+        bar.addView(modeBtn, LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, dp(36)).apply { marginEnd = dp(4) })
+        bar.addView(smallButton(activity.getString(R.string.btn_choose_lyrics)) { onPickLrc() }, LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, dp(36)).apply { marginEnd = dp(4) })
+        bar.addView(smallButton(activity.getString(R.string.close)) { dismiss() }, LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, dp(36)))
         root.addView(bar)
         root.addView(empty, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
         root.addView(list, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f))
@@ -134,7 +134,7 @@ class LyricsDialog(
     }
 
     private fun applyMode() {
-        modeBtn.text = mode.label
+        modeBtn.text = Labels.lyricMode(activity, mode)
         adapter.notifyDataSetChanged()
     }
 
@@ -147,12 +147,12 @@ class LyricsDialog(
             adapter.notifyDataSetChanged()
             list.setSelection(0)
             source.text = when {
-                l == null -> "无歌词"
-                !l.synced -> "${l.source} · 未同步歌词"
-                l.isBilingual -> "${l.source} · 双语 · ${l.lines.size} 句"
-                else -> "${l.source} · ${l.lines.size} 句"
+                l == null -> activity.getString(R.string.lyrics_none)
+                !l.synced -> activity.getString(R.string.lyrics_src_unsynced, Labels.lyricSource(activity, l.source))
+                l.isBilingual -> activity.getString(R.string.lyrics_src_bilingual, Labels.lyricSource(activity, l.source), l.lines.size)
+                else -> activity.getString(R.string.lyrics_src_lines, Labels.lyricSource(activity, l.source), l.lines.size)
             }
-            modeBtn.text = mode.label
+            modeBtn.text = Labels.lyricMode(activity, mode)
         }
         empty.visibility = if (l == null) View.VISIBLE else View.GONE
         list.visibility = if (l == null) View.GONE else View.VISIBLE
@@ -173,9 +173,10 @@ class LyricsDialog(
         isAllCaps = false
         setTextColor(textColor)
         setTextSize(TypedValue.COMPLEX_UNIT_SP, 13f)
-        minWidth = 0
+        minWidth = dp(48)
         minHeight = 0
-        setPadding(0, 0, 0, 0)
+        isSingleLine = true
+        setPadding(dp(10), 0, dp(10), 0)
         stateListAnimator = null
         background = activity.getDrawable(R.drawable.btn_bg)
         setOnClickListener { onClick() }

@@ -18,7 +18,7 @@ constexpr int kMaxTaps = 640;
 }  // namespace
 
 bool Resampler::configure(int inRate, int outRate, std::string& error) {
-    if (inRate <= 0 || outRate <= 0) { error = "采样率无效"; return false; }
+    if (inRate <= 0 || outRate <= 0) { error = "bad_rate"; return false; }
     int g = std::gcd(inRate, outRate);
     L_ = outRate / g;
     M_ = inRate / g;
@@ -28,7 +28,7 @@ bool Resampler::configure(int inRate, int outRate, std::string& error) {
         reset();
         return true;
     }
-    if (L_ > kMaxPhases) { error = "不支持的采样率比例 " + std::to_string(inRate) + "->" + std::to_string(outRate); return false; }
+    if (L_ > kMaxPhases) { error = "rate_ratio:" + std::to_string(inRate) + "->" + std::to_string(outRate); return false; }
 
     // 通带到 min(in,out)/2 的 91%（44.1k 源即 20.07kHz），阻带从奈奎斯特频率开始，无混叠
     const double nyq = 0.5 * std::min(inRate, outRate);
