@@ -208,3 +208,9 @@ app/src/main/java/com/zxdual/player/
   DeckController.kt   每轨播放列表与状态
   MainActivity.kt     界面
 ```
+
+## 许可证
+
+本项目以 [MIT 许可证](LICENSE) 发布。
+
+第三方代码：`app/src/main/cpp/third_party/` 下的 [dr_flac / dr_wav](https://github.com/mackron/dr_libs) 采用 Public Domain / MIT-0 双许可。
