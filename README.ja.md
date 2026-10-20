@@ -38,7 +38,7 @@
   - FLAC / WAV / AIFF / DSD をアプリ内でデコードします。
   - A と B は 64bit 浮動小数点でミックスします。
   - サンプリングレートが同じときはリサンプルせず、**ビットパーフェクト**のまま出力します。
-- **バックアップと復元**、再インストール後の**フォルダ再リンク**、GitHub からの**アプリ内アップデート**。
+- **バックアップと復元**、再インストール後の**フォルダ再リンク**、GitHub からの**アプリ内アップデート**（GitHub に接続できない場合は jsDelivr ミラーに自動で切り替え、SHA-256 と署名を確認してからインストール）。
 - **17 言語**に対応し、システムの言語に自動で切り替わります。
 
 ## 対応機種
@@ -56,7 +56,7 @@
 
 ## インストール
 
-1. **[Releases](https://github.com/AIcivilization/duoplayer/releases/latest)** から `duoplayer-x.y.apk` をダウンロードします。
+1. **[Releases](https://github.com/AIcivilization/duoplayer/releases/latest)** から `duoplayer-x.y.apk` をダウンロードします（GitHub に接続できない場合は **[CDN ミラー](https://cdn.jsdelivr.net/gh/AIcivilization/duoplayer@dist/)**）。
 2. ウォークマンにコピーし、ファイルマネージャーで開いてインストールします。
 3. 以降のバージョンはアプリ内（リスト → 更新を確認）でアップデートできます。
 

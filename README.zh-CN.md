@@ -49,7 +49,7 @@
   - 两路在 64bit 浮点精度下混音；
   - 重采样器阻带衰减 -130 dB，源和输出采样率相同时直接跳过，保持**位精确**。
 - **备份与恢复**：导出成 JSON 文件；重装应用或换设备后，用「重新关联文件夹」自动找回文件。
-- **应用内自动更新**：从 GitHub Releases 下载新版，安装前校验签名。
+- **应用内自动更新**：从 GitHub Releases 下载新版。GitHub 连不上时（比如国内不开 VPN），自动改走 jsDelivr 镜像。安装前会校验 SHA-256 和签名。
 - **17 种界面语言**，自动跟随系统语言。
 
 ## 支持的设备
@@ -68,7 +68,7 @@
 
 ## 安装
 
-1. 到 **[Releases](https://github.com/AIcivilization/duoplayer/releases/latest)** 下载 `duoplayer-x.y.apk`。
+1. 到 **[Releases](https://github.com/AIcivilization/duoplayer/releases/latest)** 下载 `duoplayer-x.y.apk`。国内打不开 GitHub 时，用 **[国内镜像](https://cdn.jsdelivr.net/gh/AIcivilization/duoplayer@dist/)** 下载。
 2. 拷进 Walkman，用文件管理器打开安装；也可以用 `adb install -r duoplayer-x.y.apk`。
 3. 以后的版本可以在应用里更新：「列表」页 →「检查更新」。
 
@@ -140,7 +140,8 @@
 ### 自动更新
 - 每天最多检查一次 GitHub 上的最新版本。
 - 第一次更新时，需要允许本应用「安装未知应用」。
-- 国内网络访问 GitHub 可能不稳定，检查失败不影响播放；也可以点版本号打开发布页手动下载。
+- GitHub 连不上时，会依次尝试 cdn / fastly / testingcf 三个 jsDelivr 镜像地址，无需 VPN。
+- 下载对话框会显示文件来自哪个地址；都失败时可以点「国内镜像下载」，在浏览器里打开 https://cdn.jsdelivr.net/gh/AIcivilization/duoplayer@dist/ 手动下载。
 
 ## 界面语言
 

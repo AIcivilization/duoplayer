@@ -48,7 +48,7 @@
   - Mixing: a 64-bit float bus combines A and B.
   - Resampling: −130 dB stopband; skipped when the source rate already matches the output, so the path stays **bit-perfect**.
 - **Backup & restore** to a JSON file, plus **Relink folder**, which finds your files again after a reinstall or on a new device.
-- **In-app updates** from GitHub Releases, with a signature check before installing.
+- **In-app updates** from GitHub Releases. If GitHub is unreachable (e.g. in mainland China), the app falls back to a jsDelivr CDN mirror. Every package is checked with SHA-256 and its signature before it is installed.
 - **17 languages**, chosen automatically from the system language.
 
 ## Supported devices
@@ -67,7 +67,7 @@
 
 ## Install
 
-1. Download `duoplayer-x.y.apk` from **[Releases](https://github.com/AIcivilization/duoplayer/releases/latest)**.
+1. Download `duoplayer-x.y.apk` from **[Releases](https://github.com/AIcivilization/duoplayer/releases/latest)**. If GitHub is blocked on your network, use the **[CDN mirror](https://cdn.jsdelivr.net/gh/AIcivilization/duoplayer@dist/)** instead.
 2. Copy it to the Walkman and open it with the file manager, or run `adb install -r duoplayer-x.y.apk`.
 3. Later versions update from inside the app (Lists page → **Check update**).
 
