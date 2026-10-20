@@ -1,0 +1,9 @@
+{
+  "tag": "v1.7",
+  "versionName": "1.7",
+  "versionCode": 8,
+  "apk": "duoplayer-1.7.apk",
+  "size": 3516417,
+  "sha256": "4066365410ae5c32ee74493e4c05e7844bd0edcb9e6590aa4ac85dc7706d7e13",
+  "notes": "## DuoPlayer Hi-Fi 1.7\n\n- Updates now work without GitHub access: if GitHub is unreachable, the app checks and downloads from the jsDelivr CDN mirror (cdn / fastly / testingcf) / 无需 VPN 也能更新：GitHub 连不上时自动改用 jsDelivr 国内可访问的镜像检查和下载\n- Each download is verified with SHA-256 and the app signature before installing / 安装前校验 SHA-256 和签名，镜像无法篡改安装包\n- The download dialog shows which source is used; failures offer a \"Mirror download\" button / 下载时显示来源，失败时可一键打开镜像下载页\n\nManual download (China-friendly) / 手动下载（国内可用）: https://cdn.jsdelivr.net/gh/AIcivilization/duoplayer@dist/"
+}
