@@ -66,7 +66,7 @@ class UpdateUi(private val activity: Activity, private val dialogTheme: Int) {
         val size = if (r.apkSize > 0) " · %.1f MB".format(r.apkSize / 1048576.0) else ""
         AlertDialog.Builder(activity, dialogTheme)
             .setTitle("发现新版本 ${r.tag}")
-            .setMessage("当前版本 $currentVersion$size\n\n" + r.notes.take(1500).ifEmpty { r.title })
+            .setMessage("当前版本 $currentVersion$size\n\n" + plainNotes(r.notes).take(1500).ifEmpty { r.title })
             .setPositiveButton("下载并安装") { _, _ -> ensureInstallAllowed { download(r) } }
             .setNeutralButton("跳过此版本") { _, _ -> prefs.edit().putString("skip", r.tag).apply() }
             .setNegativeButton("以后", null)
@@ -120,6 +120,11 @@ class UpdateUi(private val activity: Activity, private val dialogTheme: Int) {
             }
         }.start()
     }
+
+    /** 把发布说明的 Markdown 简化成纯文本：去掉标题符号、反引号和末尾的校验信息 */
+    private fun plainNotes(md: String): String = md.substringBefore("\n---").lines()
+        .joinToString("\n") { it.trimEnd().replace(Regex("^#{1,6}\\s*"), "").replace("`", "").replace("**", "") }
+        .replace(Regex("\n{3,}"), "\n\n").trim()
 
     fun openReleases() {
         runCatching { activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(Updater.RELEASES_PAGE))) }
