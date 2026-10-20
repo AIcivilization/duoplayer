@@ -16,13 +16,14 @@
     <string name="out_running">đang chạy</string>
     <string name="out_idle">chờ</string>
     <string name="out_detail">Bộ đệm %1$d ms · Chống méo %2$d · Thiếu dữ liệu %3$d</string>
-    <string name="out_warn_48k">Đầu ra hệ thống chỉ %1$s: mở Cài đặt → Âm thanh và bật “High-Res streaming”, rồi chạm nút “Đầu ra” một lần.</string>
+    <string name="out_warn_48k">Đầu ra hệ thống chỉ %1$s: mở Cài đặt → Âm thanh và bật “High-Res streaming”, rồi chạm nút “Đầu ra” ở cuối trang này một lần.</string>
     <string name="btn_output_power">Đầu ra: Eco</string>
     <string name="btn_output_standard">Đầu ra: Std</string>
     <string name="combo_bookmark">Dấu trang: %1$s</string>
     <string name="combo_modified">" (đã sửa)"</string>
     <string name="combo_unsaved">Chưa lưu dấu trang</string>
     <string name="combo_none">Chưa chọn âm thanh</string>
+    <string name="settings_title">Cài đặt A / B — chạm thẻ để chỉnh</string>
     <string name="tab_label">%1$s · %2$s</string>
     <string name="not_selected">Chưa chọn</string>
     <string name="btn_save">Lưu</string>
@@ -48,7 +49,7 @@
     <string name="balance_left">Cân bằng: T %1$d</string>
     <string name="balance_right">Cân bằng: P %1$d</string>
     <string name="chip_hint">Chạm A / B để chuyển: sáng = đang phát, xám = tắt</string>
-    <string name="chip_no_file">Chưa có âm thanh (chọn trong %1$s phía trên)</string>
+    <string name="chip_no_file">%1$s chưa có âm thanh — chạm để chọn</string>
     <string name="state_off">Tắt · chạm để bật</string>
     <string name="state_error">Không phát được</string>
     <string name="state_playing">Đang phát</string>

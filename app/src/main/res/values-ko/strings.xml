@@ -16,13 +16,14 @@
     <string name="out_running">작동 중</string>
     <string name="out_idle">대기</string>
     <string name="out_detail">버퍼 %1$d ms · 클리핑 보호 %2$d · 언더런 %3$d</string>
-    <string name="out_warn_48k">시스템 출력이 %1$s뿐입니다: 설정 → 소리에서 “High-Res streaming”을 켠 뒤 오른쪽 “출력” 버튼을 한 번 누르세요.</string>
+    <string name="out_warn_48k">시스템 출력이 %1$s뿐입니다: 설정 → 소리에서 “High-Res streaming”을 켠 뒤 이 화면 맨 아래의 “출력” 버튼을 한 번 누르세요.</string>
     <string name="btn_output_power">출력:절전</string>
     <string name="btn_output_standard">출력:표준</string>
     <string name="combo_bookmark">북마크: %1$s</string>
     <string name="combo_modified">" (수정됨)"</string>
     <string name="combo_unsaved">북마크로 저장 안 됨</string>
     <string name="combo_none">선택된 오디오 없음</string>
+    <string name="settings_title">A / B 설정: 탭을 눌러 편집</string>
     <string name="tab_label">%1$s · %2$s</string>
     <string name="not_selected">미선택</string>
     <string name="btn_save">저장</string>
@@ -48,7 +49,7 @@
     <string name="balance_left">밸런스 L %1$d</string>
     <string name="balance_right">밸런스 R %1$d</string>
     <string name="chip_hint">A / B를 눌러 전환: 밝음 = 재생, 회색 = 끔</string>
-    <string name="chip_no_file">오디오 없음 (위의 %1$s에서 선택)</string>
+    <string name="chip_no_file">%1$s 오디오 없음 (눌러서 선택)</string>
     <string name="state_off">꺼짐 · 눌러서 켜기</string>
     <string name="state_error">재생할 수 없음</string>
     <string name="state_playing">재생 중</string>

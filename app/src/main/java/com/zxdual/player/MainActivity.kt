@@ -471,7 +471,8 @@ class MainActivity : Activity() {
             badge.background = badgeBg
             lyric1.setTextColor(color)
             title.isSelected = true
-            root.setOnClickListener { service?.toggleSlot(index) }
+            // 有文件：点一下切换亮/灰；还没选文件：点一下直接选音频
+            root.setOnClickListener { if (snap?.hasFile == true) service?.toggleSlot(index) else chooseAudioForSlot(index) }
             lyricBox.setOnClickListener { showLyrics(index) }
             lyricBox.setOnLongClickListener {
                 setLyricMode(LyricMode.values()[(lyricMode.ordinal + 1) % LyricMode.values().size])

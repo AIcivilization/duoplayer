@@ -16,13 +16,14 @@
     <string name="out_running">running</string>
     <string name="out_idle">idle</string>
     <string name="out_detail">Buffer %1$d ms · Clip guard %2$d · Underruns %3$d</string>
-    <string name="out_warn_48k">System output is only %1$s: open Settings → Sound and turn on “High-Res streaming”, then tap the “Output” button once.</string>
+    <string name="out_warn_48k">System output is only %1$s: open Settings → Sound and turn on “High-Res streaming”, then tap the “Output” button at the bottom of this page once.</string>
     <string name="btn_output_power">Output: Eco</string>
     <string name="btn_output_standard">Output: Std</string>
     <string name="combo_bookmark">Bookmark: %1$s</string>
     <string name="combo_modified">" (modified)"</string>
     <string name="combo_unsaved">Not saved as a bookmark</string>
     <string name="combo_none">No audio selected</string>
+    <string name="settings_title">A / B settings — tap a tab to edit</string>
     <string name="tab_label">%1$s · %2$s</string>
     <string name="not_selected">None</string>
     <string name="btn_save">Save</string>
@@ -48,7 +49,7 @@
     <string name="balance_left">Balance: L %1$d</string>
     <string name="balance_right">Balance: R %1$d</string>
     <string name="chip_hint">Tap A / B to switch: lit = playing, grey = off</string>
-    <string name="chip_no_file">No audio (choose it in %1$s above)</string>
+    <string name="chip_no_file">No audio for %1$s — tap to choose</string>
     <string name="state_off">Off · tap to enable</string>
     <string name="state_error">Can’t play</string>
     <string name="state_playing">Playing</string>

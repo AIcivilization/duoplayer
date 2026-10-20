@@ -16,13 +16,14 @@
     <string name="out_running">çalışıyor</string>
     <string name="out_idle">beklemede</string>
     <string name="out_detail">Arabellek %1$d ms · Kırpma koruması %2$d · Boşalma %3$d</string>
-    <string name="out_warn_48k">Sistem çıkışı yalnızca %1$s: Ayarlar → Ses bölümünden “High-Res streaming”i açın, sonra “Çıkış” düğmesine bir kez dokunun.</string>
+    <string name="out_warn_48k">Sistem çıkışı yalnızca %1$s: Ayarlar → Ses bölümünden “High-Res streaming”i açın, sonra bu sayfanın altındaki “Çıkış” düğmesine bir kez dokunun.</string>
     <string name="btn_output_power">Çıkış: Eko</string>
     <string name="btn_output_standard">Çıkış: Std</string>
     <string name="combo_bookmark">Yer imi: %1$s</string>
     <string name="combo_modified">" (değiştirildi)"</string>
     <string name="combo_unsaved">Yer imi olarak kaydedilmedi</string>
     <string name="combo_none">Ses seçilmedi</string>
+    <string name="settings_title">A / B ayarları — düzenlemek için sekmeye dokunun</string>
     <string name="tab_label">%1$s · %2$s</string>
     <string name="not_selected">Yok</string>
     <string name="btn_save">Kaydet</string>
@@ -48,7 +49,7 @@
     <string name="balance_left">Denge: S %1$d</string>
     <string name="balance_right">Denge: Sağ %1$d</string>
     <string name="chip_hint">Değiştirmek için A / B’ye dokunun: parlak = çalıyor, gri = kapalı</string>
-    <string name="chip_no_file">Ses yok (yukarıdaki %1$s içinden seçin)</string>
+    <string name="chip_no_file">%1$s için ses yok — seçmek için dokunun</string>
     <string name="state_off">Kapalı · açmak için dokunun</string>
     <string name="state_error">Çalınamıyor</string>
     <string name="state_playing">Çalıyor</string>

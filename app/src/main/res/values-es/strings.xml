@@ -16,13 +16,14 @@
     <string name="out_running">activa</string>
     <string name="out_idle">en espera</string>
     <string name="out_detail">Búfer %1$d ms · Anti-saturación %2$d · Subcargas %3$d</string>
-    <string name="out_warn_48k">La salida del sistema es solo de %1$s: abre Ajustes → Sonido y activa «High-Res streaming»; luego toca una vez el botón «Salida».</string>
+    <string name="out_warn_48k">La salida del sistema es solo de %1$s: abre Ajustes → Sonido y activa «High-Res streaming»; luego toca una vez el botón «Salida» al final de esta página.</string>
     <string name="btn_output_power">Salida: Eco</string>
     <string name="btn_output_standard">Salida: Est</string>
     <string name="combo_bookmark">Marcador: %1$s</string>
     <string name="combo_modified">" (modificado)"</string>
     <string name="combo_unsaved">No guardado como marcador</string>
     <string name="combo_none">Sin audio seleccionado</string>
+    <string name="settings_title">Ajustes de A / B: toca una pestaña para editar</string>
     <string name="tab_label">%1$s · %2$s</string>
     <string name="not_selected">Ninguno</string>
     <string name="btn_save">Guardar</string>
@@ -48,7 +49,7 @@
     <string name="balance_left">Balance: I %1$d</string>
     <string name="balance_right">Balance: D %1$d</string>
     <string name="chip_hint">Toca A / B para cambiar: encendido = suena, gris = apagado</string>
-    <string name="chip_no_file">Sin audio (elígelo en %1$s arriba)</string>
+    <string name="chip_no_file">Sin audio para %1$s: toca para elegir</string>
     <string name="state_off">Apagada · toca para activar</string>
     <string name="state_error">No se puede reproducir</string>
     <string name="state_playing">Reproduciendo</string>

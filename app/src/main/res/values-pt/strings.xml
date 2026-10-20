@@ -16,13 +16,14 @@
     <string name="out_running">ativa</string>
     <string name="out_idle">ociosa</string>
     <string name="out_detail">Buffer %1$d ms · Proteção de clipping %2$d · Underruns %3$d</string>
-    <string name="out_warn_48k">A saída do sistema é só %1$s: abra Configurações → Som e ative “High-Res streaming”, depois toque uma vez no botão “Saída”.</string>
+    <string name="out_warn_48k">A saída do sistema é só %1$s: abra Configurações → Som e ative “High-Res streaming”, depois toque uma vez no botão “Saída” no fim desta página.</string>
     <string name="btn_output_power">Saída: Eco</string>
     <string name="btn_output_standard">Saída: Pad</string>
     <string name="combo_bookmark">Favorito: %1$s</string>
     <string name="combo_modified">" (alterado)"</string>
     <string name="combo_unsaved">Não salvo como favorito</string>
     <string name="combo_none">Nenhum áudio selecionado</string>
+    <string name="settings_title">Configurações de A / B — toque numa aba para editar</string>
     <string name="tab_label">%1$s · %2$s</string>
     <string name="not_selected">Nenhum</string>
     <string name="btn_save">Salvar</string>
@@ -48,7 +49,7 @@
     <string name="balance_left">Balanço: E %1$d</string>
     <string name="balance_right">Balanço: D %1$d</string>
     <string name="chip_hint">Toque em A / B para alternar: aceso = tocando, cinza = desligado</string>
-    <string name="chip_no_file">Sem áudio (escolha em %1$s acima)</string>
+    <string name="chip_no_file">Sem áudio em %1$s — toque para escolher</string>
     <string name="state_off">Desligada · toque para ativar</string>
     <string name="state_error">Não é possível tocar</string>
     <string name="state_playing">Tocando</string>

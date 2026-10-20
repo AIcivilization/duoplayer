@@ -16,13 +16,14 @@
     <string name="out_running">aktiv</string>
     <string name="out_idle">Ruhe</string>
     <string name="out_detail">Puffer %1$d ms · Clipping-Schutz %2$d · Unterläufe %3$d</string>
-    <string name="out_warn_48k">Die Systemausgabe hat nur %1$s: Einstellungen → Ton öffnen und „High-Res streaming“ einschalten, dann einmal auf „Ausgabe“ tippen.</string>
+    <string name="out_warn_48k">Die Systemausgabe hat nur %1$s: Einstellungen → Ton öffnen und „High-Res streaming“ einschalten, dann einmal unten auf dieser Seite auf „Ausgabe“ tippen.</string>
     <string name="btn_output_power">Ausgabe: Eco</string>
     <string name="btn_output_standard">Ausgabe: Std</string>
     <string name="combo_bookmark">Lesezeichen: %1$s</string>
     <string name="combo_modified">" (geändert)"</string>
     <string name="combo_unsaved">Nicht als Lesezeichen gespeichert</string>
     <string name="combo_none">Kein Audio ausgewählt</string>
+    <string name="settings_title">A/B-Einstellungen – Tab antippen zum Bearbeiten</string>
     <string name="tab_label">%1$s · %2$s</string>
     <string name="not_selected">Keins</string>
     <string name="btn_save">Speichern</string>
@@ -48,7 +49,7 @@
     <string name="balance_left">Balance: L %1$d</string>
     <string name="balance_right">Balance: R %1$d</string>
     <string name="chip_hint">A / B antippen zum Umschalten: hell = spielt, grau = aus</string>
-    <string name="chip_no_file">Kein Audio (oben in %1$s wählen)</string>
+    <string name="chip_no_file">Kein Audio für %1$s – zum Auswählen antippen</string>
     <string name="state_off">Aus · antippen zum Einschalten</string>
     <string name="state_error">Nicht abspielbar</string>
     <string name="state_playing">Spielt</string>

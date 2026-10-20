@@ -16,13 +16,14 @@
     <string name="out_running">動作中</string>
     <string name="out_idle">待機</string>
     <string name="out_detail">バッファ %1$d ms · クリップ保護 %2$d · アンダーラン %3$d</string>
-    <string name="out_warn_48k">システム出力が %1$s のみです：設定 → 音 で「High-Res streaming（ハイレゾストリーミング）」をオンにし、右の「出力」ボタンを一度タップしてください。</string>
+    <string name="out_warn_48k">システム出力が %1$s のみです：設定 → 音 で「High-Res streaming（ハイレゾストリーミング）」をオンにし、このページ下部の「出力」ボタンを一度タップしてください。</string>
     <string name="btn_output_power">出力:省電力</string>
     <string name="btn_output_standard">出力:標準</string>
     <string name="combo_bookmark">ブックマーク：%1$s</string>
     <string name="combo_modified">（変更あり）</string>
     <string name="combo_unsaved">未保存</string>
     <string name="combo_none">音源が未選択</string>
+    <string name="settings_title">A / B の設定：タブをタップして編集</string>
     <string name="tab_label">%1$s · %2$s</string>
     <string name="not_selected">未選択</string>
     <string name="btn_save">保存</string>
@@ -48,7 +49,7 @@
     <string name="balance_left">定位 左 %1$d</string>
     <string name="balance_right">定位 右 %1$d</string>
     <string name="chip_hint">A / B をタップで切替：明るい = 再生、グレー = オフ</string>
-    <string name="chip_no_file">音源なし（上の %1$s で選択）</string>
+    <string name="chip_no_file">%1$s の音源なし（タップして選択）</string>
     <string name="state_off">オフ · タップで有効化</string>
     <string name="state_error">再生できません</string>
     <string name="state_playing">再生中</string>

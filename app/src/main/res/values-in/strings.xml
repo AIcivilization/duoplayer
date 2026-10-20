@@ -16,13 +16,14 @@
     <string name="out_running">berjalan</string>
     <string name="out_idle">siaga</string>
     <string name="out_detail">Buffer %1$d ms · Pelindung clipping %2$d · Underrun %3$d</string>
-    <string name="out_warn_48k">Keluaran sistem hanya %1$s: buka Setelan → Suara dan aktifkan “High-Res streaming”, lalu ketuk tombol “Keluaran” sekali.</string>
+    <string name="out_warn_48k">Keluaran sistem hanya %1$s: buka Setelan → Suara dan aktifkan “High-Res streaming”, lalu ketuk tombol “Keluaran” di bagian bawah halaman ini sekali.</string>
     <string name="btn_output_power">Keluaran: Hemat</string>
     <string name="btn_output_standard">Keluaran: Std</string>
     <string name="combo_bookmark">Penanda: %1$s</string>
     <string name="combo_modified">" (diubah)"</string>
     <string name="combo_unsaved">Belum disimpan sebagai penanda</string>
     <string name="combo_none">Belum ada audio dipilih</string>
+    <string name="settings_title">Pengaturan A / B — ketuk tab untuk mengedit</string>
     <string name="tab_label">%1$s · %2$s</string>
     <string name="not_selected">Tidak ada</string>
     <string name="btn_save">Simpan</string>
@@ -48,7 +49,7 @@
     <string name="balance_left">Balans: K %1$d</string>
     <string name="balance_right">Balans: Ka %1$d</string>
     <string name="chip_hint">Ketuk A / B untuk beralih: terang = diputar, abu-abu = mati</string>
-    <string name="chip_no_file">Belum ada audio (pilih di %1$s di atas)</string>
+    <string name="chip_no_file">Belum ada audio untuk %1$s — ketuk untuk memilih</string>
     <string name="state_off">Mati · ketuk untuk mengaktifkan</string>
     <string name="state_error">Tidak dapat diputar</string>
     <string name="state_playing">Diputar</string>

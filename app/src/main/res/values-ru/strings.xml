@@ -16,13 +16,14 @@
     <string name="out_running">работает</string>
     <string name="out_idle">ожидание</string>
     <string name="out_detail">Буфер %1$d мс · Защита от клиппинга %2$d · Опустошения %3$d</string>
-    <string name="out_warn_48k">Системный выход всего %1$s: откройте Настройки → Звук и включите «High-Res streaming», затем один раз нажмите кнопку «Выход».</string>
+    <string name="out_warn_48k">Системный выход всего %1$s: откройте Настройки → Звук и включите «High-Res streaming», затем один раз нажмите кнопку «Выход» внизу этой страницы.</string>
     <string name="btn_output_power">Выход: эко</string>
     <string name="btn_output_standard">Выход: станд</string>
     <string name="combo_bookmark">Закладка: %1$s</string>
     <string name="combo_modified">" (изменено)"</string>
     <string name="combo_unsaved">Не сохранено в закладки</string>
     <string name="combo_none">Аудио не выбрано</string>
+    <string name="settings_title">Настройки A / B — нажмите вкладку, чтобы изменить</string>
     <string name="tab_label">%1$s · %2$s</string>
     <string name="not_selected">Нет</string>
     <string name="btn_save">Сохранить</string>
@@ -48,7 +49,7 @@
     <string name="balance_left">Баланс: Л %1$d</string>
     <string name="balance_right">Баланс: П %1$d</string>
     <string name="chip_hint">Нажмите A / B для переключения: ярко = играет, серо = выкл</string>
-    <string name="chip_no_file">Нет аудио (выберите в %1$s выше)</string>
+    <string name="chip_no_file">Нет аудио для %1$s — нажмите, чтобы выбрать</string>
     <string name="state_off">Выкл · нажмите, чтобы включить</string>
     <string name="state_error">Не воспроизводится</string>
     <string name="state_playing">Играет</string>

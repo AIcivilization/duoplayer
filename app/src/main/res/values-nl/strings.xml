@@ -16,13 +16,14 @@
     <string name="out_running">actief</string>
     <string name="out_idle">inactief</string>
     <string name="out_detail">Buffer %1$d ms · Clipbeveiliging %2$d · Underruns %3$d</string>
-    <string name="out_warn_48k">De systeemuitvoer is maar %1$s: open Instellingen → Geluid en zet „High-Res streaming” aan, tik daarna één keer op „Uitvoer”.</string>
+    <string name="out_warn_48k">De systeemuitvoer is maar %1$s: open Instellingen → Geluid en zet „High-Res streaming” aan, tik daarna één keer op „Uitvoer” onderaan deze pagina.</string>
     <string name="btn_output_power">Uitvoer: Eco</string>
     <string name="btn_output_standard">Uitvoer: Std</string>
     <string name="combo_bookmark">Bladwijzer: %1$s</string>
     <string name="combo_modified">" (gewijzigd)"</string>
     <string name="combo_unsaved">Niet als bladwijzer opgeslagen</string>
     <string name="combo_none">Geen audio gekozen</string>
+    <string name="settings_title">Instellingen A / B — tik op een tabblad om te bewerken</string>
     <string name="tab_label">%1$s · %2$s</string>
     <string name="not_selected">Geen</string>
     <string name="btn_save">Opslaan</string>
@@ -48,7 +49,7 @@
     <string name="balance_left">Balans: L %1$d</string>
     <string name="balance_right">Balans: R %1$d</string>
     <string name="chip_hint">Tik op A / B om te wisselen: licht = speelt, grijs = uit</string>
-    <string name="chip_no_file">Geen audio (kies het in %1$s hierboven)</string>
+    <string name="chip_no_file">Geen audio voor %1$s — tik om te kiezen</string>
     <string name="state_off">Uit · tik om aan te zetten</string>
     <string name="state_error">Kan niet afspelen</string>
     <string name="state_playing">Speelt</string>

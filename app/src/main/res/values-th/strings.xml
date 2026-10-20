@@ -16,13 +16,14 @@
     <string name="out_running">ทำงานอยู่</string>
     <string name="out_idle">พัก</string>
     <string name="out_detail">บัฟเฟอร์ %1$d ms · ป้องกันเสียงแตก %2$d · ข้อมูลขาด %3$d</string>
-    <string name="out_warn_48k">เอาต์พุตระบบมีแค่ %1$s: เปิด การตั้งค่า → เสียง แล้วเปิด “High-Res streaming” จากนั้นแตะปุ่ม “เอาต์พุต” หนึ่งครั้ง</string>
+    <string name="out_warn_48k">เอาต์พุตระบบมีแค่ %1$s: เปิด การตั้งค่า → เสียง แล้วเปิด “High-Res streaming” จากนั้นแตะปุ่ม “เอาต์พุต” ที่ด้านล่างของหน้านี้หนึ่งครั้ง</string>
     <string name="btn_output_power">เอาต์พุต: ประหยัด</string>
     <string name="btn_output_standard">เอาต์พุต: มาตรฐาน</string>
     <string name="combo_bookmark">บุ๊กมาร์ก: %1$s</string>
     <string name="combo_modified">" (แก้ไขแล้ว)"</string>
     <string name="combo_unsaved">ยังไม่ได้บันทึกเป็นบุ๊กมาร์ก</string>
     <string name="combo_none">ยังไม่ได้เลือกเสียง</string>
+    <string name="settings_title">ตั้งค่า A / B — แตะแท็บเพื่อแก้ไข</string>
     <string name="tab_label">%1$s · %2$s</string>
     <string name="not_selected">ไม่มี</string>
     <string name="btn_save">บันทึก</string>
@@ -48,7 +49,7 @@
     <string name="balance_left">บาลานซ์: ซ้าย %1$d</string>
     <string name="balance_right">บาลานซ์: ขวา %1$d</string>
     <string name="chip_hint">แตะ A / B เพื่อสลับ: สว่าง = กำลังเล่น, เทา = ปิด</string>
-    <string name="chip_no_file">ไม่มีเสียง (เลือกใน %1$s ด้านบน)</string>
+    <string name="chip_no_file">%1$s ยังไม่มีเสียง — แตะเพื่อเลือก</string>
     <string name="state_off">ปิด · แตะเพื่อเปิด</string>
     <string name="state_error">เล่นไม่ได้</string>
     <string name="state_playing">กำลังเล่น</string>

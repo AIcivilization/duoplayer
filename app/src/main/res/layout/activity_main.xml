@@ -22,43 +22,15 @@
                 android:orientation="vertical"
                 android:padding="10dp">
 
-                <!-- 输出状态 -->
+                <!-- 播放卡片（打开就能看到）：A / B 亮=播放，灰=不播放 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/card_bg"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="10dp">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView android:id="@+id/outputLine" style="@style/Label" android:textColor="@color/text" android:textSize="12sp" />
-                        <TextView android:id="@+id/outputDetail" style="@style/Label" android:textSize="11sp" />
-                        <TextView android:id="@+id/warning" style="@style/Label" android:layout_marginTop="4dp" android:textColor="@color/warn" android:visibility="gone" />
-                    </LinearLayout>
-
-                    <Button
-                        android:id="@+id/btnMode"
-                        style="@style/SmallButton"
-                        android:layout_width="78dp"
-                        android:layout_weight="0"
-                        android:text="@string/btn_output_power" />
-                </LinearLayout>
-
-                <!-- 组合卡片：A / B 索引 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:background="@drawable/card_bg"
                     android:orientation="vertical"
-                    android:padding="12dp">
+                    android:padding="10dp">
 
+                    <TextView android:id="@+id/warning" style="@style/Label" android:layout_marginBottom="6dp" android:textColor="@color/warn" android:visibility="gone" />
                     <TextView
                         android:id="@+id/comboTitle"
                         android:layout_width="match_parent"
@@ -71,10 +43,61 @@
 
                     <TextView android:id="@+id/comboSub" style="@style/Label" android:layout_marginTop="2dp" />
 
+                    <TextView style="@style/Label" android:layout_marginTop="6dp" android:text="@string/chip_hint" android:textSize="11sp" />
+
+                    <include android:id="@+id/chipA" layout="@layout/slot_chip" />
+                    <include android:id="@+id/chipB" layout="@layout/slot_chip" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button android:id="@+id/btnPrev" style="@style/DeckButton" android:layout_width="64dp" android:layout_height="52dp" android:layout_weight="0" android:text="⏮" android:textSize="18sp" />
+                        <Button
+                            android:id="@+id/btnPlay"
+                            android:layout_width="76dp"
+                            android:layout_height="76dp"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginEnd="18dp"
+                            android:background="@drawable/play_bg"
+                            android:stateListAnimator="@null"
+                            android:text="▶"
+                            android:textColor="@color/bg"
+                            android:textSize="28sp" />
+                        <Button android:id="@+id/btnNext" style="@style/DeckButton" android:layout_width="64dp" android:layout_height="52dp" android:layout_weight="0" android:text="⏭" android:textSize="18sp" />
+                    </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView android:id="@+id/queueLine" style="@style/Label" android:layout_width="0dp" android:layout_weight="1" android:ellipsize="end" android:singleLine="true" android:textColor="@color/text" android:textSize="12sp" />
+                        <Button android:id="@+id/btnRepeat" style="@style/SmallButton" android:layout_width="84dp" android:layout_weight="0" />
+                        <Button android:id="@+id/btnExitQueue" style="@style/SmallButton" android:layout_width="72dp" android:layout_weight="0" android:text="@string/btn_exit_queue" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- 设置卡片：A / B 索引，点标签设置那一路 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/card_bg"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView style="@style/Label" android:text="@string/settings_title" android:textColor="@color/text" android:textSize="13sp" android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
                         android:orientation="horizontal">
 
                         <Button android:id="@+id/tabA" style="@style/DeckButton" android:layout_height="48dp" android:background="@drawable/tab_bg" android:ellipsize="end" android:paddingStart="8dp" android:paddingEnd="8dp" android:singleLine="true" android:textSize="14sp" />
@@ -124,53 +147,32 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- 播放：A / B 亮=播放，灰=不播放 -->
+                <!-- 输出状态（放最下面） -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/card_bg"
-                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
                     android:padding="10dp">
 
-                    <TextView style="@style/Label" android:text="@string/chip_hint" android:textSize="11sp" />
-
-                    <include android:id="@+id/chipA" layout="@layout/slot_chip" />
-                    <include android:id="@+id/chipB" layout="@layout/slot_chip" />
-
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                        <Button android:id="@+id/btnPrev" style="@style/DeckButton" android:layout_width="64dp" android:layout_height="52dp" android:layout_weight="0" android:text="⏮" android:textSize="18sp" />
-                        <Button
-                            android:id="@+id/btnPlay"
-                            android:layout_width="76dp"
-                            android:layout_height="76dp"
-                            android:layout_marginStart="18dp"
-                            android:layout_marginEnd="18dp"
-                            android:background="@drawable/play_bg"
-                            android:stateListAnimator="@null"
-                            android:text="▶"
-                            android:textColor="@color/bg"
-                            android:textSize="28sp" />
-                        <Button android:id="@+id/btnNext" style="@style/DeckButton" android:layout_width="64dp" android:layout_height="52dp" android:layout_weight="0" android:text="⏭" android:textSize="18sp" />
+                        <TextView android:id="@+id/outputLine" style="@style/Label" android:textColor="@color/text" android:textSize="12sp" />
+                        <TextView android:id="@+id/outputDetail" style="@style/Label" android:textSize="11sp" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView android:id="@+id/queueLine" style="@style/Label" android:layout_width="0dp" android:layout_weight="1" android:ellipsize="end" android:singleLine="true" android:textColor="@color/text" android:textSize="12sp" />
-                        <Button android:id="@+id/btnRepeat" style="@style/SmallButton" android:layout_width="84dp" android:layout_weight="0" />
-                        <Button android:id="@+id/btnExitQueue" style="@style/SmallButton" android:layout_width="72dp" android:layout_weight="0" android:text="@string/btn_exit_queue" />
-                    </LinearLayout>
+                    <Button
+                        android:id="@+id/btnMode"
+                        style="@style/SmallButton"
+                        android:layout_width="78dp"
+                        android:layout_weight="0"
+                        android:text="@string/btn_output_power" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

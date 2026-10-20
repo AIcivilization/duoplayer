@@ -16,13 +16,14 @@
     <string name="out_running">działa</string>
     <string name="out_idle">bezczynne</string>
     <string name="out_detail">Bufor %1$d ms · Ochrona przed przesterem %2$d · Niedobory %3$d</string>
-    <string name="out_warn_48k">Wyjście systemu ma tylko %1$s: otwórz Ustawienia → Dźwięk i włącz „High-Res streaming”, potem dotknij raz przycisku „Wyjście”.</string>
+    <string name="out_warn_48k">Wyjście systemu ma tylko %1$s: otwórz Ustawienia → Dźwięk i włącz „High-Res streaming”, potem dotknij raz przycisku „Wyjście” na dole tej strony.</string>
     <string name="btn_output_power">Wyjście: Eko</string>
     <string name="btn_output_standard">Wyjście: Std</string>
     <string name="combo_bookmark">Zakładka: %1$s</string>
     <string name="combo_modified">" (zmieniono)"</string>
     <string name="combo_unsaved">Nie zapisano jako zakładki</string>
     <string name="combo_none">Nie wybrano audio</string>
+    <string name="settings_title">Ustawienia A / B — dotknij karty, aby edytować</string>
     <string name="tab_label">%1$s · %2$s</string>
     <string name="not_selected">Brak</string>
     <string name="btn_save">Zapisz</string>
@@ -48,7 +49,7 @@
     <string name="balance_left">Balans: L %1$d</string>
     <string name="balance_right">Balans: P %1$d</string>
     <string name="chip_hint">Dotknij A / B, aby przełączyć: jasne = gra, szare = wył.</string>
-    <string name="chip_no_file">Brak audio (wybierz w %1$s powyżej)</string>
+    <string name="chip_no_file">Brak audio dla %1$s — dotknij, aby wybrać</string>
     <string name="state_off">Wył. · dotknij, aby włączyć</string>
     <string name="state_error">Nie można odtworzyć</string>
     <string name="state_playing">Odtwarzanie</string>

@@ -16,13 +16,14 @@
     <string name="out_running">运行中</string>
     <string name="out_idle">待机</string>
     <string name="out_detail">缓冲 %1$d ms · 削波保护 %2$d · 欠载 %3$d</string>
-    <string name="out_warn_48k">系统输出仅 %1$s：请到 设置 → 声音 打开「High-Res streaming」，再点一次右侧「输出」按钮。</string>
+    <string name="out_warn_48k">系统输出仅 %1$s：请到 设置 → 声音 打开「High-Res streaming」，再点一次本页最下方的「输出」按钮。</string>
     <string name="btn_output_power">输出:省电</string>
     <string name="btn_output_standard">输出:标准</string>
     <string name="combo_bookmark">书签：%1$s</string>
     <string name="combo_modified">（已修改）</string>
     <string name="combo_unsaved">未存为书签</string>
     <string name="combo_none">未选择音频</string>
+    <string name="settings_title">A / B 设置：点标签编辑</string>
     <string name="tab_label">%1$s · %2$s</string>
     <string name="not_selected">未选择</string>
     <string name="btn_save">保存</string>
@@ -48,7 +49,7 @@
     <string name="balance_left">声像 左 %1$d</string>
     <string name="balance_right">声像 右 %1$d</string>
     <string name="chip_hint">点 A / B 切换：亮 = 播放，灰 = 不播放</string>
-    <string name="chip_no_file">未选择音频（在上方 %1$s 中选择）</string>
+    <string name="chip_no_file">%1$s 未选择音频（点这里选择）</string>
     <string name="state_off">已关闭 · 点亮播放</string>
     <string name="state_error">无法播放</string>
     <string name="state_playing">播放中</string>
