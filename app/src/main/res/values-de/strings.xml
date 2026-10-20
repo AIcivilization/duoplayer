@@ -175,6 +175,9 @@
     <string name="upd_latest">Du bist auf dem neuesten Stand (%1$s)</string>
     <string name="upd_check_failed">Update-Prüfung fehlgeschlagen</string>
     <string name="upd_check_failed_msg">%1$s\n\nGitHub kann in manchen Netzen langsam oder nicht erreichbar sein. Versuche es später erneut oder öffne die Release-Seite im Browser.</string>
+    <string name="upd_open_mirror">Über Spiegel laden</string>
+    <string name="upd_source">Quelle: %1$s</string>
+    <string name="upd_err_sha">Die heruntergeladene Datei hat die Prüfsumme nicht bestanden und wurde verworfen</string>
     <string name="upd_open_page">Release-Seite öffnen</string>
     <string name="upd_found">Neue Version %1$s</string>
     <string name="upd_current">Aktuelle Version %1$s%2$s</string>

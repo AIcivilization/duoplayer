@@ -175,6 +175,9 @@
     <string name="upd_latest">Anda sudah memakai versi terbaru (%1$s)</string>
     <string name="upd_check_failed">Gagal memeriksa pembaruan</string>
     <string name="upd_check_failed_msg">%1$s\n\nDi beberapa jaringan GitHub bisa lambat atau tidak terjangkau. Coba lagi nanti, atau buka halaman rilis di browser.</string>
+    <string name="upd_open_mirror">Unduh dari mirror</string>
+    <string name="upd_source">Sumber: %1$s</string>
+    <string name="upd_err_sha">File unduhan gagal verifikasi checksum dan dibuang</string>
     <string name="upd_open_page">Buka halaman rilis</string>
     <string name="upd_found">Versi baru %1$s</string>
     <string name="upd_current">Versi saat ini %1$s%2$s</string>

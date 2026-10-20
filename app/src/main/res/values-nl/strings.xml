@@ -175,6 +175,9 @@
     <string name="upd_latest">Je hebt de nieuwste versie (%1$s)</string>
     <string name="upd_check_failed">Zoeken naar updates mislukt</string>
     <string name="upd_check_failed_msg">%1$s\n\nGitHub kan op sommige netwerken traag of onbereikbaar zijn. Probeer het later opnieuw of open de releasepagina in een browser.</string>
+    <string name="upd_open_mirror">Via spiegel downloaden</string>
+    <string name="upd_source">Bron: %1$s</string>
+    <string name="upd_err_sha">Het gedownloade bestand kwam niet door de controle en is verwijderd</string>
     <string name="upd_open_page">Releasepagina openen</string>
     <string name="upd_found">Nieuwe versie %1$s</string>
     <string name="upd_current">Huidige versie %1$s%2$s</string>

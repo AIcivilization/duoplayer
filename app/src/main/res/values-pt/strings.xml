@@ -175,6 +175,9 @@
     <string name="upd_latest">Você está atualizado (%1$s)</string>
     <string name="upd_check_failed">Falha ao verificar atualizações</string>
     <string name="upd_check_failed_msg">%1$s\n\nO GitHub pode ser lento ou inacessível em algumas redes. Tente mais tarde ou abra a página de versões no navegador.</string>
+    <string name="upd_open_mirror">Baixar do espelho</string>
+    <string name="upd_source">Origem: %1$s</string>
+    <string name="upd_err_sha">O arquivo baixado falhou na verificação e foi descartado</string>
     <string name="upd_open_page">Abrir página de versões</string>
     <string name="upd_found">Nova versão %1$s</string>
     <string name="upd_current">Versão atual %1$s%2$s</string>

@@ -175,6 +175,9 @@
     <string name="upd_latest">Установлена последняя версия (%1$s)</string>
     <string name="upd_check_failed">Не удалось проверить обновления</string>
     <string name="upd_check_failed_msg">%1$s\n\nВ некоторых сетях GitHub работает медленно или недоступен. Попробуйте позже или откройте страницу релизов в браузере.</string>
+    <string name="upd_open_mirror">Скачать с зеркала</string>
+    <string name="upd_source">Источник: %1$s</string>
+    <string name="upd_err_sha">Скачанный файл не прошёл проверку контрольной суммы и удалён</string>
     <string name="upd_open_page">Открыть страницу релизов</string>
     <string name="upd_found">Новая версия %1$s</string>
     <string name="upd_current">Текущая версия %1$s%2$s</string>

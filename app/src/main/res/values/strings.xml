@@ -175,6 +175,9 @@
     <string name="upd_latest">You’re up to date (%1$s)</string>
     <string name="upd_check_failed">Update check failed</string>
     <string name="upd_check_failed_msg">%1$s\n\nGitHub can be slow or unreachable on some networks. Try again later, or open the releases page in a browser.</string>
+    <string name="upd_open_mirror">Mirror download</string>
+    <string name="upd_source">Source: %1$s</string>
+    <string name="upd_err_sha">The downloaded file failed the checksum and was discarded</string>
     <string name="upd_open_page">Open releases page</string>
     <string name="upd_found">New version %1$s</string>
     <string name="upd_current">Current version %1$s%2$s</string>

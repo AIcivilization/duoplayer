@@ -175,6 +175,9 @@
     <string name="upd_latest">Masz najnowszą wersję (%1$s)</string>
     <string name="upd_check_failed">Nie udało się sprawdzić aktualizacji</string>
     <string name="upd_check_failed_msg">%1$s\n\nW niektórych sieciach GitHub działa wolno lub jest niedostępny. Spróbuj później albo otwórz stronę wydań w przeglądarce.</string>
+    <string name="upd_open_mirror">Pobierz z serwera lustrzanego</string>
+    <string name="upd_source">Źródło: %1$s</string>
+    <string name="upd_err_sha">Pobrany plik nie przeszedł weryfikacji sumy kontrolnej i został odrzucony</string>
     <string name="upd_open_page">Otwórz stronę wydań</string>
     <string name="upd_found">Nowa wersja %1$s</string>
     <string name="upd_current">Bieżąca wersja %1$s%2$s</string>

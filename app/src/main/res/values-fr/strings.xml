@@ -175,6 +175,9 @@
     <string name="upd_latest">Vous êtes à jour (%1$s)</string>
     <string name="upd_check_failed">Échec de la recherche de mise à jour</string>
     <string name="upd_check_failed_msg">%1$s\n\nGitHub peut être lent ou inaccessible sur certains réseaux. Réessayez plus tard ou ouvrez la page des versions dans un navigateur.</string>
+    <string name="upd_open_mirror">Télécharger via miroir</string>
+    <string name="upd_source">Source : %1$s</string>
+    <string name="upd_err_sha">Le fichier téléchargé n’a pas passé la vérification et a été supprimé</string>
     <string name="upd_open_page">Ouvrir la page des versions</string>
     <string name="upd_found">Nouvelle version %1$s</string>
     <string name="upd_current">Version actuelle %1$s%2$s</string>

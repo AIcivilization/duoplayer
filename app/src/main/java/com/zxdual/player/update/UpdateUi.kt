@@ -55,7 +55,8 @@ class UpdateUi(private val activity: Activity, private val dialogTheme: Int) {
                     if (manual) {
                         AlertDialog.Builder(activity, dialogTheme).setTitle(str(R.string.upd_check_failed))
                             .setMessage(str(R.string.upd_check_failed_msg, describe(e)))
-                            .setPositiveButton(str(R.string.upd_open_page)) { _, _ -> openReleases() }
+                            .setPositiveButton(str(R.string.upd_open_mirror)) { _, _ -> openMirror() }
+                            .setNeutralButton(str(R.string.upd_open_page)) { _, _ -> openReleases() }
                             .setNegativeButton(str(R.string.close), null).show()
                     }
                 }
@@ -96,9 +97,9 @@ class UpdateUi(private val activity: Activity, private val dialogTheme: Int) {
             .show()
         Thread {
             val result = runCatching {
-                val f = Updater.download(activity, r) { done, total ->
-                    val text = if (total > 0) str(R.string.upd_progress, "%.1f".format(done / 1048576.0), "%.1f".format(total / 1048576.0), (done * 100 / total).toInt())
-                    else str(R.string.upd_progress_unknown, "%.1f".format(done / 1048576.0))
+                val f = Updater.download(activity, r) { done, total, host ->
+                    val text = (if (total > 0) str(R.string.upd_progress, "%.1f".format(done / 1048576.0), "%.1f".format(total / 1048576.0), (done * 100 / total).toInt())
+                    else str(R.string.upd_progress_unknown, "%.1f".format(done / 1048576.0))) + "\n" + str(R.string.upd_source, host)
                     main.post { dlg.setMessage(text) }
                 }
                 Updater.verify(activity, f)?.let { throw UpdateException(it) }
@@ -115,7 +116,8 @@ class UpdateUi(private val activity: Activity, private val dialogTheme: Int) {
                 }.onFailure { e ->
                     AlertDialog.Builder(activity, dialogTheme).setTitle(str(R.string.upd_failed))
                         .setMessage(describe(e))
-                        .setPositiveButton(str(R.string.upd_open_page)) { _, _ -> openReleases() }
+                        .setPositiveButton(str(R.string.upd_open_mirror)) { _, _ -> openMirror() }
+                        .setNeutralButton(str(R.string.upd_open_page)) { _, _ -> openReleases() }
                         .setNegativeButton(str(R.string.close), null).show()
                 }
             }
@@ -126,6 +128,12 @@ class UpdateUi(private val activity: Activity, private val dialogTheme: Int) {
     private fun plainNotes(md: String): String = md.substringBefore("\n---").lines()
         .joinToString("\n") { it.trimEnd().replace(Regex("^#{1,6}\\s*"), "").replace("`", "").replace("**", "") }
         .replace(Regex("\n{3,}"), "\n\n").trim()
+
+    /** 国内一般能打开的 jsDelivr 镜像目录，里面有最新的 APK */
+    fun openMirror() {
+        runCatching { activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(Updater.MIRROR_PAGE))) }
+            .onFailure { toast(str(R.string.upd_no_browser, Updater.MIRROR_PAGE)) }
+    }
 
     fun openReleases() {
         runCatching { activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(Updater.RELEASES_PAGE))) }

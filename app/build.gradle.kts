@@ -20,8 +20,8 @@ android {
         // NW-ZX500 系列出厂/最终固件均为 Android 9 (API 28)
         minSdk = 28
         targetSdk = 34
-        versionCode = 7
-        versionName = "1.6"
+        versionCode = 8
+        versionName = "1.7"
 
         ndk {
             // ZX500 是 64 位 ARM；保留 armeabi-v7a 以防万一

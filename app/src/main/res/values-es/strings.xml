@@ -175,6 +175,9 @@
     <string name="upd_latest">Tienes la última versión (%1$s)</string>
     <string name="upd_check_failed">No se pudo buscar actualizaciones</string>
     <string name="upd_check_failed_msg">%1$s\n\nGitHub puede ir lento o no estar disponible en algunas redes. Inténtalo más tarde o abre la página de versiones en un navegador.</string>
+    <string name="upd_open_mirror">Descargar del espejo</string>
+    <string name="upd_source">Origen: %1$s</string>
+    <string name="upd_err_sha">El archivo descargado no superó la verificación y se descartó</string>
     <string name="upd_open_page">Abrir página de versiones</string>
     <string name="upd_found">Nueva versión %1$s</string>
     <string name="upd_current">Versión actual %1$s%2$s</string>

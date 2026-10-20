@@ -175,6 +175,9 @@
     <string name="upd_latest">Güncelsiniz (%1$s)</string>
     <string name="upd_check_failed">Güncelleme denetlenemedi</string>
     <string name="upd_check_failed_msg">%1$s\n\nBazı ağlarda GitHub yavaş veya erişilemez olabilir. Daha sonra tekrar deneyin ya da sürümler sayfasını tarayıcıda açın.</string>
+    <string name="upd_open_mirror">Yansıdan indir</string>
+    <string name="upd_source">Kaynak: %1$s</string>
+    <string name="upd_err_sha">İndirilen dosya sağlama denetimini geçemedi ve silindi</string>
     <string name="upd_open_page">Sürümler sayfasını aç</string>
     <string name="upd_found">Yeni sürüm %1$s</string>
     <string name="upd_current">Geçerli sürüm %1$s%2$s</string>

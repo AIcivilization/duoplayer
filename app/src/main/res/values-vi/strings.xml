@@ -175,6 +175,9 @@
     <string name="upd_latest">Bạn đang dùng bản mới nhất (%1$s)</string>
     <string name="upd_check_failed">Kiểm tra cập nhật thất bại</string>
     <string name="upd_check_failed_msg">%1$s\n\nỞ một số mạng GitHub có thể chậm hoặc không truy cập được. Hãy thử lại sau hoặc mở trang phát hành bằng trình duyệt.</string>
+    <string name="upd_open_mirror">Tải từ máy chủ dự phòng</string>
+    <string name="upd_source">Nguồn: %1$s</string>
+    <string name="upd_err_sha">Tệp tải về không khớp mã kiểm tra nên đã bị loại bỏ</string>
     <string name="upd_open_page">Mở trang phát hành</string>
     <string name="upd_found">Phiên bản mới %1$s</string>
     <string name="upd_current">Phiên bản hiện tại %1$s%2$s</string>

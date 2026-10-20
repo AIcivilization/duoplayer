@@ -175,6 +175,9 @@
     <string name="upd_latest">最新版です（%1$s）</string>
     <string name="upd_check_failed">更新の確認に失敗しました</string>
     <string name="upd_check_failed_msg">%1$s\n\nネットワークによっては GitHub に接続しにくい場合があります。後でもう一度試すか、ブラウザでリリースページを開いてください。</string>
+    <string name="upd_open_mirror">ミラーからダウンロード</string>
+    <string name="upd_source">取得元：%1$s</string>
+    <string name="upd_err_sha">ダウンロードしたファイルのチェックサムが一致しないため破棄しました</string>
     <string name="upd_open_page">リリースページを開く</string>
     <string name="upd_found">新しいバージョン %1$s</string>
     <string name="upd_current">現在のバージョン %1$s%2$s</string>

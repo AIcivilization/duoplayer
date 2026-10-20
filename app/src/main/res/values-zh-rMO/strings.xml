@@ -175,6 +175,9 @@
     <string name="upd_latest">已是最新版本（%1$s）</string>
     <string name="upd_check_failed">檢查更新失敗</string>
     <string name="upd_check_failed_msg">%1$s\n\n部分網路存取 GitHub 可能不穩定，可以稍後再試，或用瀏覽器開啟發布頁手動下載。</string>
+    <string name="upd_open_mirror">鏡像下載</string>
+    <string name="upd_source">來源：%1$s</string>
+    <string name="upd_err_sha">下載的檔案校驗未通過，已捨棄</string>
     <string name="upd_open_page">開啟發布頁</string>
     <string name="upd_found">發現新版本 %1$s</string>
     <string name="upd_current">目前版本 %1$s%2$s</string>

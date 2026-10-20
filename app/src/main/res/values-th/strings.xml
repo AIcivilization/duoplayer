@@ -175,6 +175,9 @@
     <string name="upd_latest">เป็นเวอร์ชันล่าสุดแล้ว (%1$s)</string>
     <string name="upd_check_failed">ตรวจหาอัปเดตไม่สำเร็จ</string>
     <string name="upd_check_failed_msg">%1$s\n\nบางเครือข่ายอาจเข้า GitHub ได้ช้าหรือเข้าไม่ได้ ลองใหม่ภายหลัง หรือเปิดหน้ารุ่นเผยแพร่ในเบราว์เซอร์</string>
+    <string name="upd_open_mirror">ดาวน์โหลดจากมิเรอร์</string>
+    <string name="upd_source">แหล่งที่มา: %1$s</string>
+    <string name="upd_err_sha">ไฟล์ที่ดาวน์โหลดตรวจสอบไม่ผ่านและถูกทิ้งแล้ว</string>
     <string name="upd_open_page">เปิดหน้ารุ่นเผยแพร่</string>
     <string name="upd_found">เวอร์ชันใหม่ %1$s</string>
     <string name="upd_current">เวอร์ชันปัจจุบัน %1$s%2$s</string>
