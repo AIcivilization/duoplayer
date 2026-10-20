@@ -50,37 +50,7 @@ echo "→ 创建 GitHub Release"
 gh release create "$TAG" "$APK" --repo "$REPO" --title "双轨 Hi-Fi $VER" --notes-file build/dist/notes.md
 
 # ---- 国内镜像通道：dist 分支（latest.json + APK），经 jsDelivr CDN 分发 ----
-# GitHub 的安装包下载在国内经常连不上，应用会自动改走这里。
-echo "→ 更新 dist 分支（jsDelivr 镜像）"
-WT=build/dist-branch
-rm -rf "$WT"; git worktree prune
-if git ls-remote --exit-code --heads origin dist >/dev/null 2>&1; then
-  git fetch -q origin dist
-  git worktree add -q -B dist "$WT" origin/dist
-else
-  git worktree add -q --detach "$WT"
-  (cd "$WT" && git checkout -q --orphan dist && git rm -rq . && git clean -fdq)
-fi
-cp "$APK" "$WT/"
-python3 - "$WT" "$TAG" "$VER" "$CODE" "$(basename "$APK")" "$SHA" "$NOTES" <<'PY'
-import json, os, sys, glob
-wt, tag, ver, code, apk, sha, notes = sys.argv[1:8]
-info = {"tag": tag, "versionName": ver, "versionCode": int(code), "apk": apk,
-        "size": os.path.getsize(os.path.join(wt, apk)), "sha256": sha,
-        "notes": open(notes, encoding="utf-8").read().strip()}
-json.dump(info, open(os.path.join(wt, "latest.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=2)
-# 只保留最近 3 个安装包，控制分支大小（jsDelivr 对仓库体积有限制）
-apks = sorted(glob.glob(os.path.join(wt, "duoplayer-*.apk")), key=os.path.getmtime)
-for old in apks[:-3]:
-    os.remove(old)
-open(os.path.join(wt, "README.md"), "w").write(
-    "# dist\n\n自动生成：应用内更新的镜像通道（jsDelivr）。请勿手动修改。\n\n"
-    f"最新版本：{tag}\n\n下载：https://cdn.jsdelivr.net/gh/AIcivilization/duoplayer@dist/{apk}\n")
-PY
-(cd "$WT" && git add -A && git commit -qm "dist $TAG" && git push -q origin dist)
-git worktree remove --force "$WT"
-# 刷新 jsDelivr 对 latest.json 的缓存
-for h in purge.jsdelivr.net; do curl -s -m 20 "https://$h/gh/$REPO@dist/latest.json" >/dev/null || true; done
+scripts/publish-dist.sh "$TAG" "$VER" "$CODE" "$APK" "$SHA" "$NOTES"
 
 echo "✓ 已发布 https://github.com/$REPO/releases/tag/$TAG"
 echo "  国内镜像：https://cdn.jsdelivr.net/gh/$REPO@dist/$(basename "$APK")"

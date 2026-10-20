@@ -25,7 +25,8 @@ class UpdateException(val res: Int, val arg: String = "") : IOException(arg)
 object Updater {
     const val REPO = "AIcivilization/duoplayer"
     const val RELEASES_PAGE = "https://github.com/$REPO/releases"
-    private const val API_LATEST = "https://api.github.com/repos/$REPO/releases/latest"
+    /** 可在测试里改成不可达地址，模拟「GitHub 连不上」 */
+    internal var apiLatest = "https://api.github.com/repos/$REPO/releases/latest"
 
     /** jsDelivr 的几个入口，按顺序尝试 */
     val MIRRORS = listOf(
@@ -126,7 +127,7 @@ object Updater {
     }
 
     private fun fetchGitHub(): Release? {
-        val c = open(API_LATEST, connectMs = 8000, readMs = 10000)
+        val c = open(apiLatest, connectMs = 8000, readMs = 10000)
         c.setRequestProperty("Accept", "application/vnd.github+json")
         try {
             return when (c.responseCode) {
@@ -155,8 +156,11 @@ object Updater {
      * 依次尝试每个下载地址，保存到缓存目录。
      * progress(已下载, 总大小, 当前来源域名)。阻塞调用。
      */
-    fun download(ctx: Context, r: Release, progress: (Long, Long, String) -> Unit): File {
-        val dir = File(ctx.cacheDir, ApkProvider.DIR).apply { mkdirs() }
+    fun download(ctx: Context, r: Release, progress: (Long, Long, String) -> Unit): File =
+        downloadTo(File(ctx.cacheDir, ApkProvider.DIR), r, progress)
+
+    internal fun downloadTo(dirIn: File, r: Release, progress: (Long, Long, String) -> Unit): File {
+        val dir = dirIn.apply { mkdirs() }
         dir.listFiles()?.forEach { it.delete() }  // 只保留这一次的安装包
         val out = File(dir, "duoplayer-${r.tag}.apk")
         var lastError: IOException = UpdateException(R.string.upd_err_download, "-")
